@@ -1,0 +1,8 @@
+{
+  "source": "local-customization",
+  "origin": "本地定制；初始作者未独立核验",
+  "source_sha256": "8e5b7cd6e031c2d38718cd493a8e7cafe425f96b7d77c0574fe252e0e536e2d0",
+  "snapshot_date": "2026-10-11",
+  "adaptation": "保留单条默认、集合范围选择和防覆盖；输出位置改为当前用户 Downloads。",
+  "upstream_commit": null
+}

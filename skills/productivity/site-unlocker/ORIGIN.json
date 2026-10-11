@@ -1,0 +1,8 @@
+{
+  "source": "local-customization",
+  "origin": "本地定制；初始作者未独立核验",
+  "source_sha256": "46bb02365fadea16c5d9f773cb2469a2235c3ca44cf9285f9403b7cf54671912",
+  "snapshot_date": "2026-10-11",
+  "adaptation": "保留真实正文判定；改为优先当前 Codex 浏览器工具，CLI 作为可用时的后备。",
+  "upstream_commit": null
+}

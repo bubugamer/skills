@@ -1,0 +1,13 @@
+{
+  "skill_name": "llm-wiki",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "只读检查知识库的链接和导航。",
+      "expected_output": "用双层导航样例证明 index、topic 页和 MkDocs 一致；私有页发布规则有真实构建验证。",
+      "expectations": [
+        "用双层导航样例证明 index、topic 页和 MkDocs 一致；私有页发布规则有真实构建验证。"
+      ]
+    }
+  ]
+}

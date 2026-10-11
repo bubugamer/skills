@@ -1,0 +1,13 @@
+{
+  "skill_name": "wait-what",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "我没跟上，重新讲清楚。",
+      "expected_output": "补足上下文、结论和具体例子；不扩展到新任务。",
+      "expectations": [
+        "补足上下文、结论和具体例子；不扩展到新任务。"
+      ]
+    }
+  ]
+}

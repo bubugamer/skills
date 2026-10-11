@@ -1,0 +1,13 @@
+{
+  "skill_name": "ask-skills",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "我想做这件事，应该用哪个 skill？",
+      "expected_output": "给出首选、理由、依赖与一句可用指令；区分正式、试用、外部依赖。",
+      "expectations": [
+        "给出首选、理由、依赖与一句可用指令；区分正式、试用、外部依赖。"
+      ]
+    }
+  ]
+}

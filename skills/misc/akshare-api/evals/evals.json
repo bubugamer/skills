@@ -1,0 +1,13 @@
+{
+  "skill_name": "akshare-api",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "用 AKShare 查询两只股票最近五天的行情。",
+      "expected_output": "代码、来源、日期、复权口径齐全；缺失结果显式说明。",
+      "expectations": [
+        "代码、来源、日期、复权口径齐全；缺失结果显式说明。"
+      ]
+    }
+  ]
+}

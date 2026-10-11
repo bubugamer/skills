@@ -1,0 +1,14 @@
+__pycache__/
+*.py[cod]
+.venv/
+.DS_Store
+.env
+.env.*
+!.env.example
+*.auth-state.json
+.playwright-cli/
+node_modules/
+_catalog/
+output/
+.local/
+*.skill

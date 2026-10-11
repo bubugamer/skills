@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+script_dir="$(CDPATH= cd -- "$(dirname -- "$0")" && pwd)"
+skill_dir="$(dirname -- "$script_dir")"
+runtime_dir="$skill_dir/.venv"
+python_bin="$runtime_dir/bin/python"
+
+if [[ ! -x "$python_bin" ]]; then
+  echo "Preparing the private tdx-api runtime..." >&2
+  python3 -m venv "$runtime_dir"
+  "$python_bin" -m pip install --disable-pip-version-check -r "$skill_dir/requirements.txt" >&2
+fi
+
+export PYTHONUTF8=1
+exec "$python_bin" "$script_dir/tdx_api.py" "$@"

@@ -1,0 +1,6 @@
+interface:
+  display_name: "ask-skills"
+  short_description: "Codex workflow: 选择合适的 skill; check results"
+  default_prompt: "Use $ask-skills to help with this task: 我想做这件事，应该用哪个 skill？"
+policy:
+  allow_implicit_invocation: false

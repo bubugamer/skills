@@ -1,0 +1,8 @@
+{
+  "source": "local-customization",
+  "origin": "本地定制；初始作者未独立核验",
+  "source_sha256": "b5260a70a6f27e9f7c49269b833273281cecf3fcb5a7e1655fea72b897e76dc0",
+  "snapshot_date": "2026-10-11",
+  "adaptation": "与 AKShare 保持来源边界；保留空实时结果失败规则和明确服务器优先级。",
+  "upstream_commit": null
+}

@@ -1,0 +1,8 @@
+{
+  "source": "local-customization",
+  "origin": "本地定制；初始作者未独立核验",
+  "source_sha256": "049aa43e7ef602cd2f6e7460620e61dba141cc5b6e648ddb8b448303d10af800",
+  "snapshot_date": "2026-10-11",
+  "adaptation": "保留来源标注、日期验证和空结果处理；只收源码与固定依赖，不收运行环境。",
+  "upstream_commit": null
+}

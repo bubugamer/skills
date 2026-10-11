@@ -1,0 +1,22 @@
+{
+  "name": "bubugamer-skills",
+  "version": "0.1.0",
+  "description": "Personal Codex workflows for reading, writing, organization and data.",
+  "author": {
+    "name": "bubugamer"
+  },
+  "repository": "https://github.com/bubugamer/skills",
+  "skills": [
+    "./skills/productivity/tang-monk",
+    "./skills/productivity/brief",
+    "./skills/productivity/dongnaojin-yeye",
+    "./skills/productivity/konmari",
+    "./skills/productivity/site-unlocker",
+    "./skills/productivity/writing-master",
+    "./skills/productivity/wait-what",
+    "./skills/misc/akshare-api",
+    "./skills/misc/tdx-api",
+    "./skills/misc/yt-dlp-download",
+    "./skills/productivity/ask-skills"
+  ]
+}

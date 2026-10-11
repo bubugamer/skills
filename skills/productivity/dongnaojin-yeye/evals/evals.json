@@ -1,0 +1,13 @@
+{
+  "skill_name": "dongnaojin-yeye",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "总结这篇文章，用中文解释三个术语。",
+      "expected_output": "读到有效正文；区分事实和推断；仅按明确保存要求写笔记。",
+      "expectations": [
+        "读到有效正文；区分事实和推断；仅按明确保存要求写笔记。"
+      ]
+    }
+  ]
+}

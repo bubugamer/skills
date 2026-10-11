@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Konmari Review Desk</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <main class="page">
+      <header class="hero">
+        <p class="eyebrow">Konmari</p>
+        <h1>Review Desk</h1>
+        <p class="lede">
+          Inspect the current workspace summary, review hotspots, and confirm
+          plans before running a rebuild.
+        </p>
+      </header>
+
+      <section class="grid" id="summary-grid"></section>
+
+      <section class="panel">
+        <div class="panel-head">
+          <h2>Review Summary</h2>
+          <button id="refresh" type="button">Refresh</button>
+        </div>
+        <pre id="review-summary">Loading...</pre>
+      </section>
+
+      <section class="panel">
+        <h2>PARA Plan Summary</h2>
+        <pre id="plan-summary">No plan generated yet.</pre>
+      </section>
+    </main>
+    <script src="./app.js" defer></script>
+  </body>
+</html>

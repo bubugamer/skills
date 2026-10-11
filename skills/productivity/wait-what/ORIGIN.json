@@ -1,0 +1,8 @@
+{
+  "source": "local-customization",
+  "origin": "mattpocock/skills",
+  "source_sha256": "d961bb37defd975c539427edb8f450cdbccdcdd552e213c1ece46676a7970905",
+  "snapshot_date": "2026-10-11",
+  "adaptation": "本地版本与 Matt 原文一致，明确记录出处；改成跟随当前语言，默认中文。",
+  "upstream_commit": "49dd158d1076134a641b33efb035946536778336"
+}

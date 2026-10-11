@@ -1,0 +1,6 @@
+interface:
+  display_name: "llm-wiki"
+  short_description: "Codex workflow: 维护 Markdown 知识库与导航; check results"
+  default_prompt: "Use $llm-wiki to help with this task: 只读检查知识库的链接和导航。"
+policy:
+  allow_implicit_invocation: false

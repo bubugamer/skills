@@ -1,0 +1,13 @@
+{
+  "skill_name": "writing-master",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "按 bbs 风格把这些项目经历写成帖子。",
+      "expected_output": "保留用户事实与观点；语法正确；没有编造经历。",
+      "expectations": [
+        "保留用户事实与观点；语法正确；没有编造经历。"
+      ]
+    }
+  ]
+}

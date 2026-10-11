@@ -1,0 +1,8 @@
+{
+  "source": "local-customization",
+  "origin": "本地定制；初始作者未独立核验",
+  "source_sha256": "6b5ac65523a57964aff3d56e074d34b1176347da35abbfd1c88a4341c2a2d55a",
+  "snapshot_date": "2026-10-11",
+  "adaptation": "保留内容获取门槛与结论收束规则；修正默认自动落库，摘要和讨论先在会话完成。",
+  "upstream_commit": null
+}

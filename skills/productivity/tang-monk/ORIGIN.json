@@ -1,0 +1,8 @@
+{
+  "source": "local-customization",
+  "origin": "本地定制；初始作者未独立核验",
+  "source_sha256": "009962838e06ae65d33968fcb919d690697ebc56066bd04e790e2889c431dd13",
+  "snapshot_date": "2026-10-11",
+  "adaptation": "保留执行状态与内容分类分离的设计；原 TangMonk 规范为小写名称，并保留迁移说明。",
+  "upstream_commit": null
+}

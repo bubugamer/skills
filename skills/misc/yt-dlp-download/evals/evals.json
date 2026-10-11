@@ -1,0 +1,13 @@
+{
+  "skill_name": "yt-dlp-download",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "下载这条视频，只要音频。",
+      "expected_output": "保存文件存在且符合媒体类型；合集未被意外全部下载。",
+      "expectations": [
+        "保存文件存在且符合媒体类型；合集未被意外全部下载。"
+      ]
+    }
+  ]
+}

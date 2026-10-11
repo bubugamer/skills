@@ -1,0 +1,13 @@
+{
+  "skill_name": "site-unlocker",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "这个页面只抓到标题，帮我获取正文。",
+      "expected_output": "成功产物有正文和来源；登录墙不能当作成功。",
+      "expectations": [
+        "成功产物有正文和来源；登录墙不能当作成功。"
+      ]
+    }
+  ]
+}
