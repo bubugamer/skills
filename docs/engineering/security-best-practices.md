@@ -8,7 +8,7 @@
 
 ## 使用例子
 
-> $security-best-practices：使用对应能力处理当前明确请求。
+> 对这个 Python API 做专项安全审查，指出有证据的问题。
 
 ## 输入与依赖
 

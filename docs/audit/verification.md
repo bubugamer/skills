@@ -33,4 +33,10 @@ python3 scripts/smoke_test.py
 
 每个 evals 文件是场景要求，尚未运行独立模型行为评测。普通阅读、推荐入口和写作需要真实任务记录；社交登录、网页抓取、金融数据源的当前网络可用性、付费 API、生产操作及长期学习效果均未在本轮执行。四项 Matt 方法与三个本地待改善能力保持试用状态。
 
-新仓库的 GitHub 自动检查与 Codex 插件目录读取结果，在发布后追加。没有因检查格式通过就宣布所有 skills 在实际任务中有效。
+## 发布与 Codex 目录验证
+
+- 已建立 PUBLIC 仓库 bubugamer/skills，默认分支 main。
+- 初始提交 73b737e 的 [GitHub 自动检查](https://github.com/bubugamer/skills/actions/runs/38143188223)通过，云端实际运行 validate.py 与 smoke_test.py。
+- 执行 codex plugin marketplace add bubugamer/skills --ref main 后，当前 Codex 能列出 bubugamer-skills@bubugamer 0.1.0。
+- 列表明确显示 installed=false、enabled=false：仅登记来源，没有批量安装，也没有让旧安装与插件产生同名重复。
+- 目录被识别不等于桌面新会话中的全部行为已验证。没有因检查格式通过就宣布所有 skills 在实际任务中有效。

@@ -8,7 +8,7 @@ Wrangler 登录与指定产品；本地说明的 sandbox 升权语法必须服�
 
 ## 使用例子
 
-> $cloudflare-deploy：使用对应能力处理当前明确请求。
+> 把这个 Worker 发布到我已指定的 Cloudflare 项目。
 
 ## 输入与依赖
 
