@@ -1,6 +1,6 @@
 # 目录与文件清单
 
-整理日期：2026-10-20（第一轮收尾完成）。当前 17 个技能源码，按用途归 engineering 3 项、productivity 11 项、misc 3 项；另有 agent-browser、find-skills 两项外部使用说明。原有 32 项均已确认处理，第一轮待审 0 项。已确认保留 18 项（含提前引入的 teach），ask-skills 另列体系维护；Matt 36 项候选留待第二批。详见 [收尾说明](audit/first-round-summary.md)。
+整理日期：2026-10-20（第一轮收尾完成）。当前 17 个技能源码，按用途归 engineering 3 项、productivity 11 项、misc 3 项；另有 agent-browser、find-skills 两项外部使用说明。原有 32 项均已确认处理，第一轮待审 0 项。已确认保留 19 项（含提前引入的 teach 和已获准的 ask-skills），ask-skills 仍另列体系维护；Matt 36 项候选留待第二批。详见 [收尾说明](audit/first-round-summary.md)。
 
 ## 整理记录（历史）
 
@@ -96,6 +96,7 @@ skills/（仓库根目录）
 │   │   │   └── SKILL.md
 │   │   ├── agent-browser-review.md
 │   │   ├── akshare-api-review.md
+│   │   ├── ask-skills-review.md
 │   │   ├── brief-review.md
 │   │   ├── deep-research-review.md
 │   │   ├── deepcoffee-dev-review.md

@@ -10,11 +10,11 @@
 | --- | --- | --- | --- |
 | 第一轮：当前重点 | 原有 32 个不同技能 | 已确认处理 32 项，待审 0 项 | 本轮收尾完成；已知限制继续记录，安装迁移另行处理。 |
 | 第二批：稍后扩展 | Matt 尚未引入的 36 个候选 | 尚未启动整批引入评估；其中 6 项只做过方法比较 | 原有集合审完后，再判断是否值得引入。 |
-| 体系维护：单列 | ask-skills | 本轮新增入口，尚未独立审核 | 不计入原有技能的第一轮待审数量。 |
+| 体系维护：单列 | ask-skills | 用户已明确批准加入，保持手动推荐入口 | 不计入原有技能的第一轮待审数量。 |
 
 teach 已经用户明确确认引入，单独保留，不算第一轮原有技能。wait-what 原本就在本地集合，也来自 Matt，归第一轮审阅，第二批不重复列入。
 
-## 已审阅并保留在用途目录：18 项
+## 已审阅并保留在用途目录：19 项
 
 | Skill | 当前目录 | 来源或角色 |
 | --- | --- | --- |
@@ -36,13 +36,14 @@ teach 已经用户明确确认引入，单独保留，不算第一轮原有技�
 | `deep-research` | productivity | 方法参考第三方；已批准 Codex 重写，取证与交叉核对，报告和记录按需。 |
 | `ui-ux-pro-max` | engineering | 个人设计规则与 Codex 适配入口；第三方资料和引擎仍外置。 |
 | `skill-creator` | engineering | 创建、维护与评测统一入口；按需比较任务、检查触发和评阅结果。 |
+| `ask-skills` | productivity | 体系新增入口；用户明确批准加入，手动推荐已有技能，不执行任务。 |
 
 其他已确认处理：
 
 - **brief**：迁到定时任务项目，方法与消息源已保存，调度尚未实现。
 - **OpenAI 官方 14 项**：imagegen、pdf 已先前确认沿用官方；本轮另按用户规则直接跳过 `cloudflare-deploy`、`gh-address-comments`、`gh-fix-ci`、`jupyter-notebook`、`openai-docs`、`playwright`、`playwright-interactive`、`screenshot`、`security-best-practices`、`security-threat-model`、`transcribe`、`vercel-deploy`。全部不纳入个人集合，仅保留 [处理依据](openai-official-exclusions.md)，本机安装暂不处理。
 
-第一轮已确认处理 32 项：原有保留 17 项、brief 迁出 1 项、官方跳过 14 项。提前确认的 teach 不计入原有 32 项，因此个人集合已审阅保留共 18 项，其中 agent-browser 和 find-skills 仅登记外部工具，不包含可发布源码。批量跳过依据用户授权与来源，不表示已完成这些技能的逐项内容审阅或行为验证。
+第一轮已确认处理 32 项：原有保留 17 项、brief 迁出 1 项、官方跳过 14 项。提前确认的 teach 和体系新增 ask-skills 不计入原有 32 项，因此个人集合已审阅保留共 19 项，其中 agent-browser 和 find-skills 仅登记外部工具，不包含可发布源码。批量跳过依据用户授权与来源，不表示已完成这些技能的逐项内容审阅或行为验证。
 
 ## 第一轮已确认处理：32 项
 
@@ -145,7 +146,7 @@ teach 已经用户明确确认引入，单独保留，不算第一轮原有技�
 
 ## 体系维护项：ask-skills
 
-本轮新增的推荐入口，尚未由用户独立审核；不属于原有 32 项，也不占第一轮的待审数量。建立目录和生成说明不表示已审阅通过。见 [当前说明](../../skills/productivity/ask-skills/SKILL.md)。
+用户明确表示「ask-skills可以加入」，已确认保留，归 productivity，保持手动调用、仅推荐而不安装或执行任务。此前未获确认便进入源码和发布的遗漏已记录，统一准入检查不再区分来源或维护角色。不属于原有 32 项，不改变第一轮计数。见 [确认记录](ask-skills-review.md) 与 [当前说明](../../skills/productivity/ask-skills/SKILL.md)。
 
 ## 目录与审查状态
 

@@ -803,16 +803,40 @@
       "category": "productivity",
       "purpose": "选择合适的 skill",
       "decision": "new",
-      "reason": "覆盖工程、内容、学习、整理和数据任务；从真实目录给建议，不自动执行手动能力。",
+      "reason": "用户明确确认「ask-skills可以加入」。作为 productivity 的手动推荐入口保留，从当前集合选择适合任务的能力，说明外部依赖和候选边界；只给建议，不安装、不启动目标任务。此前未获确认即进入源码和发布的遗漏已纠正，所有来源统一要求明确批准。见 [确认记录](../audit/ask-skills-review.md)。",
       "example": "我想做这件事，应该用哪个 skill？",
       "done": "给出首选、理由、依赖与一句可用指令；区分用户审阅状态、已知限制、外部依赖与调用方式。",
-      "compare": "ask-matt",
+      "compare": "find-skills（搜索外部新技能）；ask-skills 从当前集合推荐已有能力",
       "source": "new",
       "origin": "本仓库",
       "path": "skills/productivity/ask-skills",
       "manual": true,
       "dependencies": [],
-      "updated_at": "2026-10-14"
+      "updated_at": "2026-10-20",
+      "review": {
+        "status": "user-approved",
+        "admission_status": "user-approved",
+        "approved_at": "2026-10-20",
+        "approval_basis": "用户重申未通过的技能不能进入源码和发布清单，并明确表示「ask-skills可以加入」，确认保留该体系维护入口。",
+        "audit": "docs/audit/ask-skills-review.md",
+        "verified_scope": "保留原推荐说明和手动调用方式；检查当前路由与来源、文档一致性，并在临时副本验证未获批准时源码检查失败、生成清单排除和安装被阻断。行为场景为定义，未运行独立模型评测。"
+      },
+      "release": true,
+      "release_reason": "用户已明确批准加入；纳入默认清单，保持手动调用，与原有 32 项及 Matt 第二批分别计数。",
+      "usage_scenarios": [
+        {
+          "situation": "不确定已有技能里该选哪一个",
+          "prompt": "$ask-skills 我想理解一篇文章并整理阅读笔记，应该用哪个技能？",
+          "assistance": "从当前路由给出首选、必要备选、选择理由、输入条件和一句可直接使用的请求。",
+          "result": "明确的技能建议和下一步用法。"
+        },
+        {
+          "situation": "几个技能用途接近，想先确认分工",
+          "prompt": "$ask-skills 比较 read、teach 和 wiki，告诉我当前任务该用哪个，先只推荐。",
+          "assistance": "结合用户意图及已有选择解释边界，区分已收录能力、外部依赖与候选，保留手动调用要求。",
+          "result": "针对当前任务的选择依据，不自动启动目标技能。"
+        }
+      ]
     }
   ],
   "updated_at": "2026-10-20"

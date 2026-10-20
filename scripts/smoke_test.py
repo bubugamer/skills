@@ -2,6 +2,7 @@
 """Exercise safe installation and file inspection on disposable real files."""
 import hashlib
 import json
+import shutil
 import subprocess
 import sys
 import tempfile
@@ -24,6 +25,35 @@ def main():
     assert not (ROOT / 'docs/in-progress').exists(), 'Removed usage category must stay absent'
     with tempfile.TemporaryDirectory(prefix='personal-skills-check-') as temporary:
         base = Path(temporary)
+        admission_copy = base / 'admission-check'
+        shutil.copytree(ROOT, admission_copy, ignore=shutil.ignore_patterns('.git', '__pycache__', '.venv', '.DS_Store'))
+        approval_catalog = json.loads((admission_copy / 'catalog.json').read_text())
+        for source in ['new', 'local-customization', 'upstream-adapted']:
+            for release in [True, False]:
+                candidate_catalog = json.loads(json.dumps(approval_catalog))
+                candidate = next(row for row in candidate_catalog['skills'] if row['name'] == 'ask-skills')
+                candidate['source'] = source
+                candidate['release'] = release
+                candidate.pop('review')
+                (admission_copy / 'catalog.json').write_text(json.dumps(candidate_catalog))
+                output = run(admission_copy / 'scripts/validate.py', expected=1)
+                assert 'ask-skills: explicit user approval' in output, 'Every source type must require approval, even when not released'
+                blocked_target = base / ('unapproved-' + source + '-' + str(release))
+                run(admission_copy / 'scripts/install.py', '--target', blocked_target, '--skill', 'ask-skills', '--apply', expected=2)
+                assert not blocked_target.exists(), 'Unapproved source must not be installed'
+                run(admission_copy / 'scripts/sync_catalog.py')
+                blocked_manifest = json.loads((admission_copy / '.codex-plugin/plugin.json').read_text())
+                assert './skills/productivity/ask-skills' not in blocked_manifest['skills']
+        for missing in ['approval_basis', 'audit']:
+            incomplete_catalog = json.loads(json.dumps(approval_catalog))
+            candidate = next(row for row in incomplete_catalog['skills'] if row['name'] == 'ask-skills')
+            candidate['review'].pop(missing)
+            (admission_copy / 'catalog.json').write_text(json.dumps(incomplete_catalog))
+            output = run(admission_copy / 'scripts/validate.py', expected=1)
+            assert 'ask-skills: explicit user approval' in output
+            blocked_target = base / ('incomplete-approval-' + missing)
+            run(admission_copy / 'scripts/install.py', '--target', blocked_target, '--skill', 'ask-skills', '--apply', expected=2)
+            assert not blocked_target.exists()
         target = base / 'installed'
         output = run(installer, '--target', target)
         assert 'Preview only' in output and not target.exists(), 'Preview must not create directories'
@@ -33,6 +63,8 @@ def main():
         for entry in target.iterdir():
             assert entry.is_symlink() and (entry / 'SKILL.md').is_file()
             assert 'in-progress' not in str(entry.resolve())
+        assert (target / 'ask-skills').is_symlink(), 'Explicitly approved ask-skills remains available'
+        assert yaml.safe_load((target / 'ask-skills/agents/openai.yaml').read_text())['policy']['allow_implicit_invocation'] is False
         again = run(installer, '--target', target, '--apply')
         assert 'Created 0 links' in again
         conflict = base / 'conflict'
@@ -206,7 +238,7 @@ def main():
     run(ROOT / 'skills/productivity/deep-research/scripts/test_records.py')
     run(ROOT / 'skills/engineering/ui-ux-pro-max/scripts/test_tools.py')
     run(ROOT / 'skills/engineering/skill-creator/scripts/test_evaluation.py')
-    print('Passed: safe installation and legacy aliases, preserved invocation policies, reviewed references, research/UI preservation, skill-creator preview and existing-creator conflict protection, candidate exclusions, unchanged user files, 14 PARA, 16 wiki, 9 research-record, 9 UI-adapter and 15 evaluation-tool tests.')
+    print('Passed: admission checks across all sources, approved manual ask-skills, safe installation and legacy aliases, preserved invocation policies, reviewed references, research/UI preservation, skill-creator preview and existing-creator conflict protection, candidate exclusions, unchanged user files, 14 PARA, 16 wiki, 9 research-record, 9 UI-adapter and 15 evaluation-tool tests.')
     return 0
 
 

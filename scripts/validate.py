@@ -27,12 +27,15 @@ def main():
     if actual != managed:
         errors.append('Catalog/source mismatch: ' + str(actual ^ managed))
     for d in rows:
+        if not is_adopted(d):
+            errors.append(d['name'] + ': explicit user approval, its basis and an audit record are required before catalog, source or release admission')
+            continue
+        if not (ROOT / d['review']['audit']).is_file():
+            errors.append(d['name'] + ': approval audit record is missing')
         if d['category'] not in BUCKETS:
             errors.append(d['name'] + ': invalid purpose category')
         if 'release' in d and not isinstance(d['release'], bool):
             errors.append(d['name'] + ': release setting must be boolean')
-        if d['source'] == 'upstream-adapted' and d.get('review', {}).get('admission_status') != 'user-approved':
-            errors.append(d['name'] + ': upstream admission is not user-approved')
         scenarios = d.get('usage_scenarios', [])
         if is_adopted(d) and not scenarios:
             errors.append(d['name'] + ': adopted skill needs usage scenarios')

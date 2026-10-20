@@ -10,11 +10,15 @@ TITLES = dict(zip(BUCKETS, ['工程', '生产力', '专用工具', '废弃与迁
 
 
 def is_released(row):
-    return bool(row.get('path')) and row['category'] in ['engineering', 'productivity', 'misc'] and row.get('release', True)
+    return bool(row.get('path')) and row['category'] in ['engineering', 'productivity', 'misc'] and row.get('release', True) and is_adopted(row)
 
 
 def is_adopted(row):
-    return row.get('review', {}).get('admission_status') == 'user-approved'
+    review = row.get('review', {})
+    return review.get('admission_status') == 'user-approved' and all(
+        isinstance(review.get(key), str) and review[key].strip()
+        for key in ['approval_basis', 'audit']
+    )
 
 
 def usage_table(rows, link_usage_pages=False):
@@ -129,7 +133,7 @@ def outputs():
 
 ## 默认发布清单
 
-此表记录明确的默认发布范围；已确认保留的技能及用法见上方场景表。ask-skills 是另列的体系维护入口，尚未独立审阅。
+此表只包含已获用户明确确认的技能；对应场景见上表。ask-skills 已获准保留，作为体系维护入口单列，不计入第一轮原有 32 项。
 
 | Skill | 解决什么 | 用法 |
 | --- | --- | --- |
