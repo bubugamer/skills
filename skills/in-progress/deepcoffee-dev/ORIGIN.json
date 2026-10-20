@@ -1,8 +1,0 @@
-{
-  "source": "local-customization",
-  "origin": "本地定制；初始作者未独立核验",
-  "source_sha256": "f2ed25d9828a83ece467527c383383426e827936f40dcc66eb502bec085f0480",
-  "snapshot_date": "2026-10-11",
-  "adaptation": "一个入口混合提交、部署、生产清理和知识库；引用集合外脚本。公开版本先保留边界与改善计划，项目内部流程留在本地。",
-  "upstream_commit": null
-}

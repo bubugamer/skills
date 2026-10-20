@@ -1,0 +1,20 @@
+{
+  "source": "local-customization",
+  "origin": "本地定制；初始作者未独立核验",
+  "source_sha256": "f2ed25d9828a83ece467527c383383426e827936f40dcc66eb502bec085f0480",
+  "snapshot_date": "2026-10-11",
+  "adaptation": "用户确认使用过程中积累的 DeepCoffee 专属规则继续由本 skill 维护，撤回迁入项目规则的建议。以本机完整入口恢复直接提交/PR、部署与验收分工、维护前置检查与已有授权、账号重置、知识库审阅和文章纳入；短英文入口按需引用六篇配套说明。移除个人绝对路径和旧安装路径绑定，三个现有脚本仍为本地运行依赖，未复制生产配置或同步本机安装。用户确认审阅通过，纳入默认发布清单，保持手动调用；实际脚本仍为已说明的本地运行依赖，本机安装未同步。",
+  "upstream_commit": null,
+  "adapted_at": "2026-10-20",
+  "adapted_entrypoint_sha256": "694e2706f1cc169e5ea5ef1abb76e8ea6d4d85856f1c29d896213c43cdb59333",
+  "scope_confirmed_at": "2026-10-20",
+  "supporting_documents_sha256": {
+    "references/delivery.md": "13a716e8670617d9d6a0cd2335603aa3537985ab4b1c18b5bf9f38e74ec3ba1f",
+    "references/deployment.md": "e5229a6bcae781d9b712a1c5b5a5741bde19f4a2a614dc50241a6aadbe012fec",
+    "references/knowledge.md": "36ffffd494b983ff1bb591e3740be83b31915798093854b7092f240d40d99daf",
+    "references/maintenance.md": "f70d85059ae470ae41779371903cb78a3f75084b0aed78b42e63fd276d9c3174",
+    "references/operating-rules.md": "d1dd8220028764bb941346c5ac6efb58f8a3217a797417f53600efb2f2614f52",
+    "references/runtime.md": "bd7219b2bcb80e6ddb01608eeca7ed86119253772913ff59cb967f9733b26870"
+  },
+  "review_approved_at": "2026-10-20"
+}

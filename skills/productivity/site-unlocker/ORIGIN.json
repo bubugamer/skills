@@ -3,6 +3,8 @@
   "origin": "本地定制；初始作者未独立核验",
   "source_sha256": "46bb02365fadea16c5d9f773cb2469a2235c3ca44cf9285f9403b7cf54671912",
   "snapshot_date": "2026-10-11",
-  "adaptation": "保留真实正文判定；改为优先当前 Codex 浏览器工具，CLI 作为可用时的后备。",
-  "upstream_commit": null
+  "adaptation": "保留真实正文判定；改为优先当前 Codex 浏览器工具，CLI 作为可用时的后备。 本轮仅同步 read 更名及已移出的 brief 引用；其他方法与成熟度保持。 2026-10-20 按用户要求移出 OpenAI 官方技能登记，catalog 不再将 playwright 作为集合内条目依赖；使用页继续说明所需浏览器或 Playwright 运行工具，入口、脚本、登录与安装保持。",
+  "upstream_commit": null,
+  "adapted_at": "2026-10-20",
+  "adapted_entrypoint_sha256": "21d8005a005cebcd97e3f5a9ee0835b2737f00301ea02228b0de3da3a7f2ee4e"
 }

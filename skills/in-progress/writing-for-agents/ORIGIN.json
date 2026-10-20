@@ -1,8 +1,0 @@
-{
-  "source": "upstream-adapted",
-  "origin": "https://github.com/mattpocock/skills/tree/49dd158d1076134a641b33efb035946536778336/skills/productivity/writing-for-agents",
-  "source_sha256": "551adca942227b44192edba88acd4e8db911f0121ce58ad16944ccf6a896a74a",
-  "snapshot_date": "2026-10-11",
-  "adaptation": "保留按需展开和可核验完成条件；工具调用与手动策略改为 Codex 当前机制。",
-  "upstream_commit": "49dd158d1076134a641b33efb035946536778336"
-}

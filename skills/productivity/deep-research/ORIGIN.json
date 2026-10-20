@@ -1,0 +1,24 @@
+{
+  "source": "local-customization",
+  "origin": "https://github.com/199-biotechnologies/claude-deep-research-skill",
+  "source_sha256": "0c8e777eb13d37b4d5130f59c9237a82528224ba31b58b774cd490a742df8620",
+  "snapshot_date": "2026-10-20",
+  "upstream_commit": null,
+  "adaptation": "用户确认按审阅方案改造。参考第三方研究方法，由 Codex 为本仓库重新编写英文入口、三篇参考、来源与摘录记录工具及测试；未复制上游脚本、模板或正文段落，不声明为上游发行版。保留问题取证、交叉核对、反例与来源追溯；取消固定数量、篇幅、耗时、宿主和默认多格式输出。记录工具仅检查结构和来源关联，不进行事实评分或判定；中文回复。",
+  "adapted_at": "2026-10-20",
+  "adapted_entrypoint_sha256": "c153e3f1cfc5bf63d07a4a8e59800ba4402c9c158c04962d6b5dafc2398357d7",
+  "admission": {
+    "status": "user-approved",
+    "date": "2026-10-20",
+    "basis": "用户表示「好的，deep-research按照你说的整改吧。然后继续下一个」，明确批准保留与整改。"
+  },
+  "implementation": "independently-rewritten Codex workflow with attributed method reference",
+  "excluded_upstream_resources": [
+    "verify_claim_support.py",
+    "verify_citations.py",
+    "validate_report.py",
+    "research_engine.py",
+    "fixed report templates",
+    "automatic continuation agents"
+  ]
+}

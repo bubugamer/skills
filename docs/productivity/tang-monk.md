@@ -1,29 +1,3 @@
-# tang-monk
+# tang-monk 已更名为 remind
 
-管理想法、探索和每日重点。状态：正式集合。
-
-## 为什么保留或调整
-
-保留执行状态与内容分类分离的设计；原 TangMonk 规范为小写名称，并保留迁移说明。
-
-## 使用例子
-
-> 今天应该推进哪一件事？
-
-## 输入与依赖
-
-先明确本次任务范围与需要的输入。依赖：以操作入口的当前工具检查为准。已有授权继续适用；缺少事实先检查，缺少用户决定再询问。
-
-## 怎样算完成
-
-Today 只有一项；能说明它来自哪个 Weekly 项和如何验收。
-
-## 与相邻能力的关系
-
-对照：wayfinder、loop-me。按本次目的选择；名称相似不代表输出相同。
-
-## 来源与验证范围
-
-[操作入口](../../skills/productivity/tang-monk/SKILL.md)
-
-本页用于选择与验收；具体步骤以操作入口和当前工具文档为准。实际执行记录见 [首版验证](../audit/verification.md)。尚未执行的场景见入口的 evals，用例存在不等于已经通过。
+当前名称为 `remind`，分类继续为 productivity。使用 `$remind`；见 [使用说明](remind.md) 和 [操作入口](../../skills/productivity/remind/SKILL.md)。旧名 TangMonk、tang-monk 保留为安装冲突检查名称，避免重复发现。

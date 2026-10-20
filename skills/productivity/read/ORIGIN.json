@@ -1,0 +1,11 @@
+{
+  "source": "local-customization",
+  "origin": "本地定制；用户提出阅读助手需求，Codex 于 2026-03-23 编写",
+  "source_sha256": "6b5ac65523a57964aff3d56e074d34b1176347da35abbfd1c88a4341c2a2d55a",
+  "snapshot_date": "2026-10-11",
+  "adaptation": "用户确认阅读助手与阅读秘书定位，更名为 read。增加连续共读、局部材料解释、翻译范围与材料分类；入口专注阅读操作，跨技能选择规则在 .agents/invocation.md 维护。保留笔记约定与旧目录模型，未重建个人知识库。",
+  "upstream_commit": null,
+  "adapted_at": "2026-10-13",
+  "adapted_entrypoint_sha256": "272ef0b0a021441bdd31229e285085d3af0abe6a5161b0c3026f6eb709830d41",
+  "original_name": "dongnaojin-yeye"
+}

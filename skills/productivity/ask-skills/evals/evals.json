@@ -4,9 +4,45 @@
     {
       "id": 1,
       "prompt": "我想做这件事，应该用哪个 skill？",
-      "expected_output": "给出首选、理由、依赖与一句可用指令；区分正式、试用、外部依赖。",
+      "expected_output": "给出首选、理由、依赖与一句可用指令；区分已收录、外部依赖与候选。",
       "expectations": [
-        "给出首选、理由、依赖与一句可用指令；区分正式、试用、外部依赖。"
+        "给出首选、理由、依赖与一句可用指令；区分已收录、外部依赖与候选。"
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "用户想基于知识材料自测；当前集合有已确认的 teach 和 wiki。",
+      "expected_output": "推荐手动使用 teach 进行学习与自测；wiki 负责长期知识维护。",
+      "expectations": [
+        "推荐来源是最新 routes.md。",
+        "按用户选择区分学习自测与知识维护，不把 wiki 当作出题入口。"
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "用户询问 domain-modeling 是否可以直接使用，当前集合中没有它，只有上游候选审查文档有链接。",
+      "expected_output": "明确它是 Matt 的候选技能，尚待用户逐项审核和纳入确认；需要时介绍候选，不当作已入库或已安装能力。",
+      "expectations": [
+        "当前可用集合与候选建议分清。",
+        "不从上游成熟度或分类整理推断用户已批准纳入。"
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "social-feed 已经审阅确认保留，现在在 productivity，但仍有抓取工具的已知问题；它是否还在待审或试用目录？",
+      "expected_output": "说明它是已确认保留的辅助技能，按用途放 productivity；已知问题继续记录，不放回试用目录，也不重新计入第一轮待审。",
+      "expectations": [
+        "分类、辅助角色、用户审阅状态和已知问题分别说明。",
+        "不建立或重新生成 in-progress 目录。"
+      ]
+    },
+    {
+      "id": 5,
+      "prompt": "用户说想用原 writing-master 按 bbs 审稿，已确认的正式技能现在叫 writing-styles。Matt 的 writing-shape 仍只有候选记录。",
+      "expected_output": "推荐 writing-styles 并说明旧名已更换；按审稿要求在会话提建议，不将 writing-shape 当作已安装能力。",
+      "expectations": [
+        "推荐名称来自当前 routes.md。",
+        "区分已确认个人文风入口与 Matt 阶段候选。"
       ]
     }
   ]

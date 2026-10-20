@@ -1,6 +1,0 @@
-interface:
-  display_name: "dongnaojin-yeye"
-  short_description: "Codex workflow: 阅读、翻译、出处追溯和笔记; check results"
-  default_prompt: "Use $dongnaojin-yeye to help with this task: 总结这篇文章，用中文解释三个术语。"
-policy:
-  allow_implicit_invocation: true

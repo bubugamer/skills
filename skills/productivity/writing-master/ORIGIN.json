@@ -1,8 +1,0 @@
-{
-  "source": "local-customization",
-  "origin": "本地定制；初始作者未独立核验",
-  "source_sha256": "1e1a2f9938eef176dfd3d8df9b3edaa4ac189e6374e5c21d782f0099b18d5346",
-  "snapshot_date": "2026-10-11",
-  "adaptation": "保留风格文件与共同规则分离；只做建议的审稿和明确要求改文件的编辑区分清楚。",
-  "upstream_commit": null
-}

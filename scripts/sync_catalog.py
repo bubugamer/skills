@@ -5,43 +5,71 @@ import json
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-BUCKETS = ['engineering', 'productivity', 'misc', 'in-progress', 'deprecated']
-TITLES = dict(zip(BUCKETS, ['工程', '生产力', '专用工具', '试用与待改善', '废弃与迁移']))
+BUCKETS = ['engineering', 'productivity', 'misc', 'deprecated']
+TITLES = dict(zip(BUCKETS, ['工程', '生产力', '专用工具', '废弃与迁移']))
+
+
+def is_released(row):
+    return bool(row.get('path')) and row['category'] in ['engineering', 'productivity', 'misc'] and row.get('release', True)
+
+
+def is_adopted(row):
+    return row.get('review', {}).get('admission_status') == 'user-approved'
+
+
+def usage_table(rows, link_usage_pages=False):
+    def cell(value):
+        return value.replace('|', '\\|').replace('\n', '<br>')
+
+    table = '| 具体场景 | 你可以怎样提出要求 | 用哪个 skill | AI 会怎样协助 | 最终产出 |\n| --- | --- | --- | --- | --- |\n'
+    for row in rows:
+        skill = f"[{row['name']}](docs/{row['category']}/{row['name']}.md)" if link_usage_pages else f"`${row['name']}`"
+        for case in row.get('usage_scenarios', []):
+            command = '$' + row['name']
+            prompt = case['prompt']
+            if prompt.startswith(command):
+                prompt = f'`{command}`' + prompt[len(command):]
+            values = [case['situation'], prompt, skill, case['assistance'], case['result']]
+            table += '| ' + ' | '.join(cell(value) for value in values) + ' |\n'
+    return table
 
 
 def outputs():
     catalog = json.loads((ROOT / 'catalog.json').read_text())
     rows = catalog['skills']
-    formal = [d for d in rows if d.get('path') and d['category'] not in ['in-progress', 'deprecated']]
+    formal = [d for d in rows if is_released(d)]
+    adopted = [d for d in rows if is_adopted(d) and d.get('usage_scenarios')]
     result = {}
     for bucket in BUCKETS:
         selected = [d for d in rows if d['category'] == bucket]
         listing = '| Skill | 用途 | 状态 |\n| --- | --- | --- |\n'
         for d in selected:
-            state = '外部依赖' if not d.get('path') else ('手动试用' if bucket == 'in-progress' else '正式')
+            state = '外部依赖' if not d.get('path') else ('默认发布' if is_released(d) else '未默认发布')
             listing += f"| [{d['name']}](../../docs/{bucket}/{d['name']}.md) | {d['purpose']} | {state} |\n"
         if not selected:
             listing += '| 暂无技能 | 保留退役与迁移说明 | 未发布 |\n'
-        result[f'skills/{bucket}/README.md'] = f'# {TITLES[bucket]}\n\n{listing}\n分类表示用途或成熟度，不代表全部技能都会被默认安装。\n'
+        result[f'skills/{bucket}/README.md'] = f'# {TITLES[bucket]}\n\n{listing}\n按用途归类；用户审阅状态、已知问题和默认发布设置分别记录，目录存在不表示已经审阅通过。\n'
     for d in rows:
-        state = '外部依赖，继续从上游维护来源获取' if not d.get('path') else ('手动试用，尚未晋升' if d['category'] == 'in-progress' else '正式集合')
+        state = '外部依赖，继续从上游维护来源获取' if not d.get('path') else ('已收录，列入默认发布清单' if is_released(d) else '已收录，尚未列入默认发布清单')
         location = f"[操作入口](../../{d['path']}/SKILL.md)" if d.get('path') else d['origin']
         deps = ', '.join(d.get('dependencies', [])) or '以操作入口的当前工具检查为准'
+        inputs = d.get('inputs', '先明确本次任务范围与需要的输入')
+        role_note = {'support': '角色：辅助技能。', 'task-entry': '角色：任务入口。'}.get(d.get('role'), '')
+        usage = '## 使用场景\n\n' + usage_table([d]) if is_adopted(d) and d.get('usage_scenarios') else f"## 使用例子\n\n> {d['example']}\n"
         result[f"docs/{d['category']}/{d['name']}.md"] = f"""# {d['name']}
 
-{d['purpose']}。状态：{state}。
+{d['purpose']}。状态：{state}。{role_note}
 
 ## 为什么保留或调整
 
 {d['reason']}
+{chr(10) + d['release_reason'] + chr(10) if d.get('release_reason') else ''}
 
-## 使用例子
-
-> {d['example']}
+{usage.rstrip()}
 
 ## 输入与依赖
 
-先明确本次任务范围与需要的输入。依赖：{deps}。已有授权继续适用；缺少事实先检查，缺少用户决定再询问。
+{inputs}。依赖：{deps}。已有授权继续适用；缺少事实先检查，缺少用户决定再询问。
 
 ## 怎样算完成
 
@@ -61,33 +89,47 @@ def outputs():
     for d in rows:
         if d['name'] == 'ask-skills':
             continue
-        state = '外部能力，先确认已安装' if not d.get('path') else ('仅手动试用' if d['category'] == 'in-progress' else '正式能力')
+        state = '外部能力，先确认已安装' if not d.get('path') else ('当前集合，结合使用页检查已知限制' if is_released(d) else '尚待第一轮审阅，未默认发布；先检查安装与使用页限制')
+        if d.get('path') and d.get('manual', False):
+            state += '；手动选择'
         router += f"| {d['purpose']} | {d['name']} | {state}；{d['done']} |\n"
     result['skills/productivity/ask-skills/references/routes.md'] = router
     readme = '''# 我的 Codex Skills
 
 学习现成系统后，整理自己的能力、共享方法与使用入口。目录分类与文档治理参考 [Matt Pocock 的 skills](https://github.com/mattpocock/skills)。当前只适配 Codex。
 
+来自 OpenAI 官方的技能直接使用官方维护来源，按用户要求跳过个人收录；本仓库聚焦个人技能与必要定制，处理依据见[官方技能处理记录](docs/audit/openai-official-exclusions.md)。
+
 不确定选哪个时，手动使用 `$ask-skills`。需要某项任务时，可以直接使用对应技能；无需每次先经过入口。
 
-## 当前集合
-
 '''
-    readme += f"审查了 32 个不同现有 skills：13 项本地定制进入源码集合，19 项保留为外部依赖。新增一个推荐入口，并试用四项 Matt 基础方法。当前正式发布 {len(formal)} 项，试用 {sum(d['category'] == 'in-progress' for d in rows)} 项。原安装保持不变。\n\n"
+    readme += '## 按场景选技能\n\n'
+    scenario_count = sum(len(d['usage_scenarios']) for d in adopted)
+    readme += f'以下覆盖已确认保留的 {len(adopted)} 个技能、{scenario_count} 个代表场景。待审技能与 Matt 候选继续记录在[分批审查清单](docs/audit/review-checklist.md)，审阅确认后补入此表。brief 已迁到独立定时任务项目。\n\n'
+    readme += usage_table(adopted, link_usage_pages=True) + '\n## 当前集合\n\n'
+    managed = [d for d in rows if d.get('path')]
+    external = [d for d in rows if not d.get('path')]
+    upstream = sum(d.get('source') == 'upstream-adapted' for d in managed)
+    readme += f"最初盘点的 32 项原有技能已完成第一轮处理，待审 0 项；Matt 候选放第二批考虑是否引入，ask-skills 单列为体系维护项。当前维护 {len(managed)} 个源码技能（其中 {upstream} 项上游适配）及 {len(external)} 项外部依赖说明；默认发布 {len(formal)} 项。目录按用途分类，审阅和已知问题单独记录。进度见 [分批审查清单](docs/audit/review-checklist.md)，名称与已有安装迁移见 [安装说明](docs/installation.md)。\n\n"
     readme += '| 分类 | 作用 | 目录 |\n| --- | --- | --- |\n'
     for bucket in BUCKETS:
         readme += f'| {bucket} | {TITLES[bucket]} | [浏览](skills/{bucket}/README.md) |\n'
     readme += '''
 ## 从这里开始
 
-- [现有 skills 的逐项审查](docs/audit/existing-skills.md)：保留、改善、外部依赖与重复项。
+- [第一轮收尾](docs/audit/first-round-summary.md)：最终集合、处理结论与验证范围。
+- [分批审查清单](docs/audit/review-checklist.md)：第一轮原有技能优先，第二批 Matt 候选另列。
+- [原有 skills 的技术盘点](docs/audit/existing-skills.md)：来源、改善建议、外部依赖与重复项。
 - [Matt 全部 38 项的纳入判断](docs/audit/upstream-skills.md)：在整理自身集合后选择扩展。
 - [架构与各目录的作用](docs/architecture.md)：操作入口、使用文档、术语和治理分工。
-- [安装与调用](docs/installation.md)：只安装正式项，先预览并检查冲突。
+- [当前目录与文件清单](docs/directory-map.md)：各类技能、外部能力说明与实际文件。
+- [安装与调用](docs/installation.md)：按明确清单安装，先预览并检查冲突。
 - [验证记录](docs/audit/verification.md)：本次实际验证了什么，以及哪些仍待验证。
 - [范围与准入](SCOPE.md)、[词汇表](GLOSSARY.md)、[来源与许可](THIRD_PARTY_NOTICES.md)。
 
-## 正式能力
+## 默认发布清单
+
+此表记录明确的默认发布范围；已确认保留的技能及用法见上方场景表。ask-skills 是另列的体系维护入口，尚未独立审阅。
 
 | Skill | 解决什么 | 用法 |
 | --- | --- | --- |
@@ -114,7 +156,7 @@ python3 scripts/smoke_test.py
     for d in rows:
         if not d.get('path'):
             continue
-        implicit = d['category'] not in ['in-progress', 'deprecated'] and not d.get('manual', False)
+        implicit = not d.get('manual', False)
         interface = {'display_name': d['name'], 'short_description': ('Codex workflow: ' + d['purpose'] + '; check results')[:64], 'default_prompt': 'Use $' + d['name'] + ' to help with this task: ' + d['example']}
         result[d['path'] + '/agents/openai.yaml'] = 'interface:\n' + ''.join('  ' + k + ': ' + json.dumps(v, ensure_ascii=False) + '\n' for k, v in interface.items()) + 'policy:\n  allow_implicit_invocation: ' + str(implicit).lower() + '\n'
     return {p: s.rstrip() + '\n' for p, s in result.items()}

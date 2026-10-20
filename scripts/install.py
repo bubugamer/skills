@@ -3,6 +3,7 @@
 import argparse
 import json
 from pathlib import Path
+from sync_catalog import is_released
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -17,11 +18,11 @@ def main():
     if target == ROOT or ROOT in target.parents:
         parser.error('Install outside the collection source tree.')
     catalog = json.loads((ROOT / 'catalog.json').read_text())['skills']
-    available = {d['name']: d for d in catalog if d.get('path') and d['category'] not in ['in-progress', 'deprecated']}
+    available = {d['name']: d for d in catalog if is_released(d)}
     names = args.skill or list(available)
     unknown = set(names) - set(available)
     if unknown:
-        parser.error('Not a formal skill: ' + ', '.join(sorted(unknown)))
+        parser.error('Not in the default release list: ' + ', '.join(sorted(unknown)))
     names = list(dict.fromkeys(names))
     defaults = [Path.home() / '.agents/skills', Path.home() / '.codex/skills']
     peers = defaults if target in [p.resolve() for p in defaults] else [target]
@@ -31,7 +32,7 @@ def main():
         source = (ROOT / d['path']).resolve()
         if ROOT not in source.parents or not (source / 'SKILL.md').is_file():
             parser.error('Invalid source for ' + name)
-        aliases = [name] + ([d['original']] if d.get('original') else [])
+        aliases = list(dict.fromkeys([name] + ([d['original']] if d.get('original') else []) + d.get('previous_names', [])))
         for peer in peers:
             for alias in aliases:
                 existing = peer / alias

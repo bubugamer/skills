@@ -1,6 +1,0 @@
-interface:
-  display_name: "writing-for-agents"
-  short_description: "Codex workflow: 编写简洁、可靠的 AI 工作说明; check results"
-  default_prompt: "Use $writing-for-agents to help with this task: 帮我检查这个 SKILL.md 是否容易正确触发和完成。"
-policy:
-  allow_implicit_invocation: false

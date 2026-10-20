@@ -7,16 +7,22 @@
   },
   "repository": "https://github.com/bubugamer/skills",
   "skills": [
-    "./skills/productivity/tang-monk",
-    "./skills/productivity/brief",
-    "./skills/productivity/dongnaojin-yeye",
-    "./skills/productivity/konmari",
+    "./skills/productivity/remind",
+    "./skills/productivity/read",
+    "./skills/productivity/teach",
+    "./skills/productivity/para",
     "./skills/productivity/site-unlocker",
-    "./skills/productivity/writing-master",
+    "./skills/productivity/writing-styles",
     "./skills/productivity/wait-what",
     "./skills/misc/akshare-api",
     "./skills/misc/tdx-api",
     "./skills/misc/yt-dlp-download",
+    "./skills/engineering/deepcoffee-dev",
+    "./skills/productivity/wiki",
+    "./skills/productivity/social-feed",
+    "./skills/productivity/deep-research",
+    "./skills/engineering/ui-ux-pro-max",
+    "./skills/engineering/skill-creator",
     "./skills/productivity/ask-skills"
   ]
 }

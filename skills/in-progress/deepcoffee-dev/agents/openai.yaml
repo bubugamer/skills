@@ -1,6 +1,0 @@
-interface:
-  display_name: "deepcoffee-dev"
-  short_description: "Codex workflow: 维护特定项目的交付流程; check results"
-  default_prompt: "Use $deepcoffee-dev to help with this task: 为项目整理发布流程和验收清单。"
-policy:
-  allow_implicit_invocation: false

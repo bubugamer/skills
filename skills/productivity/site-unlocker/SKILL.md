@@ -15,7 +15,7 @@ description: "Use when the user wants to extract readable content from websites 
 - 把可读内容保存成干净的 Markdown / text 文件
 - 如果拿不到正文，明确停下，不要假装抓到了
 
-后续总结、值不值得读、知识沉淀，交给别的 skill，比如 `dongnaojin-yeye`。
+后续总结、值不值得读、知识沉淀，交给别的 skill，比如 `read`。
 
 ## When To Use
 
@@ -206,7 +206,7 @@ description: "Use when the user wants to extract readable content from websites 
 
 - `agent-browser`: 登录、持久会话、交互抓取
 - `playwright`: 可视化调试、复杂页面检查
-- `dongnaojin-yeye`: 在成功拿到正文之后再交给它判断值不值得读、做总结和沉淀
+- `read`: 在成功拿到正文之后再交给它判断值不值得读、做总结和沉淀
 
 ## Reference Map
 

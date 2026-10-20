@@ -1,6 +1,0 @@
-interface:
-  display_name: "brief"
-  short_description: "Codex workflow: 筛选指定来源并生成简报; check results"
-  default_prompt: "Use $brief to help with this task: 扫这三个博客，只列今天值得点开的文章。"
-policy:
-  allow_implicit_invocation: true

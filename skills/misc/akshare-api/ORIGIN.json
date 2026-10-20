@@ -1,8 +1,21 @@
 {
   "source": "local-customization",
-  "origin": "本地定制；初始作者未独立核验",
+  "origin": "本地定制；用户于 2026-07-22 要求创建，Codex 围绕 AKShare 编写调用封装",
   "source_sha256": "049aa43e7ef602cd2f6e7460620e61dba141cc5b6e648ddb8b448303d10af800",
   "snapshot_date": "2026-10-11",
-  "adaptation": "保留来源标注、日期验证和空结果处理；只收源码与固定依赖，不收运行环境。",
-  "upstream_commit": null
+  "adaptation": "保留来源标注、日期验证和空结果处理；只收源码与固定依赖，不收运行环境。本轮核实创建出处并记录入口、参数和运行环境改进建议；尚未改写入口、参考或脚本。 2026-10-20 用户明确确认与另一个数据通道分别保留；仅同步采纳、场景和来源分工说明，入口、脚本及本机安装保持。实际验证范围和已知问题另记审查文档。",
+  "upstream_commit": null,
+  "provenance_verified_at": "2026-10-20",
+  "creation_basis": "2026-07-22 用户在已有 tdx-api 并询问免费同花顺接口后，明确要求把 AKShare 整理成 skill，并关心功能过多；同一会话由 Codex 创建本地封装。",
+  "design_references": [
+    {
+      "url": "https://akshare.akfamily.xyz/",
+      "basis": "第三方库的官方文档，函数选择与来源核对参考。"
+    },
+    {
+      "url": "https://github.com/akfamily/akshare",
+      "basis": "底层开源库；本仓库封装通过依赖调用，不将第三方库归为个人原创。"
+    }
+  ],
+  "review_approved_at": "2026-10-20"
 }

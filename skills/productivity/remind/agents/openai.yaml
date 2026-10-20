@@ -1,0 +1,6 @@
+interface:
+  display_name: "remind"
+  short_description: "Codex workflow: 发现待办与想法，提醒并跟进; check results"
+  default_prompt: "Use $remind to help with this task: 我周五前要交方案，还得整理费用清单，提醒我别漏掉。"
+policy:
+  allow_implicit_invocation: true

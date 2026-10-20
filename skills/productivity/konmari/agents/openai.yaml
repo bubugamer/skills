@@ -1,6 +1,0 @@
-interface:
-  display_name: "konmari"
-  short_description: "Codex workflow: 检查文件结构与整理方案; check results"
-  default_prompt: "Use $konmari to help with this task: 检查这个文件夹有没有重复文件，先不要移动。"
-policy:
-  allow_implicit_invocation: true

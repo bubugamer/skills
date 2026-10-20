@@ -4,70 +4,168 @@
   "upstream_commit": "49dd158d1076134a641b33efb035946536778336",
   "skills": [
     {
-      "name": "tang-monk",
+      "name": "remind",
       "category": "productivity",
-      "purpose": "管理想法、探索和每日重点",
+      "purpose": "发现待办与想法，提醒并跟进",
       "decision": "keep",
-      "reason": "保留执行状态与内容分类分离的设计；原 TangMonk 规范为小写名称，并保留迁移说明。",
-      "example": "今天应该推进哪一件事？",
-      "done": "Today 只有一项；能说明它来自哪个 Weekly 项和如何验收。",
-      "compare": "wayfinder、loop-me",
+      "reason": "用户已确认提醒版定稿，并要求将 tang-monk 更名为 remind；保留 productivity 正式分类。收敛到识别、简短提醒和状态跟进，参考 Matt 的单一用途与明确边界。[旧目录及规则](../audit/tang-monk-legacy-workspace.md) 独立保存，等待统一整理；不作为当前调用要求。",
+      "example": "我周五前要交方案，还得整理费用清单，提醒我别漏掉。",
+      "done": "待办与想法区分清楚；提醒基于已知事实；按用户确认跟进状态，不强制目录或周／日计划。",
+      "compare": "para（PARA 文件重建）、writing-styles（内容产出）、wayfinder（复杂决策）、loop-me（重复流程设计）",
       "original": "TangMonk",
-      "path": "skills/productivity/tang-monk",
+      "path": "skills/productivity/remind",
       "source": "local-customization",
-      "origin": "本地定制；初始作者未独立核验",
+      "origin": "本地定制；用户定义、Codex 整理的提醒助手",
       "source_sha256": "009962838e06ae65d33968fcb919d690697ebc56066bd04e790e2889c431dd13",
-      "dependencies": []
-    },
-    {
-      "name": "brief",
-      "category": "productivity",
-      "purpose": "筛选指定来源并生成简报",
-      "decision": "keep",
-      "reason": "保留来源范围、去重和短输出；浏览器抓取能力是条件依赖，缺失时明确报告。",
-      "example": "扫这三个博客，只列今天值得点开的文章。",
-      "done": "每项有原始链接和入选理由；未读来源明确标记。",
-      "compare": "research",
-      "path": "skills/productivity/brief",
-      "source": "local-customization",
-      "origin": "本地定制；初始作者未独立核验",
-      "source_sha256": "833abf1df31e83251498bfa98a90e82ec3c20e026f4a5f827b33188085c182fe",
-      "dependencies": [
-        "site-unlocker",
-        "social-feed"
+      "dependencies": [],
+      "updated_at": "2026-10-15",
+      "review": {
+        "status": "user-approved",
+        "approved_at": "2026-10-12",
+        "entrypoint_sha256": "41fe8a80f4a8a29baeb065a21dc54a8d487005baefe983a08ea9819322a39ded",
+        "renamed_at": "2026-10-15",
+        "rename_basis": "用户明确要求将 tang-monk 改为 remind。",
+        "admission_status": "user-approved",
+        "audit": "docs/audit/tang-monk-review.md",
+        "approval_basis": "已获用户确认保留；依据既有分批审查清单与所链接的审阅记录补齐采纳标记，不代表新增行为验证。"
+      },
+      "previous_names": [
+        "tang-monk"
+      ],
+      "usage_scenarios": [
+        {
+          "situation": "对话中提了几件待办和想法，担心遗漏。",
+          "prompt": "$remind 回顾刚才提到的事项，区分确定要做的事和待考虑想法，提醒我哪些值得跟进。",
+          "assistance": "依据当前对话和已知状态给出简短提醒，按你的答复确认后续状态。",
+          "result": "待办与想法的区分、简短提醒及待确认状态。"
+        }
       ]
     },
     {
-      "name": "dongnaojin-yeye",
+      "name": "read",
       "category": "productivity",
-      "purpose": "阅读、翻译、出处追溯和笔记",
+      "purpose": "阅读、翻译、共读问答与阅读事务",
       "decision": "keep",
-      "reason": "保留内容获取门槛与结论收束规则；修正默认自动落库，摘要和讨论先在会话完成。",
-      "example": "总结这篇文章，用中文解释三个术语。",
-      "done": "读到有效正文；区分事实和推断；仅按明确保存要求写笔记。",
-      "compare": "teach、research",
-      "path": "skills/productivity/dongnaojin-yeye",
+      "reason": "用户确认定位为阅读助手与阅读秘书，并更名为 read。保留材料解释、筛选分类与阅读笔记；入口专注阅读操作，跨技能选择规则集中维护，目录模型留待统一整理。",
+      "example": "读这段材料，解释我不懂的概念；沿用当前阅读上下文，按已有约定整理阅读笔记。",
+      "done": "回答由实际材料支持；阅读范围与保存范围清楚；连续追问沿用上下文；保存笔记时报告实际位置。",
+      "compare": "teach（明确选择后的系统学习）、site-unlocker（难读正文获取，辅助）、wiki（长期主题页维护）",
+      "path": "skills/productivity/read",
       "source": "local-customization",
-      "origin": "本地定制；初始作者未独立核验",
+      "origin": "本地定制；用户提出阅读助手需求，Codex 于 2026-03-23 编写",
       "source_sha256": "6b5ac65523a57964aff3d56e074d34b1176347da35abbfd1c88a4341c2a2d55a",
-      "dependencies": [
-        "site-unlocker"
+      "dependencies": [],
+      "updated_at": "2026-10-13",
+      "original": "dongnaojin-yeye",
+      "role": "task-entry",
+      "inputs": "用户提供或已确认的材料、当前阅读问题与笔记约定",
+      "review": {
+        "status": "user-confirmed-scope",
+        "approved_at": "2026-10-13",
+        "entrypoint_sha256": "272ef0b0a021441bdd31229e285085d3af0abe6a5161b0c3026f6eb709830d41",
+        "admission_status": "user-approved",
+        "audit": "docs/audit/reading-learning-review.md",
+        "approval_basis": "已获用户确认保留；依据既有分批审查清单与所链接的审阅记录补齐采纳标记，不代表新增行为验证。"
+      },
+      "usage_scenarios": [
+        {
+          "situation": "读外文文章或专业材料，有些段落和概念不理解。",
+          "prompt": "$read 翻译这篇文章，解释我标出的概念，再和我继续共读。",
+          "assistance": "获取实际正文，按指定范围翻译，结合原文回答追问。",
+          "result": "译文、概念解释和有出处的共读问答。"
+        },
+        {
+          "situation": "共读结束，想把已经讨论清楚的内容留下来。",
+          "prompt": "$read 把刚才讨论的结论整理成阅读笔记，存到我们已约定的位置。",
+          "assistance": "收束材料主线、关键解释与未解问题，保留来源并按约定保存。",
+          "result": "有出处的阅读笔记，以及实际保存位置。"
+        }
       ]
     },
     {
-      "name": "konmari",
+      "name": "teach",
       "category": "productivity",
-      "purpose": "检查文件结构与整理方案",
+      "domain": "productivity",
+      "purpose": "围绕目标持续学习课程、领域或技能",
       "decision": "keep",
-      "reason": "保留内部目录隔离、重复检测与可回退计划；先验证脚本，再讨论重构算法。",
-      "example": "检查这个文件夹有没有重复文件，先不要移动。",
-      "done": "能定位重复组；分析不改变用户文件；执行有可回退记录。",
-      "compare": "improve-codebase-architecture（仅方法相似）",
-      "path": "skills/productivity/konmari",
+      "role": "task-entry",
+      "manual": true,
+      "reason": "用户确认与 read 独立，并要求恢复 Matt 的完整英文教学设计。按上游用途归入 productivity，保留完整正文与 Codex 调用适配；中文使用说明单独维护，继续手动选择。",
+      "example": "用 teach 学习这个主题，沿用已经确认的目标与工作区，给我一节课和一个有反馈的练习。",
+      "done": "课程紧扣学习目标且挑战程度合适；可信来源可追溯；练习及时反馈；课程、参考材料与学习记录便于后续学习和复习。具体产物服从本次明确要求。",
+      "compare": "read（日常阅读与共读）；两者独立，不互相嵌套",
+      "path": "skills/productivity/teach",
+      "source": "upstream-adapted",
+      "origin": "https://github.com/mattpocock/skills/tree/49dd158d1076134a641b33efb035946536778336/skills/productivity/teach",
+      "source_sha256": "550482c2d674b085c9043b87bfdc14a8f2ec453c736119e7fcbb1e9332bffeba",
+      "dependencies": [],
+      "updated_at": "2026-10-14",
+      "inputs": "用户明确选择的学习主题、学习原因与已有经验；在选定教学项目的当前目录中使用，课程与记录保存在该目录，格式模板从技能目录读取",
+      "review": {
+        "status": "user-approved",
+        "approved_at": "2026-10-13",
+        "entrypoint_sha256": "d88620632ba6b5176e01c87cdb1ffc62acfc206414dd5cc0e3a16c8efde7d4e8",
+        "classified_at": "2026-10-14",
+        "admission_status": "user-approved",
+        "approval_basis": "用户逐项审阅 teach 并明确同意纳入，随后授权恢复完整英文版本。",
+        "audit": "docs/audit/reading-learning-review.md"
+      },
+      "usage_scenarios": [
+        {
+          "situation": "想系统掌握一门课程、领域或技能，并持续练习。",
+          "prompt": "$teach 我想学会用 Python 整理表格，请先明确学习目标，再安排课程和练习。",
+          "assistance": "围绕目标选择可信材料，安排适合当前程度的短课与练习，记录学习情况。",
+          "result": "学习目标、课程与参考资料，以及带反馈的练习。"
+        },
+        {
+          "situation": "已经学过一些内容，希望检验理解并复习。",
+          "prompt": "$teach 根据这些学习材料考考我，等我回答后指出理解漏洞。",
+          "assistance": "结合目标与已有学习记录出题，对回答给出反馈，再调整复习重点。",
+          "result": "自测题、反馈和需要复习的知识点。"
+        }
+      ]
+    },
+    {
+      "name": "para",
+      "category": "productivity",
+      "purpose": "按 PARA 重建用户选定目录",
+      "decision": "keep",
+      "reason": "用户确认 PARA 专用定位，授权整改、更名，并在查看说明后明确审阅通过。保留盘点、查重、目录整体性判断与恢复记录；个人编号和目录映射放工作区配置，执行前核对整份计划的范围与冲突。",
+      "example": "用 PARA 整理这个目录，保留已有的编号分类；先给我看重建方案。",
+      "done": "方案说明四类归属、保留与拆分决定及待复核项；获授权的执行保持文件内容，并记录实际结果与逆向移动方案。",
+      "compare": "wiki（知识内容与导航）、read（阅读与材料理解）",
+      "path": "skills/productivity/para",
       "source": "local-customization",
       "origin": "本地定制；初始作者未独立核验",
       "source_sha256": "b533a92cff04718c4a728bb2427bc3a6688a97f462d702d2c6266eec4a24f190",
-      "dependencies": []
+      "dependencies": [],
+      "updated_at": "2026-10-15",
+      "original": "konmari",
+      "inputs": "选定目录、当前项目目标、持续责任和现有分类约定；执行需要审阅过的具体计划及相应授权",
+      "role": "task-entry",
+      "review": {
+        "reviewed_at": "2026-10-15",
+        "admission_status": "user-approved",
+        "approval_basis": "用户确认 PARA 专用定位并授权整改与更名；审阅入口和操作流程、了解配套资源维护方式后，明确回复「好的，没问题。那这个skill就审阅通过了」。",
+        "verified_scope": "隔离目录中验证编号与自定义映射、执行范围、冲突保护、正常移动与恢复、打包和中途失败记录；不代表全部模型分类行为或大型真实目录已验证。",
+        "content_review_status": "user-approved",
+        "content_approved_at": "2026-10-15",
+        "audit": "docs/audit/konmari-review.md"
+      },
+      "usage_scenarios": [
+        {
+          "situation": "资料目录混杂，想按 PARA 整理，但先看看方案。",
+          "prompt": "$para 检查这个目录，保留已有分类名，先给我看 PARA 整理方案。",
+          "assistance": "盘点文件，结合当前项目与长期责任分类，列出冲突和不确定归属。",
+          "result": "可审阅的整理方案、保留项和待确认事项。"
+        },
+        {
+          "situation": "整理方案已确认，希望执行并能核对、恢复。",
+          "prompt": "$para 执行我们刚确认的方案，完成后核对文件完整性。",
+          "assistance": "检查路径与目标冲突，按授权移动，核对内容并记录操作。",
+          "result": "整理后的目录、执行报告与逆向移动方案。"
+        }
+      ]
     },
     {
       "name": "site-unlocker",
@@ -83,472 +181,622 @@
       "origin": "本地定制；初始作者未独立核验",
       "source_sha256": "46bb02365fadea16c5d9f773cb2469a2235c3ca44cf9285f9403b7cf54671912",
       "dependencies": [
-        "agent-browser",
-        "playwright"
-      ]
+        "agent-browser"
+      ],
+      "role": "support",
+      "usage_scenarios": [
+        {
+          "situation": "链接只能读到标题，或需要加载、展开、登录后才有正文。",
+          "prompt": "$site-unlocker 获取这个链接的可读正文，保留来源；如果拿不到，说明卡在哪里。",
+          "assistance": "用可用的读取或浏览器工具处理跳转与加载，需要时使用有效登录状态，并核实实际正文。",
+          "result": "正文文件与来源链接；无法读取时说明障碍。"
+        }
+      ],
+      "review": {
+        "admission_status": "user-approved",
+        "audit": "docs/audit/reading-learning-review.md",
+        "approval_basis": "已获用户确认保留；依据既有分批审查清单与所链接的审阅记录补齐采纳标记，不代表新增行为验证。"
+      },
+      "inputs": "用户提供的 URL、正文获取目标与允许的访问范围；优先当前浏览器工具，CLI 后备需可用的 agent-browser 或 Playwright 工具。官方技能由官方维护，不作为个人集合条目"
     },
     {
-      "name": "writing-master",
+      "name": "writing-styles",
       "category": "productivity",
-      "purpose": "按命名风格写作和审稿",
+      "purpose": "应用和维护多种文风，写作、润色与审稿",
       "decision": "keep",
-      "reason": "保留风格文件与共同规则分离；只做建议的审稿和明确要求改文件的编辑区分清楚。",
+      "reason": "用户确认保留个人文风层并更名 writing-styles。共用语言检查与原稿处理规则，按需选择 bbs 或 research-analysis；支持后续增加文风。素材探索和成文组织的方法另行选择，Matt 写作阶段技能仍为第二批候选。详见 [整改与取舍](../audit/writing-master-review.md)。",
       "example": "按 bbs 风格把这些项目经历写成帖子。",
-      "done": "保留用户事实与观点；语法正确；没有编造经历。",
-      "compare": "writing-fragments、writing-shape、writing-beats",
-      "path": "skills/productivity/writing-master",
+      "done": "输出符合所选文风与请求形式；保留事实、来源、立场和确定程度；完成基础语言检查；文件修改仅限已授权范围",
+      "compare": "read（理解材料）、wiki（长期知识维护）、deep-research（多来源调查与取证）；Matt 的 writing-fragments／writing-shape／writing-beats 仍为第二批候选，未引入",
+      "path": "skills/productivity/writing-styles",
       "source": "local-customization",
-      "origin": "本地定制；初始作者未独立核验",
+      "origin": "本地定制；用户要求创建，Codex 根据用户原稿与写作反馈整理并扩充",
       "source_sha256": "1e1a2f9938eef176dfd3d8df9b3edaa4ac189e6374e5c21d782f0099b18d5346",
-      "dependencies": []
+      "dependencies": [],
+      "updated_at": "2026-10-19",
+      "review": {
+        "status": "user-approved",
+        "started_at": "2026-10-19",
+        "audit": "docs/audit/writing-master-review.md",
+        "verified_scope": "核实两种文风的历史创建要求；保留本机原安装及改前源码备份，检查新名称、引用、来源指纹与安装冲突。九条场景仅为定义，未执行独立模型文风评测。",
+        "comparison": "docs/audit/writing-master-matt-comparison.md",
+        "admission_status": "user-approved",
+        "approved_at": "2026-10-19",
+        "approval_basis": "用户确认复数命名与内部文风说明后明确要求：“好的，没问题了。开始执行方案吧”。确认个人文风层的整改与更名，不视为 Matt 候选的纳入确认。"
+      },
+      "original": "writing-master",
+      "inputs": "提供原稿、笔记或已有分析材料；说明受众、文风及要审稿、改写还是修改指定文件",
+      "usage_scenarios": [
+        {
+          "situation": "有项目经历或明确观点，想写一篇自然的论坛帖",
+          "prompt": "$writing-styles 按 bbs 把这些材料写成论坛帖，保留我的观点和事实。",
+          "assistance": "按论坛语气组织已有材料，保留立场和真实细节，并检查基础语言。",
+          "result": "一篇可以继续修改或使用的论坛草稿。"
+        },
+        {
+          "situation": "已有文章，只想知道哪里需要改",
+          "prompt": "$writing-styles 按 bbs 审阅这篇文章，只列修改建议。",
+          "assistance": "定位错字、用词与风格问题，给出替换建议，区分必要修正和可选调整。",
+          "result": "会话中的审稿意见，原文及文件保持。"
+        },
+        {
+          "situation": "研究材料已有，想把分析写得明确简洁",
+          "prompt": "$writing-styles 按 research-analysis 精简这份产品比较，保留证据与来源。",
+          "assistance": "提出材料支持的结论，删去空话与重复表达，保留关键限定，使用对应领域的比较标准。",
+          "result": "结论明确、证据可追溯的分析文稿。"
+        },
+        {
+          "situation": "希望直接修改已指定的草稿文件",
+          "prompt": "$writing-styles 按选定文风润色 draft.md，直接修改这个文件，保留事实和立场。",
+          "assistance": "读取指定稿件，在授权范围内修订和检查语言，核对事实与来源。",
+          "result": "更新后的草稿文件及简短修改说明。"
+        }
+      ]
     },
     {
       "name": "wait-what",
       "category": "productivity",
       "purpose": "重新解释上一段回答",
       "decision": "keep",
-      "reason": "本地版本与 Matt 原文一致，明确记录出处；改成跟随当前语言，默认中文。",
+      "reason": "用户确认保留并完成第一轮审阅。沿用 Matt 原版英文说明与完整正文，正文末尾仅增加 Reply in Chinese.；Codex 手动调用设置保持。原有中文改写已退出，本机旧安装留待全部技能梳理完成后统一处理。见 [定稿记录](../audit/wait-what-review.md)。",
       "example": "我没跟上，重新讲清楚。",
-      "done": "补足上下文、结论和具体例子；不扩展到新任务。",
-      "compare": "wait-what",
-      "origin": "mattpocock/skills",
+      "done": "补足必要上下文，以简明中文重讲，并沿用相关项目术语。",
+      "compare": "read（阅读材料）、teach（系统学习）、writing-styles（文稿表达）",
+      "origin": "https://github.com/mattpocock/skills/blob/49dd158d1076134a641b33efb035946536778336/skills/productivity/wait-what/SKILL.md",
       "manual": true,
       "path": "skills/productivity/wait-what",
       "source": "local-customization",
       "source_sha256": "d961bb37defd975c539427edb8f450cdbccdcdd552e213c1ece46676a7970905",
-      "dependencies": []
+      "dependencies": [],
+      "inputs": "已有对话及需要重新讲清楚的部分；项目词汇表存在时沿用",
+      "updated_at": "2026-10-20",
+      "review": {
+        "status": "user-approved",
+        "started_at": "2026-10-19",
+        "audit": "docs/audit/wait-what-review.md",
+        "verified_scope": "固定提交原始文件指纹已核实。完整英文正文逐字保留，仅追加 Reply in Chinese.；移除上游宿主专用 frontmatter 标记，Codex 原有手动调用配置保持。两条场景为定义，未运行独立模型评测。本机安装暂不处理。",
+        "implementation_confirmed_at": "2026-10-20",
+        "implementation_decision": "用户要求沿用 Matt 原版，末尾只增加 Reply in Chinese.；区分英文技能指令与中文回复。已按此修改仓库正文，未修改本机安装。",
+        "admission_status": "user-approved",
+        "approved_at": "2026-10-20",
+        "approval_basis": "用户指定保留 Matt 英文原文并追加 Reply in Chinese.，修改完成后回复“好的，继续吧”，接受当前版本并继续下一项审阅。"
+      },
+      "usage_scenarios": [
+        {
+          "situation": "刚才的回答没听懂，需要换一种方式讲清楚",
+          "prompt": "$wait-what 我没跟上刚才那段，请补充必要背景，换一种方式讲清楚。",
+          "assistance": "沿用当前上下文和已有项目术语，以简明中文重新解释。",
+          "result": "一段更容易理解、含义准确的中文说明。"
+        }
+      ]
     },
     {
       "name": "akshare-api",
       "category": "misc",
       "purpose": "获取多来源金融市场数据",
       "decision": "keep",
-      "reason": "保留来源标注、日期验证和空结果处理；只收源码与固定依赖，不收运行环境。",
+      "reason": "用户确认独立保留。通过 AKShare 获取同花顺、东方财富、新浪等来源的数据，按具体接口明确来源；与通达信入口保持分工。此前发现的通用参数类型和首次安装恢复问题仍记录为后续改进项，尚未实施脚本修复。见 [审阅与保留决定](../audit/akshare-api-review.md)。",
       "example": "用 AKShare 查询两只股票最近五天的行情。",
       "done": "代码、来源、日期、复权口径齐全；缺失结果显式说明。",
-      "compare": "无直接同类；属于专用工具",
+      "compare": "tdx-api（沪深行情和历史价格部分重合，来源与其他覆盖不同）",
       "path": "skills/misc/akshare-api",
       "source": "local-customization",
-      "origin": "本地定制；初始作者未独立核验",
+      "origin": "本地定制；用户于 2026-07-22 要求创建，Codex 围绕 AKShare 编写调用封装",
       "source_sha256": "049aa43e7ef602cd2f6e7460620e61dba141cc5b6e648ddb8b448303d10af800",
-      "dependencies": []
+      "dependencies": [],
+      "updated_at": "2026-10-20",
+      "review": {
+        "status": "user-approved",
+        "started_at": "2026-10-20",
+        "audit": "docs/audit/akshare-api-review.md",
+        "verified_scope": "核实用户创建需求与 Codex 创建操作；在源码之外的临时环境运行固定依赖下十项测试及帮助、检索、函数说明。复现通用数字字符串参数和首次安装失败恢复边界；未调用真实证券行情，未修改入口、脚本或本机安装。",
+        "admission_status": "user-approved",
+        "approved_at": "2026-10-20",
+        "approval_basis": "用户明确表示 akshare-api、tdx-api 对应不同数据通道，因此两个 skill 都可以保留。确认独立保留，不视为已完成所有技术验证或已修复已知问题。",
+        "known_issues": [
+          "通用 call 将部分日期和证券代码字符串解析为整数。",
+          "首次依赖安装失败后，再次启动可能跳过依赖安装。",
+          "运行环境目前写入技能目录，建议与源码分离。"
+        ]
+      },
+      "usage_scenarios": [
+        {
+          "situation": "希望从同花顺获取公司的业务与财务资料",
+          "prompt": "$akshare-api 从同花顺获取这家公司的业务介绍和财务指标，保留报告日期与原始字段。",
+          "assistance": "选择对应的同花顺接口，核对股票代码与字段，标明来源、报告期和获取时间。",
+          "result": "带来源与日期的公司资料和财务数据。"
+        },
+        {
+          "situation": "指定来源，获取几只股票的历史价格",
+          "prompt": "$akshare-api 从新浪获取这些股票最近五个交易日的未复权日线，列明实际日期。",
+          "assistance": "按指定来源调用历史行情，核对代码、日期和复权口径，明确缺失或失败。",
+          "result": "来源与口径明确的历史日线表。"
+        }
+      ]
     },
     {
       "name": "tdx-api",
       "category": "misc",
       "purpose": "读取沪深行情与历史数据",
       "decision": "keep",
-      "reason": "与 AKShare 保持来源边界；保留空实时结果失败规则和明确服务器优先级。",
+      "reason": "用户确认作为通达信数据入口独立保留，覆盖沪深行情、日线、分时及相关参考数据。与 AKShare 保持来源边界，保留空实时结果失败规则和明确服务器优先级。此次确认去留，入口和脚本保持；未新增真实服务器或全量功能验证。见 [确认记录](../audit/tdx-api-review.md)。",
       "example": "用通达信查询这三个代码，给出最近五根日线。",
       "done": "返回代码完整；日线确认日期；不拿历史值冒充实时值。",
-      "compare": "无直接同类；与 akshare-api 互补",
+      "compare": "akshare-api（行情部分重合；通达信与 AKShare 各来源分别标注）",
       "path": "skills/misc/tdx-api",
       "source": "local-customization",
       "origin": "本地定制；初始作者未独立核验",
       "source_sha256": "b5260a70a6f27e9f7c49269b833273281cecf3fcb5a7e1655fea72b897e76dc0",
-      "dependencies": []
+      "dependencies": [],
+      "review": {
+        "status": "user-approved",
+        "admission_status": "user-approved",
+        "approved_at": "2026-10-20",
+        "approval_basis": "用户明确表示 akshare-api、tdx-api 对应不同数据通道，因此两个 skill 都可以保留。确认独立保留，不视为已完成所有技术验证或已修复已知问题。",
+        "audit": "docs/audit/tdx-api-review.md",
+        "verified_scope": "已读取仓库入口、启动脚本与 pytdx 客户端来源声明，确认通达信通道定位。用户直接确认保留，本轮未运行 TDX 独立脚本测试或真实服务器查询，不将保留确认写成行为验证。"
+      },
+      "updated_at": "2026-10-20",
+      "usage_scenarios": [
+        {
+          "situation": "明确使用通达信查看沪深股票最新行情",
+          "prompt": "$tdx-api 通过通达信查询这些代码的最新价和涨跌幅，注明日期与获取时间。",
+          "assistance": "按通达信通道读取并核对请求代码，结合有日期的日线确认交易日，说明快照时点和缺失结果。",
+          "result": "来源和时点明确的行情表。"
+        },
+        {
+          "situation": "需要通达信的历史日线用于比较",
+          "prompt": "$tdx-api 读取这些股票最近五根日线，保留日期，说明是否复权。",
+          "assistance": "读取对应日线，保留实际日期和原始价格口径，说明通达信日线未自动复权。",
+          "result": "带日期与价格口径说明的历史日线表。"
+        }
+      ]
     },
     {
       "name": "yt-dlp-download",
       "category": "misc",
       "purpose": "下载或检查用户指定媒体",
       "decision": "keep",
-      "reason": "保留单条默认、集合范围选择和防覆盖；输出位置改为当前用户 Downloads。",
+      "reason": "用户确认按审阅建议独立保留。入口精简，完整 CLI 命令外置；下载前识别合集并遵守所选范围，音频按目标格式分目录与下载记录，公开内容不读取浏览器登录状态。保留 Downloads/sourcesget 偏好且用户目录优先。已用本地合成媒体验证配套命令；真实网站登录未验证。见 [定稿与验证](../audit/yt-dlp-download-review.md)。当前只整改仓库，本机安装留待统一处理。",
       "example": "下载这条视频，只要音频。",
-      "done": "保存文件存在且符合媒体类型；合集未被意外全部下载。",
-      "compare": "无直接同类；属于专用工具",
+      "done": "实际文件存在，媒体类型、音频格式与所选范围符合要求；换格式保留已有文件，记录跳过须核实文件；报告成功、已有文件及失败的实际路径与结果。",
+      "compare": "site-unlocker（网页正文获取）、transcribe（对已有音频转写）",
       "path": "skills/misc/yt-dlp-download",
       "source": "local-customization",
-      "origin": "本地定制；初始作者未独立核验",
+      "origin": "本地定制；用户于 2026-05-20 要求基于 yt-dlp 建立技能，Codex 编写下载工作流",
       "source_sha256": "8e5b7cd6e031c2d38718cd493a8e7cafe425f96b7d77c0574fe252e0e536e2d0",
-      "dependencies": []
+      "dependencies": [],
+      "inputs": "媒体 URL、下载或仅查看意图、目标格式与合集范围；使用现有 yt-dlp，合并或转码需要 ffmpeg；默认目录可由用户指定覆盖",
+      "updated_at": "2026-10-20",
+      "review": {
+        "status": "user-approved",
+        "started_at": "2026-10-20",
+        "audit": "docs/audit/yt-dlp-download-review.md",
+        "verified_scope": "按 references/commands.md 的实际命令，用本地合成媒体和仅绑定 127.0.0.1 的 HTTP 服务验证：只查看无下载、视频、M4A 后请求 MP3、M4A 源转 MP3 时原文件保留、双项合集检查与选择第 2 项、档案跳过后的缺失文件窄范围恢复。ffprobe 与指纹核对通过；旧文件和旧档案保持。未访问外部媒体或浏览器登录状态，未做独立模型评测；仅修改仓库。",
+        "admission_status": "user-approved",
+        "approved_at": "2026-10-20",
+        "approval_basis": "用户表示「好的，那这个skill就按照你的建议进行吧。可以继续下一个」，确认此前的保留及整改方案并授权执行。",
+        "resolved_issues": [
+          "先识别单条与合集，再按用户选择执行；单条配方同时使用 --playlist-items 1，避免把 --no-playlist 误当通用数量限制。",
+          "音频使用目标格式各自的档案和子目录，避免新格式被旧记录跳过，以及转码中间文件影响既有 M4A。",
+          "对档案跳过核实实际文件，缺失时仅在原选择范围内忽略档案重试。"
+        ]
+      },
+      "usage_scenarios": [
+        {
+          "situation": "保存一条视频供稍后观看",
+          "prompt": "$yt-dlp-download 下载这条视频，保存到我指定的目录。",
+          "assistance": "检查媒体及所需工具，保存选定视频，核对文件和音视频流，报告实际位置。",
+          "result": "可以播放的视频文件与保存路径。"
+        },
+        {
+          "situation": "需要音频，或者已有 M4A 后改要 MP3",
+          "prompt": "$yt-dlp-download 这条链接之前存过 M4A，现在再给我一份 MP3，保留原文件。",
+          "assistance": "按 MP3 目标使用独立目录和下载记录，检查成品格式，并保留已有 M4A。",
+          "result": "格式正确的 MP3，以及保留的原 M4A。"
+        },
+        {
+          "situation": "查看合集并只保存选定条目",
+          "prompt": "$yt-dlp-download 先列出这个合集，不下载；我选好范围后再保存。",
+          "assistance": "先返回条目清单和可获得的媒体信息，明确选择后仅处理该范围。",
+          "result": "可供选择的清单，以及后续所选条目的文件。"
+        }
+      ]
     },
     {
       "name": "deepcoffee-dev",
-      "category": "in-progress",
-      "purpose": "维护特定项目的交付流程",
-      "decision": "improve",
-      "reason": "一个入口混合提交、部署、生产清理和知识库；引用集合外脚本。公开版本先保留边界与改善计划，项目内部流程留在本地。",
-      "example": "为项目整理发布流程和验收清单。",
-      "done": "拆分职责；确认全部脚本归属；根据本项目当前授权执行；发布动作与线上验收区分。",
-      "compare": "pr、implement、retro、domain-modeling",
+      "category": "engineering",
+      "purpose": "维护 DeepCoffee 开发、运维与知识流程",
+      "decision": "keep",
+      "reason": "用户明确确认：使用中积累的专属规则属于 deepcoffee-dev，继续放在 skill 内，撤回迁回项目的建议。仓库入口已恢复六类能力及按需参考，原交付、线上验收、维护检查、账号和知识库规则继续由 skill 维护。见 [本轮整理](../audit/deepcoffee-dev-review.md)。三个现有本地脚本仍作为运行依赖，尚未打包进公开仓库；本机安装与项目未改。用户现已确认审阅通过，纳入默认发布清单并保持手动调用。本机安装仍留待统一处理。",
+      "example": "用 deepcoffee-dev 按现有规则处理这次 DeepCoffee 交付，并列出我需要验收的页面。",
+      "done": "按请求完成对应流程；报告实际提交、检查、部署、维护或知识库结果，按原约定交接线上验收；缺失脚本与未完成动作明确说明。",
+      "compare": "直接沿用的官方工具提供通用能力；本 skill 维护 DeepCoffee 使用中形成的专属方法与规则",
       "domain": "engineering",
       "manual": true,
-      "path": "skills/in-progress/deepcoffee-dev",
+      "path": "skills/engineering/deepcoffee-dev",
       "source": "local-customization",
       "origin": "本地定制；初始作者未独立核验",
       "source_sha256": "f2ed25d9828a83ece467527c383383426e827936f40dcc66eb502bec085f0480",
-      "dependencies": []
+      "dependencies": [],
+      "updated_at": "2026-10-20",
+      "release": true,
+      "release_reason": "用户已确认本轮整理完成，纳入默认安装与发布清单；实际部署、维护和账号操作仍需已有本地脚本及运行环境。",
+      "review": {
+        "status": "user-approved",
+        "started_at": "2026-10-20",
+        "audit": "docs/audit/deepcoffee-dev-review.md",
+        "verified_scope": "以本机 323 行完整入口恢复六类能力和共用规则，拆为短入口及六篇配套说明；核对三个本地脚本存在、部署命令与维护/重置代码结构。仓库规则、引用及元数据进行检查；未执行 DeepCoffee 提交、部署、生产维护、账号重置、知识库写入或实际模型评测。本机安装与项目文件未改。 用户最终确认后，已在隔离目录验证默认清单及单独安装可访问六篇参考，并保持手动调用；本机安装未同步。",
+        "retention_status": "user-confirmed",
+        "retention_confirmed_at": "2026-10-20",
+        "retention_basis": "用户明确表示专属规则属于该 skill，是在使用过程中产生的，要求继续放在 skill 里面。确认规则归属与保留方向，不提前将整理后的全部内容记为审阅通过。",
+        "admission_status": "user-approved",
+        "approved_at": "2026-10-20",
+        "approval_basis": "用户在规则保留于 skill 的整理完成后表示「好的，那这个skill是不是也审核好了。可以下一个了吗」，确认本项完成并继续下一项。"
+      },
+      "inputs": "当前 DeepCoffee 工作区、已确认操作范围和运行配置；部署、维护、账号重置需要现有本地脚本及后端环境。规则存于 skill，路径、凭据与环境值在用户运行配置中解析",
+      "usage_scenarios": [
+        {
+          "situation": "DeepCoffee 改动完成，需要按已有习惯交付",
+          "prompt": "$deepcoffee-dev 按现有规则完成这次改动的交付，只提交本次相关文件。",
+          "assistance": "沿用交付分流和已有维护安排，选择直接提交或 PR，运行相关检查并报告实际交付结果。",
+          "result": "提交或 PR、检查结果，以及需要用户验收的页面清单。"
+        },
+        {
+          "situation": "合并后需要发布 DeepCoffee 后端",
+          "prompt": "$deepcoffee-dev 部署本次后端改动，线上由我检查。",
+          "assistance": "解析已确认的本地部署脚本和配置，完成请求的发布动作，按既有分工交接线上验收。",
+          "result": "实际发布动作结果和具体的用户验收项。"
+        },
+        {
+          "situation": "想确认测试账号将被清理哪些数据",
+          "prompt": "$deepcoffee-dev 只预览这个测试账号的重置范围，不进行任何写入。",
+          "assistance": "使用现有账号工具预览数量与范围，说明保留内容，遵守当前只读要求。",
+          "result": "目标账号的数据预览和保留清单。"
+        },
+        {
+          "situation": "咖啡资料需要先判断是否值得纳入项目知识库",
+          "prompt": "$deepcoffee-dev 审阅这篇咖啡文章，先给出纳入建议，确认后再重写。",
+          "assistance": "查找已有承载页，区分读者正文、必要模型注释与不纳入材料，按明确阶段处理。",
+          "result": "具体的新增、修改和不纳入建议清单。"
+        }
+      ]
     },
     {
-      "name": "llm-wiki",
-      "category": "in-progress",
-      "purpose": "维护 Markdown 知识库与导航",
-      "decision": "improve",
-      "reason": "rebuild_index.py 仍按全页目录重建 index，未同步修改 mkdocs.yml；说明声称 lint 支持 --dry-run，而脚本未定义。",
+      "name": "wiki",
+      "category": "productivity",
+      "purpose": "维护 Markdown 长期知识、关联与导航",
+      "decision": "keep",
+      "reason": "用户确认 wiki 的知识维护定位与配套说明，移除自测，由 teach 承担。保留页面格式、状态、证据、日志、导航及本地站点操作；个人设置从项目读取。只读检查工具已用临时文件验证，具体取舍见 [审查对照](../audit/wiki-comparison.md)。",
       "example": "只读检查知识库的链接和导航。",
-      "done": "用双层导航样例证明 index、topic 页和 MkDocs 一致；私有页发布规则有真实构建验证。",
-      "compare": "domain-modeling、teach",
+      "done": "完成本次授权范围的知识更新或只读查询；核对来源、链接、主题入口和所用站点导航，说明待核验事项及未检查范围。本地站点操作以实际服务状态验收。",
+      "compare": "read（阅读与笔记）、teach（系统学习与自测）、para（文件目录整理）",
       "domain": "productivity",
       "manual": true,
-      "path": "skills/in-progress/llm-wiki",
+      "path": "skills/productivity/wiki",
       "source": "local-customization",
       "origin": "本地定制；初始作者未独立核验",
       "source_sha256": "e8300f6ec702c9e936e60089063b13c66891a86c6e65edfa9b69daaecf9317ea",
-      "dependencies": []
+      "dependencies": [],
+      "updated_at": "2026-10-16",
+      "release": true,
+      "review": {
+        "status": "user-approved",
+        "approved_at": "2026-10-16",
+        "audit": "docs/audit/llm-wiki-review.md",
+        "comparison": "docs/audit/wiki-comparison.md",
+        "verified_scope": "用户确认去除自测后实施；16 项临时文件回归验证只读检查、来源解析、导航与路径处理，场景定义不等于模型行为测试。真实知识库与站点不随本次改造变更。",
+        "admission_status": "user-approved",
+        "approval_basis": "已获用户确认保留；依据既有分批审查清单与所链接的审阅记录补齐采纳标记，不代表新增行为验证。"
+      },
+      "original": "llm-wiki",
+      "inputs": "选定知识库、任务范围及已有项目约定；配套只读工具需要 Python 3.10+ 与 PyYAML",
+      "usage_scenarios": [
+        {
+          "situation": "多份阅读笔记围绕同一主题，想编入长期知识库。",
+          "prompt": "$wiki 把这几份笔记编入指定知识库，先查已有页面，再补充结论与关联。",
+          "assistance": "优先修订已有页，保留证据与冲突，同步受影响的主题入口、导航和日志。",
+          "result": "更新的知识页、相关入口和变更记录。"
+        },
+        {
+          "situation": "记得以前研究过某个问题，想找回已有结论。",
+          "prompt": "$wiki 在我的知识库查一下这个主题，告诉我已有认识和对应页面。",
+          "assistance": "搜索并阅读相关页面，区分已有结论、推断和知识空白。",
+          "result": "基于知识库的回答、页面出处及覆盖缺口。"
+        },
+        {
+          "situation": "知识库页面逐渐增多，想检查链接和导航。",
+          "prompt": "$wiki 只读检查这些页面的链接、主题入口和站点导航，先列问题。",
+          "assistance": "按项目约定检查常见链接和导航，结合内容给出复核线索，说明未覆盖部分。",
+          "result": "断链与导航问题清单、复核建议和检查范围。"
+        }
+      ]
     },
     {
       "name": "social-feed",
-      "category": "in-progress",
+      "category": "productivity",
       "purpose": "读取社交时间线的结构化条目",
-      "decision": "improve",
+      "decision": "keep",
       "reason": "脚本硬编码寻找旧的 Playwright 安装路径，且需要登录状态；不把未验证的登录抓取包装成通用可用。",
       "example": "读取指定账号最近八条公开动态。",
       "done": "能选择当前工具；缺失或过期登录状态明确失败；时间与跳转链接由真实卡片获取。",
       "compare": "research 的信息获取层",
       "domain": "productivity",
       "manual": true,
-      "path": "skills/in-progress/social-feed",
+      "path": "skills/productivity/social-feed",
       "source": "local-customization",
       "origin": "本地定制；初始作者未独立核验",
       "source_sha256": "9257fe8ed3ebb5bdb12bf014acd5409fa730a2e64d3256ded935df1cce8473f7",
-      "dependencies": [
-        "playwright"
-      ]
+      "dependencies": [],
+      "role": "support",
+      "updated_at": "2026-10-15",
+      "review": {
+        "status": "user-approved",
+        "approval_basis": "用户已审阅来源与辅助定位并确认保持现状；本次明确取消 in-progress，按用途归入 productivity。",
+        "classified_at": "2026-10-15",
+        "admission_status": "user-approved",
+        "audit": "docs/audit/reading-learning-review.md"
+      },
+      "usage_scenarios": [
+        {
+          "situation": "想扫一批 X 首页或微博时间线，而不是阅读单篇文章。",
+          "prompt": "$social-feed 从 X 首页取最近可读的八条动态，保留作者、时间和原帖链接。",
+          "assistance": "工具与登录状态可用时读取可见卡片，标记广告或不可读项；失败时说明缺口。",
+          "result": "结构化动态条目，包含可核实的作者、时间、片段和跳转链接。"
+        }
+      ],
+      "inputs": "时间线来源、时间范围与已授权登录状态；当前脚本仍需原 Playwright 安装位置中的 playwright_cli.sh。固定路径的已知限制保持，本轮只移出官方技能登记，不修改脚本或安装"
     },
     {
       "name": "agent-browser",
       "category": "engineering",
       "purpose": "浏览器交互与抓取",
       "decision": "keep",
-      "reason": "CLI、浏览器和认证状态；allowed-tools 是其他宿主的提示，不构成 Codex 工具授权。",
+      "reason": "用户已确认作为 Vercel Labs 外部浏览器工具保留，归 engineering；个人库只登记用途、选择依据和限制，不复制或重写第三方实现。当前 CLI 自带与版本匹配的使用说明，与 site-unlocker 的正文获取方法分工见 [本轮审阅](../audit/agent-browser-review.md)。独立临时会话下的本地基础表单交互已通过；显式临时 profile 曾出现空快照或等待超时，原因未定位。真实网站、登录复用和截图未验证。本机安装未改，留待统一处理。",
       "example": "用 agent-browser 检查这个网页的表单，填写样例并确认结果。",
-      "done": "满足原作者完成条件；现场检查工具与授权。",
-      "compare": "playwright、site-unlocker",
+      "done": "按指定网页和已授权范围完成操作，核对实际页面状态或提取结果；仅关闭本次会话，返回结果及实际文件位置。",
+      "compare": "当前内置浏览器或官方 Playwright 工具（通用浏览器操作）；site-unlocker（特殊正文获取的方法与结果判定）",
       "source": "external",
       "origin": "https://github.com/vercel-labs/agent-browser",
       "source_sha256": "9caba4d013daf731c9f78803c9a73178400c04e2c033541939d77d0f5bc9248c",
-      "dependencies": []
+      "dependencies": [],
+      "inputs": "用户指定的 URL、操作目标和执行范围；需可用的 agent-browser CLI 与浏览器。优先读取当前 CLI 配套说明，使用本次任务自己的会话；涉及登录时沿用已授权方式",
+      "updated_at": "2026-10-20",
+      "review": {
+        "status": "user-approved",
+        "started_at": "2026-10-20",
+        "audit": "docs/audit/agent-browser-review.md",
+        "verified_scope": "核对本机入口与原快照指纹、Vercel Labs 上游及作者文档。当前 CLI 0.39.1 的版本、帮助和配套 core 说明可用。使用本地合成表单和独立临时会话完成快照、填入并读回邮箱、点击提交、重新观察并核对确认文字，已关闭本次会话。显式临时 profile 测试曾出现空快照或等待超时，原因未定位；未访问外部网站、复用用户登录状态、验证截图或更新安装。",
+        "admission_status": "user-approved",
+        "approved_at": "2026-10-20",
+        "approval_basis": "用户在外部浏览器工具保留、不复制第三方实现的审阅建议后表示「好的，继续吧」，确认本项并继续下一项。"
+      },
+      "usage_scenarios": [
+        {
+          "situation": "检查指定测试页面的表单交互",
+          "prompt": "$agent-browser 检查这个测试页的表单，填入样例并确认结果。",
+          "assistance": "使用本次任务自己的会话，读取页面后执行已授权操作，再核对页面实际显示的结果。",
+          "result": "可复核的交互结果和发现的问题。"
+        },
+        {
+          "situation": "从动态页面提取已显示的数据",
+          "prompt": "$agent-browser 把这个页面显示的商品列表整理成表格，附来源。",
+          "assistance": "观察页面，按范围展开或翻页，提取实际可见的数据，说明访问或完整性限制。",
+          "result": "带来源的结构化列表及覆盖范围。"
+        }
+      ]
     },
     {
       "name": "find-skills",
       "category": "productivity",
-      "purpose": "发现现成 skills",
+      "purpose": "从外部技能生态寻找新能力",
       "decision": "keep",
-      "reason": "两个安装目录的 SKILL.md 完全相同；只保留一个来源，先确认 Codex 内置发现能力是否已覆盖。",
-      "example": "为 Markdown 知识库维护查找现成的 Codex skill，先比较再安装。",
-      "done": "满足原作者完成条件；现场检查工具与授权。",
-      "compare": "ask-skills",
+      "reason": "用户已确认作为 Vercel Labs 外部发现工具保留，归 productivity；本仓库登记用途与边界，不复制第三方源码。它搜索外部新技能，ask-skills 帮用户选择已有能力。沿用上游方法，先读候选内容、比较已有能力与 Codex 适配，再按用户规则逐项确认是否纳入；热门榜单与安装量只作发现线索。宽泛触发、全局安装和跳过提示示例不代替当前范围授权。两处本机入口指纹一致，本轮不去重或更新。详见 [本轮审阅](../audit/find-skills-review.md)。",
+      "example": "用 find-skills 查找 Markdown 知识库维护技能，先给来源与内容比较，暂不安装。",
+      "done": "返回与需求相关的候选、原始来源、内容及已有能力比较，明确适配条件和仍待确认事项；未搜索到时如实说明。本轮发现结果不自动纳入集合或安装。",
+      "compare": "ask-skills（在当前目录内选择已有能力）；find-skills（向外部寻找新能力）",
       "source": "external",
       "origin": "https://github.com/vercel-labs/skills",
       "source_sha256": "54b44dc9539df865fbb060f62fb062e8232e765852a0cf14c38301fe0c1eb264",
-      "dependencies": []
+      "dependencies": [],
+      "inputs": "明确要寻找的能力与已有方法；可浏览 skills.sh 或使用兼容的 Skills CLI。候选全文、来源、许可和实际工具要求需要另行核对，发现与安装分别处理",
+      "updated_at": "2026-10-20",
+      "review": {
+        "status": "user-approved",
+        "started_at": "2026-10-20",
+        "audit": "docs/audit/find-skills-review.md",
+        "verified_scope": "核对两处本机 SKILL.md 指纹、ask-skills 当前正文、Vercel Labs 上游入口和 CLI 文档。直接使用现有缓存中的 Skills CLI 1.5.22，在临时目录执行版本查询与 find markdown knowledge base，成功返回候选及来源链接；没有运行 npx 下载、新增或更新 CLI，没有安装或导入任何技能。未逐项阅读搜索结果中的候选、验证候选效果或执行独立模型评测；本机安装保持。",
+        "admission_status": "user-approved",
+        "approved_at": "2026-10-20",
+        "approval_basis": "用户在沿用作者版本、作为外部发现工具保留及搜索和纳入分开的建议后表示「好的，那就继续下一个吧」，确认本项并继续下一项。"
+      },
+      "usage_scenarios": [
+        {
+          "situation": "需要当前集合尚未覆盖的新能力",
+          "prompt": "$find-skills 找找检查电子书排版的现成技能，先比较，暂不安装。",
+          "assistance": "搜索外部候选，读取说明，核对来源、依赖和适配性，说明是否与已有能力重合。",
+          "result": "带来源和依据的候选比较及引入建议。"
+        },
+        {
+          "situation": "想借鉴外部方法改善已有技能",
+          "prompt": "$find-skills 找几个知识库维护技能，与我的 wiki 比较，先不引入。",
+          "assistance": "围绕明确的改善目标搜索和对照方法，区分可借鉴内容与需要新增的能力。",
+          "result": "具体差异、借鉴建议与待确认事项。"
+        }
+      ]
     },
     {
       "name": "deep-research",
       "category": "productivity",
       "purpose": "多来源证据研究",
-      "decision": "improve",
-      "reason": "当前定制仍含 Claude Task/WebSearch 和 ~/.claude 输出假设；默认强制 HTML/PDF、多目录产物，与会话优先原则冲突。先统一工具与输出契约。",
-      "example": "比较这两项技术的证据和取舍，先在会话交付；独立报告另按明确要求生成。",
-      "done": "满足原作者完成条件；现场检查工具与授权。",
-      "compare": "research、writing-master",
-      "source": "external",
+      "decision": "keep",
+      "reason": "用户已确认保留并按审阅方案整改。方法参考 199-biotechnologies 的第三方技能，由 Codex 为本仓库重新编写英文入口、三篇按需参考及轻量来源／摘录记录工具；未复制上游脚本、模板或正文段落，不声明为上游发行版。保留取证、反例、交叉核对与可追溯结论，取消固定来源数、篇幅、耗时、Claude 工具及默认多格式产物。记录工具只检查格式和来源关联，不评判事实支持；关键断言回到原文核对。见 [定稿记录](../audit/deep-research-review.md)。本机旧安装暂不处理。",
+      "example": "调查这个问题的现状、主要证据与反例，先在对话给结论和来源；暂不生成独立报告。",
+      "done": "围绕明确研究问题给出可追溯的结论、主要证据、反例与不确定性；关键断言回到原文核对。独立报告及格式按用户明确要求交付，脚本结果仅作辅助，不以数量或评分代替事实核验。",
+      "compare": "read（围绕已给材料阅读与追问）；wiki（维护长期知识内容）；writing-styles（已有内容的文风与审校）；Matt research 仍为第二批候选",
+      "source": "local-customization",
       "origin": "https://github.com/199-biotechnologies/claude-deep-research-skill",
       "source_sha256": "0c8e777eb13d37b4d5130f59c9237a82528224ba31b58b774cd490a742df8620",
-      "dependencies": []
+      "dependencies": [],
+      "inputs": "研究问题、用途、范围与时效；当前可用的搜索和材料读取工具。默认对话交付；独立报告或研究记录沿用已明确的保存范围和格式。可选记录工具仅需 Python 3",
+      "updated_at": "2026-10-20",
+      "review": {
+        "status": "user-approved",
+        "started_at": "2026-10-20",
+        "audit": "docs/audit/deep-research-review.md",
+        "verified_scope": "仓库新入口、三篇参考、来源及使用页已核对；新记录工具通过九项实际测试，覆盖来源去重、原文保留、无效关联、损坏记录、身份检查、重复追加、符号链接及 CLI 往返。在临时安装位置验证配套文件可达、正常自动选择、记录命令和安装冲突保护；未执行真实研究、独立模型评测、报告生成或 HTML/PDF 视觉验收。本机原技能与上游实现未改。",
+        "admission_status": "user-approved",
+        "approved_at": "2026-10-20",
+        "approval_basis": "用户表示「好的，deep-research按照你说的整改吧。然后继续下一个」，明确批准保留、实施此前整改方案及继续下一项。"
+      },
+      "path": "skills/productivity/deep-research",
+      "manual": false,
+      "release": true,
+      "release_reason": "用户明确批准保留与整改，仓库版本纳入默认清单；维持原入口的正常自动选择方式，本机安装统一处理。",
+      "usage_scenarios": [
+        {
+          "situation": "需要围绕问题主动调查，而非只读给定文章",
+          "prompt": "$deep-research 调查这两项技术的适用条件、主要证据和反例，先在对话给结论。",
+          "assistance": "检索并阅读原始资料，比较独立证据与实际约束，逐项核对关键断言，解释不确定性。",
+          "result": "带来源的研究结论、主要取舍与证据缺口。"
+        },
+        {
+          "situation": "需要一份明确格式的独立研究报告",
+          "prompt": "$deep-research 按已约定目录生成 Markdown 报告，附来源和限制，不要其他格式。",
+          "assistance": "按既有范围组织报告，核对引用及关键结论，只保存所需文件并报告实际位置。",
+          "result": "经过内容和引用检查的 Markdown 报告。"
+        },
+        {
+          "situation": "长研究需要保留证据，便于下次继续",
+          "prompt": "$deep-research 把来源和关键摘录保存在已约定的研究目录，列出仍需核对的问题。",
+          "assistance": "记录来源、原文位置和摘录，保留反例、当前结论与待解问题；记录检查不替代事实核验。",
+          "result": "可追溯的研究记录与明确的后续问题。"
+        }
+      ]
     },
     {
       "name": "ui-ux-pro-max",
       "category": "engineering",
       "purpose": "设计资料库与风格建议",
-      "decision": "improve",
-      "reason": "本地增加了个人设计偏好，但 description 仍只有一句模糊介绍。应把偏好与可更新的第三方资料库分开，并补充触发范围。",
-      "example": "为这个数据查看页面选择清晰的布局与配色，并说明交互顺序。",
-      "done": "满足原作者完成条件；现场检查工具与授权。",
-      "compare": "prototype",
-      "source": "external",
+      "decision": "keep",
+      "reason": "用户已确认保留并整改。仓库新增 Codex 短英文入口，个人设计偏好继续保存在 skill 的三篇参考中；第三方资料库和检索引擎作为外部运行依赖，不整库复制。新适配工具按实际栈文件选择平台，临时过滤结构异常记录并明确部分覆盖；保存工具先展示差异，仅新建文件，已有规则保留并按授权范围合并。九项工具测试及五组真实资料检索通过。异常数据被排除，不声称恢复缺失条目；实际页面效果仍需按任务检查。详见 [定稿记录](../audit/ui-ux-pro-max-review.md)。本机旧安装和上游实现未改。",
+      "example": "审阅这个数据检查页的布局，沿用我的设计偏好，先给建议，不改页面或保存设计规则。",
+      "done": "围绕真实页面任务给出有依据的布局、视觉与交互建议，尊重现有设计系统和用户要求；实现或保存仅在请求范围内，并核对实际页面或文件结果。检索返回与设计建议不代替页面体验验收。",
+      "compare": "现有项目设计系统（本次约束）；agent-browser 等浏览器工具（页面检查）；Matt prototype 仍为第二批候选",
+      "source": "local-customization",
       "origin": "https://github.com/nextlevelbuilder/ui-ux-pro-max-skill",
       "source_sha256": "eb540d8262789975a8c1b7403b598bbd4f9d775642e9a91c4d5beabe93d0a98f",
-      "dependencies": []
+      "dependencies": [],
+      "inputs": "页面任务、用户、平台、已有界面与设计系统、请求阶段；资料检索需要独立可用的上游运行目录（scripts/core.py 与 data/），通过 --runtime 或 UI_UX_PRO_MAX_RUNTIME 指定。Python 3 为本地适配工具依赖；无外部运行目录时不编造搜索结果或自动安装",
+      "updated_at": "2026-10-20",
+      "review": {
+        "status": "user-approved",
+        "started_at": "2026-10-20",
+        "audit": "docs/audit/ui-ux-pro-max-review.md",
+        "verified_scope": "新适配工具九项测试通过，覆盖数据过滤、平台选择、源文件保持、缺失配置、规则预览、新建和已有文件保护。使用原安装的临时副本实际执行 UX、React、React Native、style、landing 五组查询，均返回结果；style 与 landing 排除异常记录并报告覆盖范围。隔离安装检查参考可达、正常自动选择及保存不覆盖。未升级或修改本机安装、复制外部资料或引擎、实现真实页面或进行独立模型与视觉评测。",
+        "admission_status": "user-approved",
+        "approved_at": "2026-10-20",
+        "approval_basis": "用户在保留个人规则和上游资料、精简入口及修正平台、异常数据和保存流程的建议后表示「好的，没问题。继续吧」，确认实施并继续下一项。"
+      },
+      "path": "skills/engineering/ui-ux-pro-max",
+      "manual": false,
+      "release": true,
+      "release_reason": "用户已确认保留与整改，仓库适配入口纳入默认清单并正常自动选择；外部资料和引擎仍需在运行时配置，本机安装留待整批审阅后统一处理。",
+      "usage_scenarios": [
+        {
+          "situation": "检查工具页面的任务和信息层级",
+          "prompt": "$ui-ux-pro-max 审阅这个数据检查页，沿用我的设计习惯，先给布局建议。",
+          "assistance": "围绕主要任务、信息层级、动作与结果，结合个人规则和现有项目约束给出修改建议。",
+          "result": "清晰的页面结构与交互建议。"
+        },
+        {
+          "situation": "为真实平台寻找相关设计和实现参考",
+          "prompt": "$ui-ux-pro-max 这是 React 网页，查查表格选择和状态反馈的参考，保留当前视觉系统。",
+          "assistance": "选择可用的实际平台资料，排除异常记录并说明覆盖限制，给出针对当前任务的建议。",
+          "result": "带适用条件和数据范围的设计参考。"
+        },
+        {
+          "situation": "保存已确认规则，同时保留以前的修改",
+          "prompt": "$ui-ux-pro-max 先比较这份设计建议与已有规则，保留我的修改，再按已确认范围整理。",
+          "assistance": "显示差异，保留既有决定和无关内容；新文件可按授权创建，已有文件先准备明确的合并。",
+          "result": "可复核的差异，以及按范围更新的设计文档。"
+        }
+      ]
     },
     {
       "name": "skill-creator",
       "category": "engineering",
-      "purpose": "创建并评估技能",
-      "decision": "prefer-builtin",
-      "reason": "本地评测版已经使用 codex exec，不能误称为 Claude 脚本。与系统 skill-creator 职责重叠，且夹带另一个 .skill 包；日常创建优先系统版，复杂评测按需使用本地版。",
-      "example": "把这个反复使用的工作流程整理成一个可验证的 Codex skill。",
-      "done": "满足原作者完成条件；现场检查工具与授权。",
-      "compare": "writing-for-agents",
-      "source": "external",
-      "origin": "本地评测定制，初始来源未独立核验；系统入口见 https://github.com/openai/skills",
+      "purpose": "创建、改进与评测技能",
+      "decision": "keep",
+      "reason": "用户最终确认创建与评测统一保留在 skill-creator，取消独立评测入口。参考 Anthropic 与本地 Codex 改写的方法，为仓库独立编写短英文入口、四篇参考与评测辅助工具；创建、任务对比、触发检查按需求选择。错误与超时单列，不完整用例不通过，缺失测量不填零。十五项离线测试及评阅页面反馈交互通过，未进行真实模型效果测量。详见 [定稿记录](../audit/skill-creator-review.md)。本机旧安装留待统一迁移。",
+      "example": "用 skill-creator 改进这个技能，保留原用途，并根据实际需要检查新旧版本的结果。",
+      "done": "按用户要求交付新建或改进后的技能及配套资料；实际评测时给出结果、证据和限制，错误单列，不把文件检查说成行为改进。",
+      "compare": "仓库版 skill-creator 将创建、维护和评测放在同一入口；本机旧版与系统同名能力留待统一迁移时处理；Matt writing-for-agents 仍为第二批候选",
+      "source": "local-customization",
+      "origin": "https://github.com/anthropics/skills/tree/main/skills/skill-creator",
       "source_sha256": "e8b2f920eeec4cd74be001b71a02ae289210b7722d27bcfc869acaad8ac6d3ea",
-      "dependencies": []
-    },
-    {
-      "name": "cloudflare-deploy",
-      "category": "engineering",
-      "purpose": "发布到 Cloudflare",
-      "decision": "keep",
-      "reason": "Wrangler 登录与指定产品；本地说明的 sandbox 升权语法必须服从当前工具权限。",
-      "example": "把这个 Worker 发布到我已指定的 Cloudflare 项目。",
-      "done": "满足原作者完成条件；现场检查工具与授权。",
-      "compare": "wizard",
-      "source": "external",
-      "origin": "https://github.com/openai/skills/tree/main/skills/.curated/cloudflare-deploy",
-      "source_sha256": "d7632537cf19be17cf33d2c696b9d9c2ea3ee51026030e9b203d5b9255e75b15",
-      "dependencies": []
-    },
-    {
-      "name": "gh-address-comments",
-      "category": "engineering",
-      "purpose": "处理 PR 审阅意见",
-      "decision": "keep",
-      "reason": "gh 登录；已有明确处理范围时无需重复询问所有意见。",
-      "example": "处理这个 PR 中指定的两条审阅意见，修好后验证。",
-      "done": "满足原作者完成条件；现场检查工具与授权。",
-      "compare": "code-review、pr",
-      "source": "external",
-      "origin": "https://github.com/openai/skills/tree/main/skills/.curated/gh-address-comments",
-      "source_sha256": "77389eefd3fb6584210668ca8e43f4b8de87e7722ddd953474bc9e24cdfaaedd",
-      "dependencies": []
-    },
-    {
-      "name": "gh-fix-ci",
-      "category": "engineering",
-      "purpose": "定位和修复 GitHub CI 失败",
-      "decision": "keep",
-      "reason": "仅覆盖 GitHub Actions；计划审批应结合当前用户授权。",
-      "example": "检查这个 GitHub PR 为什么 CI 失败，并修复已授权范围的问题。",
-      "done": "满足原作者完成条件；现场检查工具与授权。",
-      "compare": "diagnosing-bugs",
-      "source": "external",
-      "origin": "https://github.com/openai/skills/tree/main/skills/.curated/gh-fix-ci",
-      "source_sha256": "7b326b4a2f0f5f85122144628ec02077e48841e0e0e82efce88b3415bcfb7c26",
-      "dependencies": []
-    },
-    {
-      "name": "imagegen",
-      "category": "misc",
-      "purpose": "生成和编辑图像",
-      "decision": "keep",
-      "reason": "与系统 imagegen 同名；优先当前原生工具，CLI 是显式 API 工作流，需密钥。",
-      "example": "用当前图像工具生成一张透明背景的角色图。",
-      "done": "满足原作者完成条件；现场检查工具与授权。",
-      "compare": "prototype（输出形态不同）",
-      "source": "external",
-      "origin": "https://github.com/openai/skills/tree/main/skills/.curated/imagegen",
-      "source_sha256": "4da06e7a1fbfaa94154dda2699e449a1f6d79e6e4299fcfeb785aad7c87f59dc",
-      "dependencies": []
-    },
-    {
-      "name": "jupyter-notebook",
-      "category": "engineering",
-      "purpose": "创建和维护 notebook",
-      "decision": "keep",
-      "reason": "脚手架只需 Python；运行代码另需 notebook 环境。",
-      "example": "创建一个可以从上到下运行的数据探索 notebook。",
-      "done": "满足原作者完成条件；现场检查工具与授权。",
-      "compare": "scaffold-exercises（用途不同）",
-      "source": "external",
-      "origin": "https://github.com/openai/skills/tree/main/skills/.curated/jupyter-notebook",
-      "source_sha256": "62f102e8554b25716dccef0ffab4572d4e3eaf05ccc76562d33a065bc9c521fb",
-      "dependencies": []
-    },
-    {
-      "name": "openai-docs",
-      "category": "engineering",
-      "purpose": "查证 OpenAI 官方文档",
-      "decision": "keep",
-      "reason": "与系统同名；优先系统新版，不因旧说明反复安装 MCP。",
-      "example": "查证当前 Codex 的技能安装范围，给出官方来源。",
-      "done": "满足原作者完成条件；现场检查工具与授权。",
-      "compare": "research",
-      "source": "external",
-      "origin": "https://github.com/openai/skills/tree/main/skills/.curated/openai-docs",
-      "source_sha256": "100099568ce8887ccd961aad2aa824a6d6054d4e5e697625815cc6e1b30d54a7",
-      "dependencies": []
-    },
-    {
-      "name": "pdf",
-      "category": "misc",
-      "purpose": "阅读和制作 PDF",
-      "decision": "keep",
-      "reason": "与插件能力重叠；选一个维护来源，文本读取不能替代版面验证。",
-      "example": "把这份内容制作成 PDF，并检查每页排版。",
-      "done": "满足原作者完成条件；现场检查工具与授权。",
-      "compare": "无直接同类",
-      "source": "external",
-      "origin": "https://github.com/openai/skills/tree/main/skills/.curated/pdf",
-      "source_sha256": "d108cf2b36355ab37eb5962933f4d09785ec002f3105c506129320209306b9d2",
-      "dependencies": []
-    },
-    {
-      "name": "playwright",
-      "category": "engineering",
-      "purpose": "通过 CLI 验证网页",
-      "decision": "keep",
-      "reason": "Node/npm 与浏览器；不与 agent-browser 同时建立重复会话。",
-      "example": "检查这个本地页面的登录流程，确认错误提示和成功跳转。",
-      "done": "满足原作者完成条件；现场检查工具与授权。",
-      "compare": "prototype 的 UI 验证",
-      "source": "external",
-      "origin": "https://github.com/openai/skills/tree/main/skills/.curated/playwright",
-      "source_sha256": "0ffaabcc8e0990627c4725f18bf1c7955534a796c1c199e872909de2013ce6a8",
-      "dependencies": []
-    },
-    {
-      "name": "playwright-interactive",
-      "category": "engineering",
-      "purpose": "持续浏览器和 Electron 调试",
-      "decision": "keep",
-      "reason": "本地说明要求 js_repl 和配置变更；当前宿主工具名称须现场核对，不能照搬。",
-      "example": "用持续会话验证这个 Electron 应用的界面和状态变化。",
-      "done": "满足原作者完成条件；现场检查工具与授权。",
-      "compare": "prototype",
-      "source": "external",
-      "origin": "https://github.com/openai/skills/tree/main/skills/.curated/playwright-interactive",
-      "source_sha256": "f6c1155d923e6ae3ccc12abfef2266f119f8e9546df2ddeee1f5eb369845a0a1",
-      "dependencies": []
-    },
-    {
-      "name": "screenshot",
-      "category": "misc",
-      "purpose": "截图系统和应用",
-      "decision": "keep",
-      "reason": "屏幕录制权限；优先对应应用工具的截图能力。",
-      "example": "截取这个指定应用窗口，保存到我指定的位置。",
-      "done": "满足原作者完成条件；现场检查工具与授权。",
-      "compare": "无直接同类",
-      "source": "external",
-      "origin": "https://github.com/openai/skills/tree/main/skills/.curated/screenshot",
-      "source_sha256": "081935a6a163277537d46365f49d6b4a3cb40b4748347e7e88759c5927fa8cf5",
-      "dependencies": []
-    },
-    {
-      "name": "security-best-practices",
-      "category": "engineering",
-      "purpose": "专项安全审查",
-      "decision": "keep",
-      "reason": "仅明确安全请求；当前资料覆盖 Python、JS/TS、Go。",
-      "example": "对这个 Python API 做专项安全审查，指出有证据的问题。",
-      "done": "满足原作者完成条件；现场检查工具与授权。",
-      "compare": "code-review（专项补充）",
-      "source": "external",
-      "origin": "https://github.com/openai/skills/tree/main/skills/.curated/security-best-practices",
-      "source_sha256": "7b3dae1ffc5434d890f3c65c8f552af52d0307fab3b35dec13013c9ca3844c4f",
-      "dependencies": []
-    },
-    {
-      "name": "security-threat-model",
-      "category": "engineering",
-      "purpose": "分析真实威胁与边界",
-      "decision": "keep",
-      "reason": "仓库证据和环境范围；与普通架构概述分开。",
-      "example": "分析这个服务的数据边界与实际威胁，并说明优先级。",
-      "done": "满足原作者完成条件；现场检查工具与授权。",
-      "compare": "codebase-design（专项补充）",
-      "source": "external",
-      "origin": "https://github.com/openai/skills/tree/main/skills/.curated/security-threat-model",
-      "source_sha256": "1283c0dd62a8104d9edda4583569b5d8510b4ddaa45120687c999250fd96bad2",
-      "dependencies": []
-    },
-    {
-      "name": "transcribe",
-      "category": "misc",
-      "purpose": "音视频转写",
-      "decision": "keep",
-      "reason": "OpenAI API 密钥与音频输入；现成原生能力可优先。",
-      "example": "把这段录音转成中文文字，保留说话人区分。",
-      "done": "满足原作者完成条件；现场检查工具与授权。",
-      "compare": "无直接同类",
-      "source": "external",
-      "origin": "https://github.com/openai/skills/tree/main/skills/.curated/transcribe",
-      "source_sha256": "f530021da9f377362ee4214e0bc689cbb5404640d2eb88ee272d51d61f530a09",
-      "dependencies": []
-    },
-    {
-      "name": "vercel-deploy",
-      "category": "engineering",
-      "purpose": "发布网站预览或生产",
-      "decision": "keep",
-      "reason": "默认预览；生产需用户已授权；不要将部署命令成功说成页面验收通过。",
-      "example": "将这个网站发布为 Vercel 预览，并返回链接。",
-      "done": "满足原作者完成条件；现场检查工具与授权。",
-      "compare": "pr、wizard",
-      "source": "external",
-      "origin": "https://github.com/openai/skills/tree/main/skills/.curated/vercel-deploy",
-      "source_sha256": "f1f3fa3ff57f87f8f32d77ed635b63416f200a1f976a8a8d3e23d12b30df3ae4",
-      "dependencies": []
-    },
-    {
-      "name": "grilling",
-      "category": "in-progress",
-      "domain": "productivity",
-      "purpose": "澄清方案与关键决策",
-      "decision": "trial",
-      "reason": "先查事实，再按依赖顺序追问；减少重复确认，不要求额外代理。",
-      "example": "请追问这份计划中影响实施的关键决策。",
-      "done": "事实由 AI 检查；每轮只问当前能回答的问题；已决定的内容不反复询问。",
-      "compare": "grilling",
-      "source": "upstream-adapted",
-      "origin": "https://github.com/mattpocock/skills/tree/49dd158d1076134a641b33efb035946536778336/skills/productivity/grilling",
-      "path": "skills/in-progress/grilling",
-      "manual": true,
-      "source_sha256": "befdff1e27a1dfe2a294d5871169ac1afe16d983911daa4f32627514a48c1e15",
-      "dependencies": []
-    },
-    {
-      "name": "writing-for-agents",
-      "category": "in-progress",
-      "domain": "productivity",
-      "purpose": "编写简洁、可靠的 AI 工作说明",
-      "decision": "trial",
-      "reason": "保留按需展开和可核验完成条件；工具调用与手动策略改为 Codex 当前机制。",
-      "example": "帮我检查这个 SKILL.md 是否容易正确触发和完成。",
-      "done": "入口描述明确；共享规则只有一个来源；每步有可核验完成条件。",
-      "compare": "writing-for-agents",
-      "source": "upstream-adapted",
-      "origin": "https://github.com/mattpocock/skills/tree/49dd158d1076134a641b33efb035946536778336/skills/productivity/writing-for-agents",
-      "path": "skills/in-progress/writing-for-agents",
-      "manual": true,
-      "source_sha256": "551adca942227b44192edba88acd4e8db911f0121ce58ad16944ccf6a896a74a",
-      "dependencies": []
-    },
-    {
-      "name": "domain-modeling",
-      "category": "in-progress",
-      "domain": "engineering",
-      "purpose": "统一业务术语与决策文档",
-      "decision": "trial",
-      "reason": "保留 GLOSSARY 与 ADR 分工，加入当前用户要求与保存授权优先。",
-      "example": "统一这些业务术语，并指出代码与说明的矛盾。",
-      "done": "术语与业务一致；词汇表没有实施计划；ADR 只记录有成本的权衡。",
-      "compare": "domain-modeling",
-      "source": "upstream-adapted",
-      "origin": "https://github.com/mattpocock/skills/tree/49dd158d1076134a641b33efb035946536778336/skills/engineering/domain-modeling",
-      "path": "skills/in-progress/domain-modeling",
-      "manual": true,
-      "source_sha256": "7b925d7b1e341a2eeae33ad68a8a8c0ab889a38ddd22a7598e4c240e5a7556a3",
-      "dependencies": []
-    },
-    {
-      "name": "diagnosing-bugs",
-      "category": "in-progress",
-      "domain": "engineering",
-      "purpose": "先复现再定位困难问题",
-      "decision": "trial",
-      "reason": "保留能捕捉原症状的验证循环；真实项目的检查方式优先。",
-      "example": "这个流程偶尔丢数据，先找能复现的输入。",
-      "done": "原症状有失败信号；修复后原输入通过；临时探针已清理。",
-      "compare": "diagnosing-bugs",
-      "source": "upstream-adapted",
-      "origin": "https://github.com/mattpocock/skills/tree/49dd158d1076134a641b33efb035946536778336/skills/engineering/diagnosing-bugs",
-      "path": "skills/in-progress/diagnosing-bugs",
-      "manual": true,
-      "source_sha256": "849198df88cdb65fd0d97236604c1fca7ff2f22d2f705f9724a800d0266b118d",
-      "dependencies": []
+      "dependencies": [],
+      "inputs": "目标任务或已有技能、预期结果、触发场景与用户约束；评测另需实际用例、标准及比较范围。离线工具需 Python 3 与 PyYAML，实时触发探针另需可用 Codex CLI；默认只预览，不更换现有安装",
+      "updated_at": "2026-10-20",
+      "review": {
+        "status": "user-approved",
+        "started_at": "2026-10-20",
+        "audit": "docs/audit/skill-creator-review.md",
+        "verified_scope": "新工具十五项离线测试通过；覆盖原故障反例、有效样本分母、超时、预览无调用、只读探针命令、空输出、成功配对与未知测量、重复记录、HTML 转义与文件保护。实际生成合成任务评阅页，使用浏览器查看输出和超时记录、填写反馈并验证生成内容。未启动真实 Codex 推理、额外代理或付费模型评测。本机旧安装保持。",
+        "admission_status": "user-approved",
+        "approved_at": "2026-10-20",
+        "approval_basis": "用户先批准第一轮收尾，随后明确改为「评测能力，还是放在 skill-creator 里面吧」，撤销独立评测入口；按最终要求保留创建、维护和评测的一体入口。"
+      },
+      "path": "skills/engineering/skill-creator",
+      "manual": false,
+      "release": true,
+      "release_reason": "用户明确确认保留 skill-creator 并将评测放在同一入口，纳入默认清单，保持正常自动选择；评测执行范围依当前任务确定。",
+      "usage_scenarios": [
+        {
+          "situation": "把反复使用的方法整理成技能，或改善已有技能",
+          "prompt": "$skill-creator 把这套已使用的方法整理成技能，保持用途清晰，配套说明按需外置。",
+          "assistance": "从实际任务确定触发条件和完成标准，编写简短入口及必要参考，检查可用性；按本次需要选择验证。",
+          "result": "可审阅的技能、配套资料和明确的验证结果。"
+        },
+        {
+          "situation": "想知道技能修改是否改善真实任务结果",
+          "prompt": "$skill-creator 比较这个技能的新旧版本，先给出真实用例、评价标准和执行范围。",
+          "assistance": "定义可比基线与任务结果，记录实际输出和失败，依据匹配样本及证据说明差异。",
+          "result": "可复核的任务对照、限制和改进建议。"
+        },
+        {
+          "situation": "技能经常误触发或漏触发",
+          "prompt": "$skill-creator 检查这个技能的描述边界，先预览探针，不启动模型调用。",
+          "assistance": "准备正向与近似反例，预览调用范围，获准执行后区分有效结果、超时和错误，再提出描述修改。",
+          "result": "触发覆盖说明及有依据的描述建议。"
+        },
+        {
+          "situation": "需要人工比较已有测试输出",
+          "prompt": "$skill-creator 用已有结果生成新的本地评阅页，保留我的旧反馈。",
+          "assistance": "展示实际输出、判断依据、错误和覆盖范围，提供本地反馈预览，并保留已有文件。",
+          "result": "可查看和填写反馈的本地评阅页面。"
+        }
+      ]
     },
     {
       "name": "ask-skills",
@@ -557,13 +805,15 @@
       "decision": "new",
       "reason": "覆盖工程、内容、学习、整理和数据任务；从真实目录给建议，不自动执行手动能力。",
       "example": "我想做这件事，应该用哪个 skill？",
-      "done": "给出首选、理由、依赖与一句可用指令；区分正式、试用、外部依赖。",
+      "done": "给出首选、理由、依赖与一句可用指令；区分用户审阅状态、已知限制、外部依赖与调用方式。",
       "compare": "ask-matt",
       "source": "new",
       "origin": "本仓库",
       "path": "skills/productivity/ask-skills",
       "manual": true,
-      "dependencies": []
+      "dependencies": [],
+      "updated_at": "2026-10-14"
     }
-  ]
+  ],
+  "updated_at": "2026-10-20"
 }

@@ -1,6 +1,0 @@
-interface:
-  display_name: "grilling"
-  short_description: "Codex workflow: 澄清方案与关键决策; check results"
-  default_prompt: "Use $grilling to help with this task: 请追问这份计划中影响实施的关键决策。"
-policy:
-  allow_implicit_invocation: false

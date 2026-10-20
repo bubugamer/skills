@@ -1,0 +1,11 @@
+{
+  "source": "local-customization",
+  "origin": "本地定制；初始作者未独立核验",
+  "source_sha256": "b533a92cff04718c4a728bb2427bc3a6688a97f462d702d2c6266eec4a24f190",
+  "snapshot_date": "2026-10-11",
+  "adaptation": "用户授权收敛为 PARA 专用重建并更名 para；缩短入口，命令移至 workflow，目录映射保持在工作区 profile。移除固定编号分类，保留已有 PARA 容器；完整执行前检查、既有 ZIP 保护、逐步记录与失败恢复。原始作者未独立核验。",
+  "upstream_commit": null,
+  "adapted_at": "2026-10-15",
+  "adapted_entrypoint_sha256": "6c6b7c033c3894c94e2db33418f06333131bafe673bb548f2e4a70ee6cfea1b2",
+  "original_name": "konmari"
+}

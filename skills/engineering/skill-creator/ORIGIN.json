@@ -1,0 +1,21 @@
+{
+  "source": "local-customization",
+  "origin": "https://github.com/anthropics/skills/tree/main/skills/skill-creator",
+  "source_sha256": "e8b2f920eeec4cd74be001b71a02ae289210b7722d27bcfc869acaad8ac6d3ea",
+  "snapshot_date": "2026-10-20",
+  "upstream_commit": null,
+  "adaptation": "用户最终明确将评测留在 skill-creator，创建、维护和评测统一入口，取消单独评测技能。参考 Anthropic 基线及本地 Codex 改写的方法，为仓库独立编写短英文入口、四篇参考、触发探针、任务汇总、离线评阅页及十五项工具测试；未复制系统技能、旧脚本、旧打包器或嵌套下载技能包。创建或评测按需求选择，不强制每次创建都运行完整评测。执行错误、超时与有效未触发分开；任何失败重复使该用例不完整，未知测量不填零，对照只比较匹配成功且标准相同的样本。模型探针默认预览。",
+  "adapted_at": "2026-10-20",
+  "adapted_entrypoint_sha256": "366afd8f8d697899b7e8592af3ba34793bed81f9056e206bfc58d94312717088",
+  "admission": {
+    "status": "user-approved",
+    "date": "2026-10-20",
+    "basis": "用户批准第一轮收尾，随后明确「评测能力，还是放在 skill-creator 里面吧」，按最终决定保留创建、维护与评测的一体入口。"
+  },
+  "excluded_upstream_resources": [
+    "package_skill.py",
+    "embedded yt-dlp-download.skill",
+    "automatic large evaluation/description loops"
+  ],
+  "implementation": "independently rewritten creation and evaluation workflow and tools; attributed method reference, not an upstream distribution"
+}

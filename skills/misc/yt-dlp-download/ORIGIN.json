@@ -1,8 +1,22 @@
 {
   "source": "local-customization",
-  "origin": "本地定制；初始作者未独立核验",
+  "origin": "本地定制；用户于 2026-05-20 要求基于 yt-dlp 建立技能，Codex 编写下载工作流",
   "source_sha256": "8e5b7cd6e031c2d38718cd493a8e7cafe425f96b7d77c0574fe252e0e536e2d0",
   "snapshot_date": "2026-10-11",
-  "adaptation": "保留单条默认、集合范围选择和防覆盖；输出位置改为当前用户 Downloads。",
-  "upstream_commit": null
+  "adaptation": "用户确认按审阅建议实施。保留直接调用 yt-dlp 与既有 Downloads/sourcesget 偏好，英文入口精简，完整命令移至 references/commands.md；先识别合集范围，单条配方增加数量保护；音频按目标格式分目录和档案，避免换格式跳过或损伤旧文件；公开内容不读 cookies，需登录时沿用已授权的 Chrome 或用户选择。补八条场景定义，仅修改仓库，不同步本机安装。",
+  "upstream_commit": null,
+  "provenance_verified_at": "2026-10-20",
+  "creation_basis": "2026-05-20 用户决定暂不开发类似 Downie 的应用，直接建立调用 yt-dlp 的 skill，并要求按 skill-creator 流程制作；同一会话 Codex 新建入口。2026-05-23 有用户明确音频试用请求及保存路径讨论。",
+  "adapted_entrypoint_sha256": "192a0ba314f2e6729c4a0ed7272599cd303aa509ba7d79ba5dcbd7e0ee275fcf",
+  "design_references": [
+    {
+      "url": "https://github.com/yt-dlp/yt-dlp",
+      "basis": "底层开源下载 CLI 与参数说明；本地技能直接调用工具。"
+    }
+  ],
+  "adapted_at": "2026-10-20",
+  "review_approved_at": "2026-10-20",
+  "supporting_documents_sha256": {
+    "references/commands.md": "a92ed58ef5e625993a7a82d8400fe3e016dfc32d6de2c9667356f6c1c776e0cf"
+  }
 }

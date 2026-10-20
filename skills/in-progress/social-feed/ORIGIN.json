@@ -1,8 +1,0 @@
-{
-  "source": "local-customization",
-  "origin": "本地定制；初始作者未独立核验",
-  "source_sha256": "9257fe8ed3ebb5bdb12bf014acd5409fa730a2e64d3256ded935df1cce8473f7",
-  "snapshot_date": "2026-10-11",
-  "adaptation": "脚本硬编码寻找旧的 Playwright 安装路径，且需要登录状态；不把未验证的登录抓取包装成通用可用。",
-  "upstream_commit": null
-}

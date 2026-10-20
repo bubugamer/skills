@@ -1,8 +1,0 @@
-{
-  "source": "upstream-adapted",
-  "origin": "https://github.com/mattpocock/skills/tree/49dd158d1076134a641b33efb035946536778336/skills/engineering/domain-modeling",
-  "source_sha256": "7b925d7b1e341a2eeae33ad68a8a8c0ab889a38ddd22a7598e4c240e5a7556a3",
-  "snapshot_date": "2026-10-11",
-  "adaptation": "保留 GLOSSARY 与 ADR 分工，加入当前用户要求与保存授权优先。",
-  "upstream_commit": "49dd158d1076134a641b33efb035946536778336"
-}

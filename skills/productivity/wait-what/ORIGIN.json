@@ -1,8 +1,12 @@
 {
   "source": "local-customization",
-  "origin": "mattpocock/skills",
+  "origin": "https://github.com/mattpocock/skills/blob/49dd158d1076134a641b33efb035946536778336/skills/productivity/wait-what/SKILL.md",
   "source_sha256": "d961bb37defd975c539427edb8f450cdbccdcdd552e213c1ece46676a7970905",
   "snapshot_date": "2026-10-11",
-  "adaptation": "本地版本与 Matt 原文一致，明确记录出处；改成跟随当前语言，默认中文。",
-  "upstream_commit": "49dd158d1076134a641b33efb035946536778336"
+  "adaptation": "按用户要求恢复 Matt 原版英文 description 与完整正文，正文末尾仅增加 Reply in Chinese.。移除此前中文改写及额外的固定输出顺序、强制例子与完成条件。上游 disable-model-invocation 标记由 Codex 已有 agents/openai.yaml 手动调用设置承接；保留 MIT、原作者版权与固定提交指纹。本轮仅修改仓库，不同步本机安装。 用户在查看完成结果后确认继续下一项，本版本审阅通过。",
+  "upstream_commit": "49dd158d1076134a641b33efb035946536778336",
+  "provenance_verified_at": "2026-10-19",
+  "adapted_entrypoint_sha256": "e570a6c7bc7d250b8d11bc2c459ced1787d0ec207506a9d5e699a60830a3ffa3",
+  "adapted_at": "2026-10-20",
+  "review_approved_at": "2026-10-20"
 }

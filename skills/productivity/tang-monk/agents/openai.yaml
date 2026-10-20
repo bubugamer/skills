@@ -1,6 +1,0 @@
-interface:
-  display_name: "tang-monk"
-  short_description: "Codex workflow: 管理想法、探索和每日重点; check results"
-  default_prompt: "Use $tang-monk to help with this task: 今天应该推进哪一件事？"
-policy:
-  allow_implicit_invocation: true

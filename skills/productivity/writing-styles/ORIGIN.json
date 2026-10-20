@@ -1,0 +1,26 @@
+{
+  "source": "local-customization",
+  "origin": "本地定制；用户要求创建，Codex 根据用户原稿与写作反馈整理并扩充",
+  "source_sha256": "1e1a2f9938eef176dfd3d8df9b3edaa4ac189e6374e5c21d782f0099b18d5346",
+  "snapshot_date": "2026-10-11",
+  "adaptation": "用户确认实施 writing-styles 多文风方案。精简共同规则，区分审稿建议、会话修订稿与指定文件编辑；保留 bbs 与 research-analysis，移至 references/styles，个人经历按材料使用，投资要求按领域适用；补充九条场景定义。保持自动选择设置，备份后按已授权更名迁移本机安装。Matt 阶段技能仍为候选，未导入。",
+  "upstream_commit": null,
+  "history_verified_at": "2026-10-19",
+  "creation_history": [
+    {
+      "date": "2026-07-24",
+      "basis": "用户要求建立 writing master，将论坛写作方式命名 bbs，并预留以后增加其他文风；另要求共用基础语言检查及原稿审稿规则。"
+    },
+    {
+      "date": "2026-08-26",
+      "basis": "用户要求将分析文章的三项原则记录到 writing-master：减少反复否定式表达、明确给出结论、删去宽泛空话。Codex 据此新增 references/research-analysis.md；英文名称由 Codex 选定，是内部文风而非独立技能。"
+    }
+  ],
+  "previous_name": "writing-master",
+  "adapted_at": "2026-10-19",
+  "adapted_entrypoint_sha256": "7f12977d78e03bfc36f27a6f97e5373e3c23b1caf77f6bd0181871a2b04d112d",
+  "supporting_documents_sha256": {
+    "references/styles/bbs.md": "e9071f4905c5606a76e20486a609175d1d531cd31edc5ae54e18f5e3281db93d",
+    "references/styles/research-analysis.md": "8bb532b2247d8d07939e6cd15b071ff8111d7a36a5cced660935a51e1da4c4e6"
+  }
+}

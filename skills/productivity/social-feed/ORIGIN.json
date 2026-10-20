@@ -1,0 +1,10 @@
+{
+  "source": "local-customization",
+  "origin": "本地定制；初始作者未独立核验",
+  "source_sha256": "9257fe8ed3ebb5bdb12bf014acd5409fa730a2e64d3256ded935df1cce8473f7",
+  "snapshot_date": "2026-10-11",
+  "adaptation": "脚本硬编码寻找旧的 Playwright 安装路径，且需要登录状态；不把未验证的登录抓取包装成通用可用。 本轮仅同步 read 更名及已移出的 brief 引用；其他方法与成熟度保持。 2026-10-15 按用户要求取消本仓库 in-progress 目录，改按用途归类；本轮仅迁移位置、保留原脚本和既有调用方式，已知问题仍在使用页记录。 2026-10-20 按用户要求移出 OpenAI 官方技能登记，catalog 不再将 playwright 作为集合内条目依赖；使用页继续说明所需浏览器或 Playwright 运行工具，入口、脚本、登录与安装保持。",
+  "upstream_commit": null,
+  "adapted_at": "2026-10-20",
+  "adapted_entrypoint_sha256": "e711a0db2fd7e38d0b9f85e5c8738a3c48d864b6492009a74761c94f9a930522"
+}

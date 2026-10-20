@@ -1,0 +1,30 @@
+{
+  "source": "local-customization",
+  "origin": "https://github.com/nextlevelbuilder/ui-ux-pro-max-skill",
+  "source_sha256": "eb540d8262789975a8c1b7403b598bbd4f9d775642e9a91c4d5beabe93d0a98f",
+  "snapshot_date": "2026-10-20",
+  "upstream_commit": null,
+  "adaptation": "用户确认保留个人偏好与外部设计资料并整改。为 Codex 新写短英文入口，将原有个人规则整理为三篇按需参考；新写搜索适配与设计规则保存工具。检索仍调用用户明确选择的外部上游 core.py，不复制第三方引擎、资料库或方案生成程序。根据实际栈文件选择平台，临时过滤异常 CSV 记录并报告部分覆盖；只预览或新建规则，已有文件保留并交由明确范围内的合并处理。本机安装和原资料不变。",
+  "adapted_at": "2026-10-20",
+  "adapted_entrypoint_sha256": "921aa7980b2e32c1286c54eed4f197a2aab93d3805a663432cd145f1082a4498",
+  "admission": {
+    "status": "user-approved",
+    "date": "2026-10-20",
+    "basis": "用户在保留偏好、上游资料、精简入口及修正平台、数据与保存流程的建议后表示「好的，没问题。继续吧」，确认实施并继续下一项。"
+  },
+  "external_runtime": {
+    "required_layout": [
+      "scripts/core.py",
+      "data/"
+    ],
+    "binding": "--runtime or UI_UX_PRO_MAX_RUNTIME; independent trusted tool location",
+    "tested_core_sha256": "ca752a342f08e853fc5a440bb02e509d803fedb5f0100110833f1dede6d2dc34",
+    "tested_data": "existing local library snapshot; malformed records excluded at query time, not reconstructed"
+  },
+  "excluded_upstream_resources": [
+    "bundled CSV library",
+    "copied search engine",
+    "automatic full design-system generation",
+    "overwriting persist command"
+  ]
+}

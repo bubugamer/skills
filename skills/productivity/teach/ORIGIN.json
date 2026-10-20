@@ -1,0 +1,20 @@
+{
+  "source": "upstream-adapted",
+  "origin": "https://github.com/mattpocock/skills/tree/49dd158d1076134a641b33efb035946536778336/skills/productivity/teach",
+  "source_sha256": "550482c2d674b085c9043b87bfdc14a8f2ec453c736119e7fcbb1e9332bffeba",
+  "snapshot_date": "2026-10-13",
+  "upstream_commit": "49dd158d1076134a641b33efb035946536778336",
+  "adaptation": "按用户要求恢复完整英文正文与原版 description，教学内容不再翻译、删减或增加本地流程。仅移除原宿主的 disable-model-invocation 与 argument-hint 字段，手动调用继续由 agents/openai.yaml 配置；正文唯一变化是将 /teach 调用记号改为 Codex 的 $teach。三个格式模板与 MIT 许可原样保留；跨技能选择在 .agents/invocation.md 维护。",
+  "adapted_at": "2026-10-14",
+  "adapted_entrypoint_sha256": "d88620632ba6b5176e01c87cdb1ffc62acfc206414dd5cc0e3a16c8efde7d4e8",
+  "classification": {
+    "category": "productivity",
+    "date": "2026-10-14",
+    "reason": "teach 已获用户逐项审阅和明确纳入确认；取消统一试用要求后按用途放入 productivity，保持手动调用。"
+  },
+  "admission": {
+    "status": "user-approved",
+    "date": "2026-10-13",
+    "basis": "用户逐项审阅 teach 并明确同意纳入，随后授权恢复完整英文版本。"
+  }
+}

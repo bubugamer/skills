@@ -1,8 +1,0 @@
-{
-  "source": "local-customization",
-  "origin": "本地定制；初始作者未独立核验",
-  "source_sha256": "833abf1df31e83251498bfa98a90e82ec3c20e026f4a5f827b33188085c182fe",
-  "snapshot_date": "2026-10-11",
-  "adaptation": "保留来源范围、去重和短输出；浏览器抓取能力是条件依赖，缺失时明确报告。",
-  "upstream_commit": null
-}

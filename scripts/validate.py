@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Check names, references, metadata, origins and promoted-only packaging."""
+"""Check names, references, metadata, origins and explicit release selection."""
 import ast
 import json
 import re
@@ -9,7 +9,7 @@ from pathlib import Path
 from urllib.parse import unquote
 
 import yaml
-from sync_catalog import ROOT, outputs
+from sync_catalog import ROOT, outputs, is_released, is_adopted, BUCKETS
 
 
 def main():
@@ -19,11 +19,29 @@ def main():
     names = [d['name'] for d in rows]
     if len(names) != len(set(names)):
         errors.append('Duplicate catalog names')
+    for retired in [ROOT / 'skills/in-progress', ROOT / 'docs/in-progress']:
+        if retired.exists():
+            errors.append('Removed category must not be recreated: ' + str(retired.relative_to(ROOT)))
     actual = {str(p.parent.relative_to(ROOT)) for p in ROOT.glob('skills/*/*/SKILL.md')}
     managed = {d['path'] for d in rows if d.get('path')}
     if actual != managed:
         errors.append('Catalog/source mismatch: ' + str(actual ^ managed))
     for d in rows:
+        if d['category'] not in BUCKETS:
+            errors.append(d['name'] + ': invalid purpose category')
+        if 'release' in d and not isinstance(d['release'], bool):
+            errors.append(d['name'] + ': release setting must be boolean')
+        if d['source'] == 'upstream-adapted' and d.get('review', {}).get('admission_status') != 'user-approved':
+            errors.append(d['name'] + ': upstream admission is not user-approved')
+        scenarios = d.get('usage_scenarios', [])
+        if is_adopted(d) and not scenarios:
+            errors.append(d['name'] + ': adopted skill needs usage scenarios')
+        if scenarios and not is_adopted(d):
+            errors.append(d['name'] + ': public usage scenarios require confirmed adoption')
+        if not isinstance(scenarios, list):
+            errors.append(d['name'] + ': usage_scenarios must be a list')
+        elif any(not isinstance(case, dict) or set(case) != {'situation', 'prompt', 'assistance', 'result'} or any(not isinstance(value, str) or not value.strip() for value in case.values()) for case in scenarios):
+            errors.append(d['name'] + ': each usage scenario needs situation, prompt, assistance and result')
         if not d.get('path'):
             continue
         folder = ROOT / d['path']
@@ -39,7 +57,7 @@ def main():
         if not isinstance(desc, str) or not desc.strip() or len(desc) > 1024:
             errors.append(d['name'] + ': invalid description')
         meta = yaml.safe_load((folder / 'agents/openai.yaml').read_text())
-        expected = d['category'] not in ['in-progress', 'deprecated'] and not d.get('manual', False)
+        expected = not d.get('manual', False)
         if meta.get('policy', {}).get('allow_implicit_invocation') != expected:
             errors.append(d['name'] + ': inconsistent invocation policy')
         ui = meta['interface']
@@ -57,12 +75,15 @@ def main():
             if dep not in names:
                 errors.append(d['name'] + ': unknown dependency ' + dep)
     plugin = json.loads((ROOT / '.codex-plugin/plugin.json').read_text())
-    expected_paths = {'./' + d['path'] for d in rows if d.get('path') and d['category'] not in ['in-progress', 'deprecated']}
+    expected_paths = {'./' + d['path'] for d in rows if is_released(d)}
     if len(plugin['skills']) != len(expected_paths) or set(plugin['skills']) != expected_paths or plugin['version'] != catalog['version']:
         errors.append('Release manifest differs from formal catalog')
     market = json.loads((ROOT / '.agents/plugins/marketplace.json').read_text())
     if market['plugins'][0]['name'] != plugin['name'] or market['plugins'][0]['source']['path'] != './':
         errors.append('Marketplace does not point at collection')
+    if errors:
+        print('\n'.join(errors))
+        return 1
     for rel, text in outputs().items():
         path = ROOT / rel
         if not path.is_file() or path.read_text() != text:

@@ -1,8 +1,0 @@
-{
-  "source": "local-customization",
-  "origin": "本地定制；初始作者未独立核验",
-  "source_sha256": "e8300f6ec702c9e936e60089063b13c66891a86c6e65edfa9b69daaecf9317ea",
-  "snapshot_date": "2026-10-11",
-  "adaptation": "rebuild_index.py 仍按全页目录重建 index，未同步修改 mkdocs.yml；说明声称 lint 支持 --dry-run，而脚本未定义。",
-  "upstream_commit": null
-}

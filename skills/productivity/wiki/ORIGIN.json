@@ -1,0 +1,39 @@
+{
+  "source": "local-customization",
+  "origin": "本地定制；初始作者未独立核验",
+  "derived_from": {
+    "path": "docs/audit/llm-wiki-original",
+    "entrypoint_sha256": "dddc579b4c9d63f690a2c15c0fc162a2e07e1077dbaabcf787ba021e6cb03bfa",
+    "references_sha256": {
+      "lint-rules.md": "53f3d614d0d369b6194c15c3308a91f30fcfc3ce514d3230fe1822aa2fd81ac7",
+      "page-templates.md": "71a5d2720d915b2aaa0c29fd43c2621b22bdac6321ee5b32974ba4ce61301aeb",
+      "scaling.md": "37666f8064f86a5b3b552b1f05af04dc8d87a090c6d87d2e20e5b20bdead0d28"
+    }
+  },
+  "adapted_at": "2026-10-16",
+  "adapted_entrypoint_sha256": "a6b1b4b25fa6d47d5f92bf85ece79f2386689bcde410567af98b241fa1f33ac6",
+  "supporting_documents_sha256": {
+    "references/health-check.md": "2ccae7c31d494eb143fc81a64e7aae5b1496f83dfbd7dc465561e92705ddb8b7",
+    "references/navigation.md": "a5c2bd3dba7a632890bb7bafedd46aedae4d69b49ccaab51922759054e8db336",
+    "references/page-conventions.md": "c6b72a266120e615a0e10ec2a5b0cece1cd60d02feabe5c82988bd7a36a15362",
+    "references/page-templates.md": "a5f9ca570af9e53b92741dadf02abe911536d9cbadb46163ade1285cf9df10c1",
+    "references/site-operations.md": "b0c6a9e1e5338da971277e60c837eab2a460580f91e289bc3b6b5f0a1f16852e",
+    "references/workspace-profile.md": "cc3908336c41de122e5d2a09edc46e7ac925df2e3fe674cec08c4c2c00d0bba3"
+  },
+  "adaptation": "2026-10-16 用户确认去除知识库自测并实施 wiki 改造。中文入口与六篇配套参考保留编入、查询、健康维护和已配置站点操作；个人目录模型单独存档。重写只读检查工具，移除覆盖首页的索引生成器；保留手动调用方式，按已授权更名迁移。原入口和三篇参考在审查目录冻结保存。",
+  "design_references": [
+    {
+      "url": "https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f",
+      "basis": "2026-04-13 用户先共读的 LLM Wiki 思路文章。"
+    },
+    {
+      "url": "https://github.com/NousResearch/hermes-agent/blob/main/skills/research/llm-wiki/SKILL.md",
+      "basis": "同日用户提供的 Hermes 对照技能，随后请 Codex 设计本地方案；记录设计参考，不声称逐行复制。"
+    }
+  ],
+  "source_sha256": "e8300f6ec702c9e936e60089063b13c66891a86c6e65edfa9b69daaecf9317ea",
+  "scripts_sha256": {
+    "scripts/lint_wiki.py": "3a4c3e245aaffbffcd1e42fbb305f98857be873635bdc0dc46147b992c412f99",
+    "scripts/test_wiki.py": "7314e5f552561a8335505ef043f8651323af373925323166bd3c2f32d3adeb3d"
+  }
+}

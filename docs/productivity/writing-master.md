@@ -1,29 +1,5 @@
-# writing-master
+# writing-master 已更名为 writing-styles
 
-按命名风格写作和审稿。状态：正式集合。
+用户于 2026-10-19 确认个人文风层方案，正式名称为复数 writing-styles。查看 [使用说明](writing-styles.md)、[正式入口](../../skills/productivity/writing-styles/SKILL.md) 与 [整改记录](../audit/writing-master-review.md)。
 
-## 为什么保留或调整
-
-保留风格文件与共同规则分离；只做建议的审稿和明确要求改文件的编辑区分清楚。
-
-## 使用例子
-
-> 按 bbs 风格把这些项目经历写成帖子。
-
-## 输入与依赖
-
-先明确本次任务范围与需要的输入。依赖：以操作入口的当前工具检查为准。已有授权继续适用；缺少事实先检查，缺少用户决定再询问。
-
-## 怎样算完成
-
-保留用户事实与观点；语法正确；没有编造经历。
-
-## 与相邻能力的关系
-
-对照：writing-fragments、writing-shape、writing-beats。按本次目的选择；名称相似不代表输出相同。
-
-## 来源与验证范围
-
-[操作入口](../../skills/productivity/writing-master/SKILL.md)
-
-本页用于选择与验收；具体步骤以操作入口和当前工具文档为准。实际执行记录见 [首版验证](../audit/verification.md)。尚未执行的场景见入口的 evals，用例存在不等于已经通过。
+保留 bbs 与 research-analysis 两种内部文风，后续可以继续增加。安装器识别 writing-master 旧名冲突，既有安装先备份再按具体授权迁移。

@@ -1,8 +1,0 @@
-{
-  "source": "local-customization",
-  "origin": "本地定制；初始作者未独立核验",
-  "source_sha256": "b533a92cff04718c4a728bb2427bc3a6688a97f462d702d2c6266eec4a24f190",
-  "snapshot_date": "2026-10-11",
-  "adaptation": "保留内部目录隔离、重复检测与可回退计划；先验证脚本，再讨论重构算法。",
-  "upstream_commit": null
-}
