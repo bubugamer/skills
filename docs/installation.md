@@ -1,6 +1,6 @@
 # 安装与调用
 
-当前阶段先审阅和整改仓库版本。按用户 2026-10-20 的决定，全部技能梳理完成后再统一处理本机旧安装与仓库版本接入；目前不逐项同步或迁移。具体范围见 [SCOPE.md](../SCOPE.md)，下方按日期记录的既有迁移保留为历史。
+2026-10-21 用户明确要求安装本地版本，本次已完成统一接入：21 个已确认的仓库技能安装到 `~/.agents/skills`，以链接读取仓库源码；agent-browser、find-skills 两项外部能力沿用原安装。11 个旧目录和 5 个旧链接完整归档后退出原发现位置，运行依赖单独保留。下方按日期的此前迁移与暂缓约定保留为历史，不作为当前未安装状态。
 
 这个仓库是源码与维护入口。除用户明确授权的名称或退出迁移外，现有安装保持不变。默认发布清单不包括 deprecated、外部依赖或明确设置 release: false 的条目。不要同时用插件和本地链接安装同一批技能。
 
@@ -22,7 +22,7 @@ python3 scripts/install.py --skill ask-skills
 python3 scripts/install.py --skill ask-skills --apply
 ```
 
-链接创建后，按 Codex 当前提示刷新或开始新会话，再手动输入 `$ask-skills`。目录按用途归类，已知问题保留在使用页。deepcoffee-dev 已审阅通过并列入默认清单，保持手动调用且仍需已有本地脚本；wiki 已确认并列入默认清单；其他条目按明确清单安装，手动调用方式保持。
+本次 Codex 实际发现名称为 `bubugamer-skills:<技能名>`，例如 `$bubugamer-skills:ask-skills`、`$bubugamer-skills:writing-fragments`。在选择器中可搜索短名称。用户配置增加运行绑定并关闭系统同名 skill-creator 入口后，需要重启 Codex 刷新配置；系统文件保留。目录按用途归类，调用方式及已知问题继续按使用页维护。
 
 ## Codex 插件方式
 
@@ -106,3 +106,14 @@ skill-creator 的离线辅助工具需 Python 3 和 PyYAML（见技能内 requir
 ## 2026-10-21 Matt 写作技能纳入
 
 用户明确批准 writing-fragments、writing-shape、writing-beats、writing-for-agents 纳入，四项均归 productivity 并进入默认清单。前三项保持手动调用，writing-for-agents 正常自动选择；中文使用场景见各自使用页。固定版本、许可与必要适配见 [纳入记录](audit/writing-skills-adoption.md)。只发布仓库版本，不同步本机安装；现有同名能力仍按安装器规则报告冲突，不覆盖。此前 writing-for-agents 撤回记录保留为历史。
+
+
+## 2026-10-21 已授权统一安装
+
+本次授权来自用户在审阅完成后明确提出「将这些 skill 安装到本地」，并沿用先前仓库为主、旧版随后退出的决定。普通 install.py 仍不覆盖或移动冲突项；这次是先记录具体迁移计划、固化指纹和配置备份，再按已授权范围归档旧入口，之后调用普通安装器创建链接。
+
+实际结果：21 个链接、11 个旧目录与 5 个旧链接归档；两项外部能力保留，其他官方能力及用户工作区不变。实际重复安装创建 0 个新链接。Codex skills/list 返回全部 21 项启用并指向仓库、0 个加载错误，系统同名 skill-creator 入口为禁用；文件未删除。不能将源码链接已存在代替实际发现验证。
+
+本地运行环境和配置不进入公开源码。保留两套行情 Python 环境并通过依赖及帮助检查；UI 数据库另存运行目录并通过列表与 UX 查询；三个现有 DeepCoffee 脚本只绑定位置，没有执行项目操作。个人完整计划、改前配置、指纹和恢复说明留在本机 skill-archive；公开记录见 [安装验证](audit/verification.md)。
+
+官方依据：[本地发现、链接和启停配置](https://learn.chatgpt.com/docs/build-skills)。实际安装与发现结果优先于通用命令示例。
