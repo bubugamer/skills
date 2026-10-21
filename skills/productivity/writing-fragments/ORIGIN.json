@@ -1,0 +1,16 @@
+{
+  "source": "upstream-adapted",
+  "origin": "https://github.com/mattpocock/skills/tree/49dd158d1076134a641b33efb035946536778336/skills/in-progress/writing-fragments",
+  "source_sha256": "298b0edd23df229183630de592ed8aa4289233560f2040691f6eb77caeaad4ea",
+  "snapshot_date": "2026-10-21",
+  "upstream_commit": "49dd158d1076134a641b33efb035946536778336",
+  "adaptation": "保留经讨论的固定版本完整英文 description 与正文，末尾追加 Reply in Chinese.；移除旧宿主 disable-model-invocation 字段，调用方式映射为 Codex agents/openai.yaml。保留上游界面名称、简介与 MIT 许可，归 productivity，不恢复 in-progress；配套中文使用页、审批及场景记录独立维护。不修改本机安装。",
+  "adapted_at": "2026-10-21",
+  "adapted_entrypoint_sha256": "b9abd39524bac25e3f0f6fb2505262ab5c63c8933090cb7cc9d557d9557f80a3",
+  "upstream_agent_metadata_sha256": "81167f25ee8ea1bb4b4958f12b6702ea972ad31b05e03ec91e39fa4bae0c2641",
+  "admission": {
+    "status": "user-approved",
+    "date": "2026-10-21",
+    "basis": "用户已讨论四项 Matt 写作技能及具体场景，本次明确表示「matt关于writing的skill也算是审核通过了，也纳入到我的项目里面吧」，批准 writing-fragments、writing-shape、writing-beats、writing-for-agents 纳入。"
+  }
+}

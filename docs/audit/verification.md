@@ -683,3 +683,21 @@ skill-creator 仍 under-review，当前只提出“日常创建沿用系统，�
 | README、用途使用页与审查清单 | 已确认保留 19 项、公开场景 44 条；第一轮原有 32 项待审仍为 0 | ask-skills 单列体系新增，Matt 36 项仍属于第二批 |
 
 未运行独立模型评测或测量路由准确率。本次检查验证的是准入记录、生成清单及安装边界，不宣称技能选择效果已被实测。
+
+
+## 2026-10-21 Matt 四项写作技能获准纳入
+
+用户明确批准先前讨论的 writing-fragments、writing-shape、writing-beats、writing-for-agents 加入。采用已审阅提交 49dd158d1076134a641b33efb035946536778336；英文正文保留，追加 Reply in Chinese.，仅做必要的 Codex 调用适配。纳入范围及具体取舍见 [本次记录](writing-skills-adoption.md)。
+
+| 实际输入或检查 | 实际结果 | 覆盖范围 |
+| --- | --- | --- |
+| GitHub API 获取四个入口、上游 UI 配置、SKILL-MECHANICS.md 和 MIT；对照此前记录 | 四个入口及配套说明的五个原始指纹全部一致 | 使用的是已讨论快照，未自动引入新版本 |
+| 逐字节比较四个适配入口、许可及上游 UI | 入口仅移除旧宿主调用字段并在末尾追加中文回复；MIT 字节一致；界面名称和简介保持 | 保留上游英文方法与出处，没有正文简化 |
+| 核对 writing-for-agents 配套说明的原文及改后指纹 | 两者均与 ORIGIN.json 一致；调用机制和路由段按 Codex 映射 | 主体规则保留，未把旧宿主字段作为 Codex 配置要求 |
+| 临时目标只安装四项写作技能 | 恰好四个链接指向仓库源码，许可及配套引用可读 | 前三项 allow_implicit_invocation=false，writing-for-agents=true；UI 名称与默认调用提示可用 |
+| quick_validate.py 分别检查四项 | 4/4 通过 | 基本格式，不证明写作质量 |
+| validate.py、smoke_test.py、sync_catalog.py --check、git diff --check | 全部通过 | 23 个条目、21 个源码及发布项；八种准入反例、安装保护与原有 63 项定向工具测试继续通过 |
+| 清单分区逐项计数 | 保留 23、第一轮处理 32、第一轮待审 0；第二批剩余 32=方法比较 2+其余候选 30；使用场景 52 | 第二批本次四项、teach、wait-what 和 ask-skills 分开计数 |
+| 157 个既有技能文件指纹对照 | 151 个保持；仅 productivity 导航、ask-skills 来源／场景／生成推荐、writing-styles 和 skill-creator 来源说明共六个文件改变 | 原有入口、脚本、个人文风及调用配置保持，新技能之外没有重写其他能力 |
+
+没有执行额外模型评测、代理任务、真实写作会话或自动触发率测量；十二条新增行为场景只是定义。隔离安装不改变用户本机安装，后续统一迁移仍未执行。

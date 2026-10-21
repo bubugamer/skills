@@ -25,7 +25,7 @@
 | find-skills | productivity | 已确认外部保留 | 外部发现工具，与 ask-skills 的已有能力推荐分工；候选仍逐项确认，两处安装当前不处理。见 [确认](find-skills-review.md)。 | ask-skills |
 | deep-research | productivity | 已确认保留并整改 | 方法参考第三方，已为 Codex 独立重写；精简入口、三篇参考和记录工具，不纳入上游评分器，见 [定稿](deep-research-review.md)。 | read、wiki、writing-styles；Matt research 仍为候选 |
 | ui-ux-pro-max | engineering | 已确认保留并整改 | 个人偏好留在 skill；仓库新增短入口及数据／平台、保存适配，外部引擎和资料不复制，见 [定稿](ui-ux-pro-max-review.md)。 | 项目设计系统；Matt prototype 仍为候选 |
-| skill-creator | engineering | 已确认保留并整改 | 用户最终确认创建与评测同属一个入口；仓库独立重写入口、四篇参考及工具，修正失败统计，排除旧打包器与嵌套包；见 [定稿](skill-creator-review.md)。 | 系统同名能力留待统一迁移；Matt writing-for-agents 仍为候选 |
+| skill-creator | engineering | 已确认保留并整改 | 用户最终确认创建与评测同属一个入口；仓库独立重写入口、四篇参考及工具，修正失败统计，排除旧打包器与嵌套包；见 [定稿](skill-creator-review.md)。 | 系统同名能力留待统一迁移；writing-for-agents 已确认纳入，负责指令表达 |
 | cloudflare-deploy | 官方能力，不收录 | 按用户规则跳过 | 来源登记为 OpenAI 官方，入口与原盘点一致；移出个人集合，本机安装保持。见 [处理记录](openai-official-exclusions.md)。 | 不重复维护官方实现 |
 | gh-address-comments | 官方能力，不收录 | 按用户规则跳过 | 来源登记为 OpenAI 官方，入口与原盘点一致；移出个人集合，本机安装保持。见 [处理记录](openai-official-exclusions.md)。 | 不重复维护官方实现 |
 | gh-fix-ci | 官方能力，不收录 | 按用户规则跳过 | 来源登记为 OpenAI 官方，入口与原盘点一致；移出个人集合，本机安装保持。见 [处理记录](openai-official-exclusions.md)。 | 不重复维护官方实现 |
@@ -72,3 +72,5 @@
 2026-10-20 第一轮已全部确认处理：原有 17 项保留、brief 迁出 1 项、OpenAI 官方跳过 14 项，共 32 项。teach 为提前确认的新增能力，保留集合共 18 项；ask-skills 另列体系维护，Matt 36 项候选留待第二批。
 
 2026-10-20 后续确认：用户明确批准体系新增的 ask-skills 加入，当前已确认保留 19 项；该入口不属于原有 32 项，第一轮计数保持。原先提前纳入的遗漏及统一准入检查见 [确认记录](ask-skills-review.md)。
+
+2026-10-21 第二批纳入更新：用户明确批准四项 Matt 写作技能，当前保留 23 项，第一轮原有 32 项计数不变，第二批剩余候选 32 项。来源和适配见 [纳入记录](writing-skills-adoption.md)。

@@ -13,6 +13,10 @@
 | [social-feed](../../docs/productivity/social-feed.md) | 读取社交时间线的结构化条目 | 默认发布 |
 | [find-skills](../../docs/productivity/find-skills.md) | 从外部技能生态寻找新能力 | 外部依赖 |
 | [deep-research](../../docs/productivity/deep-research.md) | 多来源证据研究 | 默认发布 |
+| [writing-fragments](../../docs/productivity/writing-fragments.md) | 通过访谈捕捉写作素材与片段 | 默认发布 |
+| [writing-shape](../../docs/productivity/writing-shape.md) | 将已有素材逐块组织成文章 | 默认发布 |
+| [writing-beats](../../docs/productivity/writing-beats.md) | 逐次选择叙述方向，共同推进文章 | 默认发布 |
+| [writing-for-agents](../../docs/productivity/writing-for-agents.md) | 编写清楚、按需加载的 AI 指令文档 | 默认发布 |
 | [ask-skills](../../docs/productivity/ask-skills.md) | 选择合适的 skill | 默认发布 |
 
 按用途归类；用户审阅状态、已知问题和默认发布设置分别记录，目录存在不表示已经审阅通过。

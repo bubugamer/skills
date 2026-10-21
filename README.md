@@ -8,7 +8,7 @@
 
 ## 按场景选技能
 
-以下覆盖已确认保留的 19 个技能、44 个代表场景。待审技能与 Matt 候选继续记录在[分批审查清单](docs/audit/review-checklist.md)，审阅确认后补入此表。brief 已迁到独立定时任务项目。
+以下覆盖已确认保留的 23 个技能、52 个代表场景。待审技能与 Matt 候选继续记录在[分批审查清单](docs/audit/review-checklist.md)，审阅确认后补入此表。brief 已迁到独立定时任务项目。
 
 | 具体场景 | 你可以怎样提出要求 | 用哪个 skill | AI 会怎样协助 | 最终产出 |
 | --- | --- | --- | --- | --- |
@@ -54,12 +54,20 @@
 | 想知道技能修改是否改善真实任务结果 | `$skill-creator` 比较这个技能的新旧版本，先给出真实用例、评价标准和执行范围。 | [skill-creator](docs/engineering/skill-creator.md) | 定义可比基线与任务结果，记录实际输出和失败，依据匹配样本及证据说明差异。 | 可复核的任务对照、限制和改进建议。 |
 | 技能经常误触发或漏触发 | `$skill-creator` 检查这个技能的描述边界，先预览探针，不启动模型调用。 | [skill-creator](docs/engineering/skill-creator.md) | 准备正向与近似反例，预览调用范围，获准执行后区分有效结果、超时和错误，再提出描述修改。 | 触发覆盖说明及有依据的描述建议。 |
 | 需要人工比较已有测试输出 | `$skill-creator` 用已有结果生成新的本地评阅页，保留我的旧反馈。 | [skill-creator](docs/engineering/skill-creator.md) | 展示实际输出、判断依据、错误和覆盖范围，提供本地反馈预览，并保留已有文件。 | 可查看和填写反馈的本地评阅页面。 |
+| 脑中有想法，尚未想好文章怎么写 | `$writing-fragments` 采访我这次项目经历，把有价值的表达记到 fragments.md，先不列提纲。 | [writing-fragments](docs/productivity/writing-fragments.md) | 通过追问捕捉经历、观点、原话和细节，及时保存为素材片段。 | 一份可继续积累的素材文件。 |
+| 边讨论边修改已保存的素材 | `$writing-fragments` 继续收集素材，刚才那两个片段合并一下，保留我在文件里做的修改。 | [writing-fragments](docs/productivity/writing-fragments.md) | 每次写入前读取现状，按要求追加或修改指定片段，保护其他编辑。 | 更新后的素材集合，保留用户已有修改。 |
+| 素材已经齐了，想共同组织成一篇文章 | `$writing-shape` 读取 fragments.md，面向产品经理写到 article.md，先给我几个开头选择。 | [writing-shape](docs/productivity/writing-shape.md) | 先明确读者基础，比较不同主张的开头，再按读者需要逐块推进。 | 从既有素材形成的独立文章。 |
+| 文章推进到一半，发现缺少关键例子 | `$writing-shape` 继续这篇文章；素材里没有案例时指出缺口，原素材不要修改。 | [writing-shape](docs/productivity/writing-shape.md) | 明确所缺证据或例子，请用户补充或删去相关部分，保留原素材与已有编辑。 | 有清楚材料边界、可继续共写的文章。 |
+| 希望边写边选择文章接下来怎么展开 | `$writing-beats` 根据 notes.md 写到 article.md，每次给几个下一步方向，让我选择后再写。 | [writing-beats](docs/productivity/writing-beats.md) | 比较不同起点与后续叙述动作，说明每个选择铺垫什么，再只保存选定的一步。 | 逐步共写、由用户决定方向的文章。 |
+| 写到中途想回退，换一种讲述路线 | `$writing-beats` 回到第三步，换一条叙述路线，保留我在其他地方的修改。 | [writing-beats](docs/productivity/writing-beats.md) | 读取当前稿件，修改指定位置，重新检查后续概念的铺垫与可选方向。 | 按新路线继续的稿件及下一步选择。 |
+| 给 AI 的说明太长，关键流程埋在细节里 | `$writing-for-agents` 整理这份 AGENTS.md，改善层级与引用条件，保留实际规则。 | [writing-for-agents](docs/productivity/writing-for-agents.md) | 区分主流程和按需参考，明确何时读取外部资料，去掉重复与无效指令。 | 更清楚、可维护的 AI 指令文档。 |
+| 技能拆出参考文件后，担心 AI 不会去读 | `$writing-for-agents` 检查这个 SKILL.md 的引用条件和完成标准，按当前 Codex 规则调整。 | [writing-for-agents](docs/productivity/writing-for-agents.md) | 核对触发分支、引用条件与完成标准；编写技能时读取 mechanics，并采用 Codex 调用配置。 | 引用可定位、职责明确的技能说明。 |
 | 不确定已有技能里该选哪一个 | `$ask-skills` 我想理解一篇文章并整理阅读笔记，应该用哪个技能？ | [ask-skills](docs/productivity/ask-skills.md) | 从当前路由给出首选、必要备选、选择理由、输入条件和一句可直接使用的请求。 | 明确的技能建议和下一步用法。 |
 | 几个技能用途接近，想先确认分工 | `$ask-skills` 比较 read、teach 和 wiki，告诉我当前任务该用哪个，先只推荐。 | [ask-skills](docs/productivity/ask-skills.md) | 结合用户意图及已有选择解释边界，区分已收录能力、外部依赖与候选，保留手动调用要求。 | 针对当前任务的选择依据，不自动启动目标技能。 |
 
 ## 当前集合
 
-最初盘点的 32 项原有技能已完成第一轮处理，待审 0 项；Matt 候选放第二批考虑是否引入，ask-skills 单列为体系维护项。当前维护 17 个源码技能（其中 1 项上游适配）及 2 项外部依赖说明；默认发布 17 项。目录按用途分类，审阅和已知问题单独记录。进度见 [分批审查清单](docs/audit/review-checklist.md)，名称与已有安装迁移见 [安装说明](docs/installation.md)。
+最初盘点的 32 项原有技能已完成第一轮处理，待审 0 项；Matt 候选放第二批考虑是否引入，ask-skills 单列为体系维护项。当前维护 21 个源码技能（其中 5 项上游适配）及 2 项外部依赖说明；默认发布 21 项。目录按用途分类，审阅和已知问题单独记录。进度见 [分批审查清单](docs/audit/review-checklist.md)，名称与已有安装迁移见 [安装说明](docs/installation.md)。
 
 | 分类 | 作用 | 目录 |
 | --- | --- | --- |
@@ -102,6 +110,10 @@
 | [deep-research](docs/productivity/deep-research.md) | 多来源证据研究 | `$deep-research` |
 | [ui-ux-pro-max](docs/engineering/ui-ux-pro-max.md) | 设计资料库与风格建议 | `$ui-ux-pro-max` |
 | [skill-creator](docs/engineering/skill-creator.md) | 创建、改进与评测技能 | `$skill-creator` |
+| [writing-fragments](docs/productivity/writing-fragments.md) | 通过访谈捕捉写作素材与片段 | `$writing-fragments` |
+| [writing-shape](docs/productivity/writing-shape.md) | 将已有素材逐块组织成文章 | `$writing-shape` |
+| [writing-beats](docs/productivity/writing-beats.md) | 逐次选择叙述方向，共同推进文章 | `$writing-beats` |
+| [writing-for-agents](docs/productivity/writing-for-agents.md) | 编写清楚、按需加载的 AI 指令文档 | `$writing-for-agents` |
 | [ask-skills](docs/productivity/ask-skills.md) | 选择合适的 skill | `$ask-skills` |
 
 ## 维护

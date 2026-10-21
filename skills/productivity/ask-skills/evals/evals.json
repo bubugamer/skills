@@ -38,11 +38,20 @@
     },
     {
       "id": 5,
-      "prompt": "用户说想用原 writing-master 按 bbs 审稿，已确认的正式技能现在叫 writing-styles。Matt 的 writing-shape 仍只有候选记录。",
-      "expected_output": "推荐 writing-styles 并说明旧名已更换；按审稿要求在会话提建议，不将 writing-shape 当作已安装能力。",
+      "prompt": "用户说想用原 writing-master 按 bbs 审稿，正式技能现在叫 writing-styles。Matt 的 writing-shape 已确认纳入并保持手动调用。",
+      "expected_output": "推荐 writing-styles 并说明旧名已更换；writing-shape 负责从已有素材共同成文，不替代本次只审稿的意图。",
       "expectations": [
         "推荐名称来自当前 routes.md。",
-        "区分已确认个人文风入口与 Matt 阶段候选。"
+        "区分个人文风审校与已获准的阶段写作方法，不自动启动手动技能。"
+      ]
+    },
+    {
+      "id": 6,
+      "prompt": "用户想先探索想法并持续记录片段，尚不想组织成文章；四项 Matt 写作技能已确认纳入。",
+      "expected_output": "推荐手动使用 writing-fragments，说明素材保存路径需求，不先启动 shaping 或 beats 共写。",
+      "expectations": [
+        "说明当前推荐对应的任务阶段。",
+        "只给建议和用法，不安装或运行目标任务。"
       ]
     }
   ]

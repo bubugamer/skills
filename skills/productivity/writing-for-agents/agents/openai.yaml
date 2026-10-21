@@ -1,0 +1,6 @@
+interface:
+  display_name: "Writing for Agents"
+  short_description: "Write documents agents consume"
+  default_prompt: "Use $writing-for-agents to help with this task: 用 writing-for-agents 检查这个 SKILL.md 与配套参考，改善引用条件、层级和重复规则。"
+policy:
+  allow_implicit_invocation: true

@@ -1,0 +1,6 @@
+interface:
+  display_name: "Writing Fragments"
+  short_description: "Mine raw writing fragments"
+  default_prompt: "Use $writing-fragments to help with this task: 用 writing-fragments 采访我想写的主题，把片段追加到 fragments.md，先不组织文章。"
+policy:
+  allow_implicit_invocation: false

@@ -162,6 +162,7 @@ python3 scripts/smoke_test.py
             continue
         implicit = not d.get('manual', False)
         interface = {'display_name': d['name'], 'short_description': ('Codex workflow: ' + d['purpose'] + '; check results')[:64], 'default_prompt': 'Use $' + d['name'] + ' to help with this task: ' + d['example']}
+        interface.update(d.get('interface', {}))
         result[d['path'] + '/agents/openai.yaml'] = 'interface:\n' + ''.join('  ' + k + ': ' + json.dumps(v, ensure_ascii=False) + '\n' for k, v in interface.items()) + 'policy:\n  allow_implicit_invocation: ' + str(implicit).lower() + '\n'
     return {p: s.rstrip() + '\n' for p, s in result.items()}
 

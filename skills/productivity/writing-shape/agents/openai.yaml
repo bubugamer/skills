@@ -1,0 +1,6 @@
+interface:
+  display_name: "Writing Shape"
+  short_description: "Shape raw material into an article"
+  default_prompt: "Use $writing-shape to help with this task: 用 writing-shape 读取 fragments.md，和我选好开头，再逐段写入 article.md。"
+policy:
+  allow_implicit_invocation: false

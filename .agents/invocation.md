@@ -19,3 +19,5 @@ wiki 的旧名 llm-wiki 同样属于安装冲突。用户已确认更名与本�
 writing-styles 的旧名 writing-master 同样属于安装冲突。用户已确认多文风整改与更名，完整备份后迁移，保持原有自动选择设置；新旧名称不同时作为可发现入口。
 
 skill-creator 的创建、维护与评测共用一个入口，评测按任务需要选择。仓库版、系统入口与本机旧版本存在同名可能；最终统一迁移时核对真实发现来源，选定一个个人使用入口，普通安装遇到已有同名目录仍报告冲突，不替换用户原安装。当前不执行这次迁移。
+
+2026-10-21 Matt 四项写作技能获准纳入 productivity：writing-fragments、writing-shape、writing-beats 保持上游手动调用设置；writing-for-agents 保持正常自动选择。入口保留英文说明并追加中文回复要求；旧宿主调用字段由 agents/openai.yaml 承接，配套 mechanics 文档按当前 Codex 规则维护。用户按本次写作需要选择阶段；与 writing-styles 的用途组合不代表自动串联全部技能。

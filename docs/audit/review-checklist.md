@@ -1,6 +1,6 @@
 # 分批技能审查清单
 
-更新日期：2026-10-20。**第一轮原有技能已全部确认处理。** Matt 的其他技能放在第二批，届时重点判断是否值得引入。
+更新日期：2026-10-21。**第一轮原有技能已全部确认处理。** Matt 第二批已确认纳入四项写作技能，剩余候选继续按实际用途评估。
 
 2026-10-20 范围补充：当前以仓库版本为审阅与整改对象；本机旧安装统一处理留待全部技能梳理完成后进行，见 [范围约定](../../SCOPE.md)。
 
@@ -9,12 +9,12 @@
 | 顺序 | 范围 | 当前进度 | 后续处理 |
 | --- | --- | --- | --- |
 | 第一轮：当前重点 | 原有 32 个不同技能 | 已确认处理 32 项，待审 0 项 | 本轮收尾完成；已知限制继续记录，安装迁移另行处理。 |
-| 第二批：稍后扩展 | Matt 尚未引入的 36 个候选 | 尚未启动整批引入评估；其中 6 项只做过方法比较 | 原有集合审完后，再判断是否值得引入。 |
+| 第二批：扩展 | 原有 36 项 Matt 候选 | 本次明确纳入 4 项写作技能，余 32 项；其中 2 项只做过方法比较 | 余下候选逐项确认后才能纳入。 |
 | 体系维护：单列 | ask-skills | 用户已明确批准加入，保持手动推荐入口 | 不计入原有技能的第一轮待审数量。 |
 
 teach 已经用户明确确认引入，单独保留，不算第一轮原有技能。wait-what 原本就在本地集合，也来自 Matt，归第一轮审阅，第二批不重复列入。
 
-## 已审阅并保留在用途目录：19 项
+## 已审阅并保留在用途目录：23 项
 
 | Skill | 当前目录 | 来源或角色 |
 | --- | --- | --- |
@@ -37,13 +37,17 @@ teach 已经用户明确确认引入，单独保留，不算第一轮原有技�
 | `ui-ux-pro-max` | engineering | 个人设计规则与 Codex 适配入口；第三方资料和引擎仍外置。 |
 | `skill-creator` | engineering | 创建、维护与评测统一入口；按需比较任务、检查触发和评阅结果。 |
 | `ask-skills` | productivity | 体系新增入口；用户明确批准加入，手动推荐已有技能，不执行任务。 |
+| `writing-fragments` | productivity | Matt 已确认引入；手动访谈与素材片段记录。 |
+| `writing-shape` | productivity | Matt 已确认引入；手动从固定素材逐块成文。 |
+| `writing-beats` | productivity | Matt 已确认引入；手动逐次选择叙述方向共写。 |
+| `writing-for-agents` | productivity | Matt 已确认引入；AI 指令文档的表达、层级与引用方法。 |
 
 其他已确认处理：
 
 - **brief**：迁到定时任务项目，方法与消息源已保存，调度尚未实现。
 - **OpenAI 官方 14 项**：imagegen、pdf 已先前确认沿用官方；本轮另按用户规则直接跳过 `cloudflare-deploy`、`gh-address-comments`、`gh-fix-ci`、`jupyter-notebook`、`openai-docs`、`playwright`、`playwright-interactive`、`screenshot`、`security-best-practices`、`security-threat-model`、`transcribe`、`vercel-deploy`。全部不纳入个人集合，仅保留 [处理依据](openai-official-exclusions.md)，本机安装暂不处理。
 
-第一轮已确认处理 32 项：原有保留 17 项、brief 迁出 1 项、官方跳过 14 项。提前确认的 teach 和体系新增 ask-skills 不计入原有 32 项，因此个人集合已审阅保留共 19 项，其中 agent-browser 和 find-skills 仅登记外部工具，不包含可发布源码。批量跳过依据用户授权与来源，不表示已完成这些技能的逐项内容审阅或行为验证。
+第一轮已确认处理 32 项：原有保留 17 项、brief 迁出 1 项、官方跳过 14 项。提前确认的 teach、体系新增 ask-skills 及第二批四项写作技能不计入原有 32 项，因此个人集合已审阅保留共 23 项，其中 agent-browser 和 find-skills 仅登记外部工具，不包含可发布源码。批量跳过依据用户授权与来源，不表示已完成这些技能的逐项内容审阅或行为验证。
 
 ## 第一轮已确认处理：32 项
 
@@ -92,11 +96,22 @@ teach 已经用户明确确认引入，单独保留，不算第一轮原有技�
 | --- | --- | --- | --- |
 | `teach` | Matt 候选／已确认引入 | 已读原版并讨论用途，用户明确同意纳入；已按要求恢复完整英文正文，独立、手动调用。 | [独立纳入与英文恢复](reading-learning-review.md) |
 
-## 第二批 Matt 候选：36 项
+## 第二批已确认纳入：4 项
 
-此处是之后的扩展候选，不合并进第一轮的 1 项待审。参考快照为提交 49dd158d1076134a641b33efb035946536778336，原作者共 38 项；扣除已引入的 teach 与归第一轮的 wait-what 后，余下 36 项。作者原有分类只表示上游位置，不作为本仓库的目录规则。
+用户本次明确将先前比较的四项 Matt 写作技能视为审阅通过并批准加入，固定版本、使用场景与验证范围见 [纳入记录](writing-skills-adoption.md)。
 
-### 已做过相邻方法比较：6 项
+| Skill | 目录 | 调用方式 |
+| --- | --- | --- |
+| `writing-fragments` | productivity | 手动调用 |
+| `writing-shape` | productivity | 手动调用 |
+| `writing-beats` | productivity | 手动调用 |
+| `writing-for-agents` | productivity | 正常自动选择，也可手动指定 |
+
+## 第二批 Matt 剩余候选：32 项
+
+第一轮已无待审。原第二批 36 项候选中，四项 writing-* 已由用户明确批准纳入，此处仅列剩余 32 项，不合并进第一轮计数。参考快照仍为 49dd158d1076134a641b33efb035946536778336：作者共 38 项，已采用 teach、wait-what 及四项写作技能，共 6 项。作者分类只表示上游位置，不作为本仓库目录规则。
+
+### 已做过相邻方法比较：2 项
 
 这些讨论不表示已决定引入。
 
@@ -104,10 +119,6 @@ teach 已经用户明确确认引入，单独保留，不算第一轮原有技�
 | --- | --- | --- | --- |
 | `wayfinder` | Matt 候选 | 只与 remind 比较用途和边界；尚未决定是否独立纳入。 | [上游](https://github.com/mattpocock/skills/tree/49dd158d1076134a641b33efb035946536778336/skills/engineering/wayfinder) |
 | `loop-me` | Matt 候选 | 只与 remind 比较用途和边界；尚未决定是否独立纳入。 | [上游](https://github.com/mattpocock/skills/tree/49dd158d1076134a641b33efb035946536778336/skills/in-progress/loop-me) |
-| `writing-for-agents` | Matt 候选 | 已核对原文与 SKILL-MECHANICS，比较引用条件、按需加载、去重与拆分原则；仅借鉴，未确认导入。 | [上游](https://github.com/mattpocock/skills/tree/49dd158d1076134a641b33efb035946536778336/skills/productivity/writing-for-agents) |
-| `writing-fragments` | Matt 候选 | 已读原文：素材探索与片段记录，可补足个人写作助手前期方法；未确认导入。 [对照](writing-master-matt-comparison.md) | [上游](https://github.com/mattpocock/skills/blob/49dd158d1076134a641b33efb035946536778336/skills/in-progress/writing-fragments/SKILL.md) |
-| `writing-shape` | Matt 候选 | 已读原文：文章主张、读者基础、开头与逐块成文；建议借鉴方法，未确认导入。 [对照](writing-master-matt-comparison.md) | [上游](https://github.com/mattpocock/skills/blob/49dd158d1076134a641b33efb035946536778336/skills/in-progress/writing-shape/SKILL.md) |
-| `writing-beats` | Matt 候选 | 已读原文：按叙述动作选择下一方向，一个动作可跨多段；可选共写方式，未确认导入。 [对照](writing-master-matt-comparison.md) | [上游](https://github.com/mattpocock/skills/blob/49dd158d1076134a641b33efb035946536778336/skills/in-progress/writing-beats/SKILL.md) |
 
 ### 其余扩展候选：30 项
 

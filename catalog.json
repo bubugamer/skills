@@ -204,16 +204,16 @@
       "category": "productivity",
       "purpose": "应用和维护多种文风，写作、润色与审稿",
       "decision": "keep",
-      "reason": "用户确认保留个人文风层并更名 writing-styles。共用语言检查与原稿处理规则，按需选择 bbs 或 research-analysis；支持后续增加文风。素材探索和成文组织的方法另行选择，Matt 写作阶段技能仍为第二批候选。详见 [整改与取舍](../audit/writing-master-review.md)。",
+      "reason": "用户确认保留个人文风层并更名 writing-styles。共用语言检查与原稿处理规则，按需选择 bbs 或 research-analysis；支持后续增加文风。素材探索和成文组织的方法另行选择，Matt 的 writing-fragments、writing-shape、writing-beats 已经用户确认作为独立写作过程技能纳入。详见 [整改与取舍](../audit/writing-master-review.md)。",
       "example": "按 bbs 风格把这些项目经历写成帖子。",
       "done": "输出符合所选文风与请求形式；保留事实、来源、立场和确定程度；完成基础语言检查；文件修改仅限已授权范围",
-      "compare": "read（理解材料）、wiki（长期知识维护）、deep-research（多来源调查与取证）；Matt 的 writing-fragments／writing-shape／writing-beats 仍为第二批候选，未引入",
+      "compare": "writing-fragments（素材探索）、writing-shape（成文组织）、writing-beats（逐步选路共写）；writing-styles 负责个人文风与审稿，按用户需要组合",
       "path": "skills/productivity/writing-styles",
       "source": "local-customization",
       "origin": "本地定制；用户要求创建，Codex 根据用户原稿与写作反馈整理并扩充",
       "source_sha256": "1e1a2f9938eef176dfd3d8df9b3edaa4ac189e6374e5c21d782f0099b18d5346",
       "dependencies": [],
-      "updated_at": "2026-10-19",
+      "updated_at": "2026-10-21",
       "review": {
         "status": "user-approved",
         "started_at": "2026-10-19",
@@ -751,13 +751,13 @@
       "reason": "用户最终确认创建与评测统一保留在 skill-creator，取消独立评测入口。参考 Anthropic 与本地 Codex 改写的方法，为仓库独立编写短英文入口、四篇参考与评测辅助工具；创建、任务对比、触发检查按需求选择。错误与超时单列，不完整用例不通过，缺失测量不填零。十五项离线测试及评阅页面反馈交互通过，未进行真实模型效果测量。详见 [定稿记录](../audit/skill-creator-review.md)。本机旧安装留待统一迁移。",
       "example": "用 skill-creator 改进这个技能，保留原用途，并根据实际需要检查新旧版本的结果。",
       "done": "按用户要求交付新建或改进后的技能及配套资料；实际评测时给出结果、证据和限制，错误单列，不把文件检查说成行为改进。",
-      "compare": "仓库版 skill-creator 将创建、维护和评测放在同一入口；本机旧版与系统同名能力留待统一迁移时处理；Matt writing-for-agents 仍为第二批候选",
+      "compare": "仓库版 skill-creator 将创建、维护和评测放在同一入口；本机旧版与系统同名能力留待统一迁移时处理；writing-for-agents 已确认纳入，专注 AI 指令表达与信息组织",
       "source": "local-customization",
       "origin": "https://github.com/anthropics/skills/tree/main/skills/skill-creator",
       "source_sha256": "e8b2f920eeec4cd74be001b71a02ae289210b7722d27bcfc869acaad8ac6d3ea",
       "dependencies": [],
       "inputs": "目标任务或已有技能、预期结果、触发场景与用户约束；评测另需实际用例、标准及比较范围。离线工具需 Python 3 与 PyYAML，实时触发探针另需可用 Codex CLI；默认只预览，不更换现有安装",
-      "updated_at": "2026-10-20",
+      "updated_at": "2026-10-21",
       "review": {
         "status": "user-approved",
         "started_at": "2026-10-20",
@@ -795,6 +795,190 @@
           "prompt": "$skill-creator 用已有结果生成新的本地评阅页，保留我的旧反馈。",
           "assistance": "展示实际输出、判断依据、错误和覆盖范围，提供本地反馈预览，并保留已有文件。",
           "result": "可查看和填写反馈的本地评阅页面。"
+        }
+      ]
+    },
+    {
+      "name": "writing-fragments",
+      "category": "productivity",
+      "purpose": "通过访谈捕捉写作素材与片段",
+      "decision": "keep",
+      "source": "upstream-adapted",
+      "origin": "https://github.com/mattpocock/skills/tree/49dd158d1076134a641b33efb035946536778336/skills/in-progress/writing-fragments",
+      "source_sha256": "298b0edd23df229183630de592ed8aa4289233560f2040691f6eb77caeaad4ea",
+      "path": "skills/productivity/writing-fragments",
+      "manual": true,
+      "interface": {
+        "display_name": "Writing Fragments",
+        "short_description": "Mine raw writing fragments"
+      },
+      "dependencies": [],
+      "release": true,
+      "release_reason": "用户明确批准 Matt 写作技能纳入，沿用原调用方式并进入默认清单；本机安装留待统一处理。",
+      "updated_at": "2026-10-21",
+      "reason": "用户已明确确认纳入，沿用先前讨论的 Matt 固定版本英文正文，末尾追加 Reply in Chinese.。调用标记和必要宿主机制按 Codex 映射，保留作者许可；中文使用说明独立维护。见 [纳入记录](../audit/writing-skills-adoption.md)。",
+      "example": "用 writing-fragments 采访我想写的主题，把片段追加到 fragments.md，先不组织文章。",
+      "done": "捕捉可用原话、观点、细节和未完成想法，追加到选定素材文件；保存前读取现状并保留用户修改，不提前安排文章结构。",
+      "compare": "writing-shape 和 writing-beats 负责把固定素材写成文章；writing-styles 负责个人文风与审稿",
+      "inputs": "用户想写的主题与已出现的表达；用户指定的素材 Markdown 路径，缺少时询问一次并沿用",
+      "review": {
+        "status": "user-approved",
+        "admission_status": "user-approved",
+        "approved_at": "2026-10-21",
+        "approval_basis": "用户已讨论四项 Matt 写作技能及具体场景，本次明确表示「matt关于writing的skill也算是审核通过了，也纳入到我的项目里面吧」，批准 writing-fragments、writing-shape、writing-beats、writing-for-agents 纳入。",
+        "audit": "docs/audit/writing-skills-adoption.md",
+        "verified_scope": "核对先前审阅快照指纹、英文正文差异、引用及许可、Codex 调用设置和隔离安装。场景定义不代表已执行模型效果评测。"
+      },
+      "usage_scenarios": [
+        {
+          "situation": "脑中有想法，尚未想好文章怎么写",
+          "prompt": "$writing-fragments 采访我这次项目经历，把有价值的表达记到 fragments.md，先不列提纲。",
+          "assistance": "通过追问捕捉经历、观点、原话和细节，及时保存为素材片段。",
+          "result": "一份可继续积累的素材文件。"
+        },
+        {
+          "situation": "边讨论边修改已保存的素材",
+          "prompt": "$writing-fragments 继续收集素材，刚才那两个片段合并一下，保留我在文件里做的修改。",
+          "assistance": "每次写入前读取现状，按要求追加或修改指定片段，保护其他编辑。",
+          "result": "更新后的素材集合，保留用户已有修改。"
+        }
+      ]
+    },
+    {
+      "name": "writing-shape",
+      "category": "productivity",
+      "purpose": "将已有素材逐块组织成文章",
+      "decision": "keep",
+      "source": "upstream-adapted",
+      "origin": "https://github.com/mattpocock/skills/tree/49dd158d1076134a641b33efb035946536778336/skills/in-progress/writing-shape",
+      "source_sha256": "f5e6c57bdd85178ace4a260c92f46da6b64ddee18215b461d875739c68976f72",
+      "path": "skills/productivity/writing-shape",
+      "manual": true,
+      "interface": {
+        "display_name": "Writing Shape",
+        "short_description": "Shape raw material into an article"
+      },
+      "dependencies": [],
+      "release": true,
+      "release_reason": "用户明确批准 Matt 写作技能纳入，沿用原调用方式并进入默认清单；本机安装留待统一处理。",
+      "updated_at": "2026-10-21",
+      "reason": "用户已明确确认纳入，沿用先前讨论的 Matt 固定版本英文正文，末尾追加 Reply in Chinese.。调用标记和必要宿主机制按 Codex 映射，保留作者许可；中文使用说明独立维护。见 [纳入记录](../audit/writing-skills-adoption.md)。",
+      "example": "用 writing-shape 读取 fragments.md，和我选好开头，再逐段写入 article.md。",
+      "done": "读取完整素材，明确读者基础与开头主张，逐块形成连贯文章；原素材保持，写入前读取现状，缺失材料明确指出，由用户决定结束。",
+      "compare": "writing-fragments 负责素材探索；writing-beats 提供另一种逐次选路共写；writing-styles 负责文风",
+      "inputs": "完整的素材 Markdown 文件、目标读者及已知概念、独立文章输出路径；正文逐块协商形成",
+      "review": {
+        "status": "user-approved",
+        "admission_status": "user-approved",
+        "approved_at": "2026-10-21",
+        "approval_basis": "用户已讨论四项 Matt 写作技能及具体场景，本次明确表示「matt关于writing的skill也算是审核通过了，也纳入到我的项目里面吧」，批准 writing-fragments、writing-shape、writing-beats、writing-for-agents 纳入。",
+        "audit": "docs/audit/writing-skills-adoption.md",
+        "verified_scope": "核对先前审阅快照指纹、英文正文差异、引用及许可、Codex 调用设置和隔离安装。场景定义不代表已执行模型效果评测。"
+      },
+      "usage_scenarios": [
+        {
+          "situation": "素材已经齐了，想共同组织成一篇文章",
+          "prompt": "$writing-shape 读取 fragments.md，面向产品经理写到 article.md，先给我几个开头选择。",
+          "assistance": "先明确读者基础，比较不同主张的开头，再按读者需要逐块推进。",
+          "result": "从既有素材形成的独立文章。"
+        },
+        {
+          "situation": "文章推进到一半，发现缺少关键例子",
+          "prompt": "$writing-shape 继续这篇文章；素材里没有案例时指出缺口，原素材不要修改。",
+          "assistance": "明确所缺证据或例子，请用户补充或删去相关部分，保留原素材与已有编辑。",
+          "result": "有清楚材料边界、可继续共写的文章。"
+        }
+      ]
+    },
+    {
+      "name": "writing-beats",
+      "category": "productivity",
+      "purpose": "逐次选择叙述方向，共同推进文章",
+      "decision": "keep",
+      "source": "upstream-adapted",
+      "origin": "https://github.com/mattpocock/skills/tree/49dd158d1076134a641b33efb035946536778336/skills/in-progress/writing-beats",
+      "source_sha256": "a96abafa2372eede8267d770138b322d6125da8adaa7ccf0a5e08e4ee13ee71e",
+      "path": "skills/productivity/writing-beats",
+      "manual": true,
+      "interface": {
+        "display_name": "Writing Beats",
+        "short_description": "Assemble raw material into beats"
+      },
+      "dependencies": [],
+      "release": true,
+      "release_reason": "用户明确批准 Matt 写作技能纳入，沿用原调用方式并进入默认清单；本机安装留待统一处理。",
+      "updated_at": "2026-10-21",
+      "reason": "用户已明确确认纳入，沿用先前讨论的 Matt 固定版本英文正文，末尾追加 Reply in Chinese.。调用标记和必要宿主机制按 Codex 映射，保留作者许可；中文使用说明独立维护。见 [纳入记录](../audit/writing-skills-adoption.md)。",
+      "example": "用 writing-beats 基于 notes.md 写到 article.md，每次让我选择下一个叙述动作。",
+      "done": "明确读者基础，每次提供可达的叙述方向，只写入用户选定的一步并更新已铺垫概念；保留修改，文章在叙述完成时结束。",
+      "compare": "writing-shape 更侧重主张和逐块成文；writing-beats 每一步比较不同叙述方向；writing-styles 负责文风",
+      "inputs": "已有素材 Markdown 文件、读者基础和文章输出路径；用户逐次选择叙述方向",
+      "review": {
+        "status": "user-approved",
+        "admission_status": "user-approved",
+        "approved_at": "2026-10-21",
+        "approval_basis": "用户已讨论四项 Matt 写作技能及具体场景，本次明确表示「matt关于writing的skill也算是审核通过了，也纳入到我的项目里面吧」，批准 writing-fragments、writing-shape、writing-beats、writing-for-agents 纳入。",
+        "audit": "docs/audit/writing-skills-adoption.md",
+        "verified_scope": "核对先前审阅快照指纹、英文正文差异、引用及许可、Codex 调用设置和隔离安装。场景定义不代表已执行模型效果评测。"
+      },
+      "usage_scenarios": [
+        {
+          "situation": "希望边写边选择文章接下来怎么展开",
+          "prompt": "$writing-beats 根据 notes.md 写到 article.md，每次给几个下一步方向，让我选择后再写。",
+          "assistance": "比较不同起点与后续叙述动作，说明每个选择铺垫什么，再只保存选定的一步。",
+          "result": "逐步共写、由用户决定方向的文章。"
+        },
+        {
+          "situation": "写到中途想回退，换一种讲述路线",
+          "prompt": "$writing-beats 回到第三步，换一条叙述路线，保留我在其他地方的修改。",
+          "assistance": "读取当前稿件，修改指定位置，重新检查后续概念的铺垫与可选方向。",
+          "result": "按新路线继续的稿件及下一步选择。"
+        }
+      ]
+    },
+    {
+      "name": "writing-for-agents",
+      "category": "productivity",
+      "purpose": "编写清楚、按需加载的 AI 指令文档",
+      "decision": "keep",
+      "source": "upstream-adapted",
+      "origin": "https://github.com/mattpocock/skills/tree/49dd158d1076134a641b33efb035946536778336/skills/productivity/writing-for-agents",
+      "source_sha256": "551adca942227b44192edba88acd4e8db911f0121ce58ad16944ccf6a896a74a",
+      "path": "skills/productivity/writing-for-agents",
+      "manual": false,
+      "interface": {
+        "display_name": "Writing for Agents",
+        "short_description": "Write documents agents consume"
+      },
+      "dependencies": [],
+      "release": true,
+      "release_reason": "用户明确批准 Matt 写作技能纳入，沿用原调用方式并进入默认清单；本机安装留待统一处理。",
+      "updated_at": "2026-10-21",
+      "reason": "用户已明确确认纳入，沿用先前讨论的 Matt 固定版本英文正文，末尾追加 Reply in Chinese.。调用标记和必要宿主机制按 Codex 映射，保留作者许可；中文使用说明独立维护。见 [纳入记录](../audit/writing-skills-adoption.md)。",
+      "example": "用 writing-for-agents 检查这个 SKILL.md 与配套参考，改善引用条件、层级和重复规则。",
+      "done": "指令的引用条件明确、层级与完成条件清楚，同一规则只维护一处；按请求范围交付文档调整，技能调用配置使用当前 Codex 约定。",
+      "compare": "skill-creator 负责技能创建、维护与评测整体流程；writing-for-agents 负责 AI 指令的表达与信息组织；writing-styles 负责面向人的个人文风",
+      "inputs": "要创建或修改的 SKILL.md、AGENTS.md 或被引用的说明，目标用途及已有项目规则；编写技能时按指引读取配套 mechanics 文档",
+      "review": {
+        "status": "user-approved",
+        "admission_status": "user-approved",
+        "approved_at": "2026-10-21",
+        "approval_basis": "用户已讨论四项 Matt 写作技能及具体场景，本次明确表示「matt关于writing的skill也算是审核通过了，也纳入到我的项目里面吧」，批准 writing-fragments、writing-shape、writing-beats、writing-for-agents 纳入。",
+        "audit": "docs/audit/writing-skills-adoption.md",
+        "verified_scope": "核对先前审阅快照指纹、英文正文差异、引用及许可、Codex 调用设置和隔离安装。场景定义不代表已执行模型效果评测。"
+      },
+      "usage_scenarios": [
+        {
+          "situation": "给 AI 的说明太长，关键流程埋在细节里",
+          "prompt": "$writing-for-agents 整理这份 AGENTS.md，改善层级与引用条件，保留实际规则。",
+          "assistance": "区分主流程和按需参考，明确何时读取外部资料，去掉重复与无效指令。",
+          "result": "更清楚、可维护的 AI 指令文档。"
+        },
+        {
+          "situation": "技能拆出参考文件后，担心 AI 不会去读",
+          "prompt": "$writing-for-agents 检查这个 SKILL.md 的引用条件和完成标准，按当前 Codex 规则调整。",
+          "assistance": "核对触发分支、引用条件与完成标准；编写技能时读取 mechanics，并采用 Codex 调用配置。",
+          "result": "引用可定位、职责明确的技能说明。"
         }
       ]
     },
@@ -839,5 +1023,5 @@
       ]
     }
   ],
-  "updated_at": "2026-10-20"
+  "updated_at": "2026-10-21"
 }

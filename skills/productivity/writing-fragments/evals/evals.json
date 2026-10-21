@@ -1,0 +1,30 @@
+{
+  "skill_name": "writing-fragments",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "用户明确选择素材探索，已提供 fragments.md 与两段项目经历。",
+      "expected_output": "从初始表达开始捕捉片段，追加到选定文件。",
+      "expectations": [
+        "不先创建文章结构。",
+        "每次写入前读取当前文件。"
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "用户没有给保存位置，但希望开始采集想法。",
+      "expected_output": "询问一次保存位置，沿用本次会话已确认的路径。",
+      "expectations": [
+        "不发明个人绝对路径。"
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "用户在两轮讨论间手动改写素材，并要求合并最后两个片段。",
+      "expected_output": "读取最新版本，仅修改指定片段，保留其他编辑。",
+      "expectations": [
+        "素材按用户要求编辑，未获要求不改其他内容。"
+      ]
+    }
+  ]
+}

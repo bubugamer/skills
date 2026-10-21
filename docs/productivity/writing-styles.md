@@ -4,7 +4,7 @@
 
 ## 为什么保留或调整
 
-用户确认保留个人文风层并更名 writing-styles。共用语言检查与原稿处理规则，按需选择 bbs 或 research-analysis；支持后续增加文风。素材探索和成文组织的方法另行选择，Matt 写作阶段技能仍为第二批候选。详见 [整改与取舍](../audit/writing-master-review.md)。
+用户确认保留个人文风层并更名 writing-styles。共用语言检查与原稿处理规则，按需选择 bbs 或 research-analysis；支持后续增加文风。素材探索和成文组织的方法另行选择，Matt 的 writing-fragments、writing-shape、writing-beats 已经用户确认作为独立写作过程技能纳入。详见 [整改与取舍](../audit/writing-master-review.md)。
 
 
 ## 使用场景
@@ -26,7 +26,7 @@
 
 ## 与相邻能力的关系
 
-对照：read（理解材料）、wiki（长期知识维护）、deep-research（多来源调查与取证）；Matt 的 writing-fragments／writing-shape／writing-beats 仍为第二批候选，未引入。按本次目的选择；名称相似不代表输出相同。
+对照：writing-fragments（素材探索）、writing-shape（成文组织）、writing-beats（逐步选路共写）；writing-styles 负责个人文风与审稿，按用户需要组合。按本次目的选择；名称相似不代表输出相同。
 
 ## 来源与验证范围
 

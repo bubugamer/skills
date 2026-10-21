@@ -102,3 +102,7 @@ social-feed 已获保留确认，进入用途目录和默认发布清单。deepc
 原有 32 项均已确认处理，仓库版本已整理；本机旧安装尚未统一迁移。skill-creator 按用户最终要求同时负责创建、维护与评测，普通安装仍检测已有同名目录并停止；系统同名入口的实际选择也须在后续迁移时核对。不要把当前源码发布视为已更换本机能力。
 
 skill-creator 的离线辅助工具需 Python 3 和 PyYAML（见技能内 requirements.txt）；只有明确执行实时触发探针时才需可用 Codex CLI 及相应模型调用。预览、任务汇总与本地评阅页生成不启动模型调用。
+
+## 2026-10-21 Matt 写作技能纳入
+
+用户明确批准 writing-fragments、writing-shape、writing-beats、writing-for-agents 纳入，四项均归 productivity 并进入默认清单。前三项保持手动调用，writing-for-agents 正常自动选择；中文使用场景见各自使用页。固定版本、许可与必要适配见 [纳入记录](audit/writing-skills-adoption.md)。只发布仓库版本，不同步本机安装；现有同名能力仍按安装器规则报告冲突，不覆盖。此前 writing-for-agents 撤回记录保留为历史。

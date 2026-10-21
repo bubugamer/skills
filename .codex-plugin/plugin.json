@@ -23,6 +23,10 @@
     "./skills/productivity/deep-research",
     "./skills/engineering/ui-ux-pro-max",
     "./skills/engineering/skill-creator",
+    "./skills/productivity/writing-fragments",
+    "./skills/productivity/writing-shape",
+    "./skills/productivity/writing-beats",
+    "./skills/productivity/writing-for-agents",
     "./skills/productivity/ask-skills"
   ]
 }

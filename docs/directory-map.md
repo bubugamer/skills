@@ -1,6 +1,6 @@
 # 目录与文件清单
 
-整理日期：2026-10-20（第一轮收尾完成）。当前 17 个技能源码，按用途归 engineering 3 项、productivity 11 项、misc 3 项；另有 agent-browser、find-skills 两项外部使用说明。原有 32 项均已确认处理，第一轮待审 0 项。已确认保留 19 项（含提前引入的 teach 和已获准的 ask-skills），ask-skills 仍另列体系维护；Matt 36 项候选留待第二批。详见 [收尾说明](audit/first-round-summary.md)。
+整理日期：2026-10-21。当前 21 个技能源码，按用途归 engineering 3 项、productivity 15 项、misc 3 项；另有 agent-browser、find-skills 两项外部说明。已确认保留 23 项，原有第一轮 32 项全部处理完毕、待审 0。Matt 第二批本次获准纳入四项写作技能，剩余候选 32 项；ask-skills 仍单列体系维护。见 [写作技能纳入](audit/writing-skills-adoption.md) 与 [第一轮收尾](audit/first-round-summary.md)。
 
 ## 整理记录（历史）
 
@@ -31,13 +31,13 @@
 | 目录 | 本仓库技能源码 | 只记录使用说明的外部能力 |
 | --- | --- | --- |
 | engineering | deepcoffee-dev、ui-ux-pro-max、skill-creator | agent-browser |
-| productivity | remind、read、teach、para、site-unlocker、social-feed、wiki、writing-styles、wait-what、ask-skills、deep-research | find-skills |
+| productivity | remind、read、teach、para、site-unlocker、social-feed、wiki、writing-styles、wait-what、ask-skills、deep-research、writing-fragments、writing-shape、writing-beats、writing-for-agents | find-skills |
 | misc | akshare-api、tdx-api、yt-dlp-download | 暂无 |
 | deprecated | 暂无 | 暂无 |
 
-domain-modeling、diagnosing-bugs、grilling、writing-for-agents 未获用户逐项确认，已撤回。四项仅在 [上游候选审查](audit/upstream-skills.md) 中保留链接，不计入当前集合。teach 已获明确确认，继续保留；wait-what 是原有技能。
+domain-modeling、diagnosing-bugs、grilling 未获用户逐项确认，已撤回。三项仅在 [上游候选审查](audit/upstream-skills.md) 中保留链接，不计入当前集合。teach 已获明确确认，继续保留；wait-what 是原有技能。
 
-已取消 in-progress 目录。deepcoffee-dev 已按用户确认恢复六类能力与配套规则，三个现有脚本仍为本地运行依赖，现已审阅通过；social-feed 的工具定位和登录处理仍有已知问题。wiki 已获用户确认，完成更名与只读检查工具改造；真实站点与公开过滤仍由知识库项目验证。当前默认发布 17 项，skill-creator 已按用户最终决定保留创建、维护与评测的一体入口；ui-ux-pro-max 已确认个人适配入口并纳入清单，外部运行依赖单独配置；deepcoffee-dev 已获用户确认并纳入清单，保持手动调用；deep-research 重写后纳入默认清单，正常自动选择。
+已取消 in-progress 目录。deepcoffee-dev 已按用户确认恢复六类能力与配套规则，三个现有脚本仍为本地运行依赖，现已审阅通过；social-feed 的工具定位和登录处理仍有已知问题。wiki 已获用户确认，完成更名与只读检查工具改造；真实站点与公开过滤仍由知识库项目验证。当前默认发布 21 项，四项 Matt 写作技能已获准纳入；skill-creator 已按用户最终决定保留创建、维护与评测的一体入口；ui-ux-pro-max 已确认个人适配入口并纳入清单，外部运行依赖单独配置；deepcoffee-dev 已获用户确认并纳入清单，保持手动调用；deep-research 重写后纳入默认清单，正常自动选择。
 
 ## 文件职责
 
@@ -124,6 +124,7 @@ skills/（仓库根目录）
 │   │   ├── wiki-workspace-legacy.md
 │   │   ├── writing-master-matt-comparison.md
 │   │   ├── writing-master-review.md
+│   │   ├── writing-skills-adoption.md
 │   │   └── yt-dlp-download-review.md
 │   ├── deprecated/
 │   │   └── brief.md
@@ -153,7 +154,11 @@ skills/（仓库根目录）
 │   │   ├── teach.md
 │   │   ├── wait-what.md
 │   │   ├── wiki.md
+│   │   ├── writing-beats.md
+│   │   ├── writing-for-agents.md
+│   │   ├── writing-fragments.md
 │   │   ├── writing-master.md
+│   │   ├── writing-shape.md
 │   │   └── writing-styles.md
 │   ├── architecture.md
 │   ├── directory-map.md
@@ -387,6 +392,39 @@ skills/（仓库根目录）
 │       │   ├── scripts/
 │       │   │   ├── lint_wiki.py
 │       │   │   └── test_wiki.py
+│       │   ├── ORIGIN.json
+│       │   └── SKILL.md
+│       ├── writing-beats/
+│       │   ├── agents/
+│       │   │   └── openai.yaml
+│       │   ├── evals/
+│       │   │   └── evals.json
+│       │   ├── LICENSE.txt
+│       │   ├── ORIGIN.json
+│       │   └── SKILL.md
+│       ├── writing-for-agents/
+│       │   ├── agents/
+│       │   │   └── openai.yaml
+│       │   ├── evals/
+│       │   │   └── evals.json
+│       │   ├── LICENSE.txt
+│       │   ├── ORIGIN.json
+│       │   ├── SKILL-MECHANICS.md
+│       │   └── SKILL.md
+│       ├── writing-fragments/
+│       │   ├── agents/
+│       │   │   └── openai.yaml
+│       │   ├── evals/
+│       │   │   └── evals.json
+│       │   ├── LICENSE.txt
+│       │   ├── ORIGIN.json
+│       │   └── SKILL.md
+│       ├── writing-shape/
+│       │   ├── agents/
+│       │   │   └── openai.yaml
+│       │   ├── evals/
+│       │   │   └── evals.json
+│       │   ├── LICENSE.txt
 │       │   ├── ORIGIN.json
 │       │   └── SKILL.md
 │       ├── writing-styles/

@@ -1,0 +1,29 @@
+{
+  "skill_name": "writing-shape",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "已给完整素材、读者与 article.md，要求先讨论开头。",
+      "expected_output": "读取全部素材，确认读者基础，提供不同主张的开头供选择。",
+      "expectations": [
+        "未选择开头前不先写完整文章。"
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "下一段需要一个素材中没有的例子。",
+      "expected_output": "指出缺口，要求补充或调整该部分。",
+      "expectations": [
+        "不编造材料，不修改输入素材。"
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "用户直接修改了文章中的上一段。",
+      "expected_output": "写入下一块前重新读取文章，保留用户修改。",
+      "expectations": [
+        "按已确认的段落或块逐步保存。"
+      ]
+    }
+  ]
+}

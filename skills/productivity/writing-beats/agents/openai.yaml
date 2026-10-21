@@ -1,0 +1,6 @@
+interface:
+  display_name: "Writing Beats"
+  short_description: "Assemble raw material into beats"
+  default_prompt: "Use $writing-beats to help with this task: 用 writing-beats 基于 notes.md 写到 article.md，每次让我选择下一个叙述动作。"
+policy:
+  allow_implicit_invocation: false

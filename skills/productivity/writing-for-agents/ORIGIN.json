@@ -1,0 +1,23 @@
+{
+  "source": "upstream-adapted",
+  "origin": "https://github.com/mattpocock/skills/tree/49dd158d1076134a641b33efb035946536778336/skills/productivity/writing-for-agents",
+  "source_sha256": "551adca942227b44192edba88acd4e8db911f0121ce58ad16944ccf6a896a74a",
+  "snapshot_date": "2026-10-21",
+  "upstream_commit": "49dd158d1076134a641b33efb035946536778336",
+  "adaptation": "保留经讨论的固定版本完整英文 description 与正文，末尾追加 Reply in Chinese.；移除旧宿主 disable-model-invocation 字段，调用方式映射为 Codex agents/openai.yaml。保留上游界面名称、简介与 MIT 许可，归 productivity，不恢复 in-progress；配套中文使用页、审批及场景记录独立维护。不修改本机安装。 SKILL-MECHANICS.md 的调用机制段与路由段按 Codex 改写：保留 name/description，使用 agents/openai.yaml 的调用策略；其余文档层级与拆分原则保留。",
+  "adapted_at": "2026-10-21",
+  "adapted_entrypoint_sha256": "5939d65952110c21af7950ff691f12142d048029afeb8f4bab96e5c587a60f09",
+  "upstream_agent_metadata_sha256": "eacb24b2a618cfb81dacb0416f4fdd75ddf3a8060f8ddb99aae1b1e301907e4b",
+  "admission": {
+    "status": "user-approved",
+    "date": "2026-10-21",
+    "basis": "用户已讨论四项 Matt 写作技能及具体场景，本次明确表示「matt关于writing的skill也算是审核通过了，也纳入到我的项目里面吧」，批准 writing-fragments、writing-shape、writing-beats、writing-for-agents 纳入。"
+  },
+  "supporting_resources": {
+    "SKILL-MECHANICS.md": {
+      "source_sha256": "c768e6307c7c10728c401c213f2c4ba71c542127eeb7ad2956aabd15a0fa0059",
+      "adapted_sha256": "cd617e5ac0ca69e84e36201b125eb011a1f32e539d6a7bf415a92112e4ae36f5",
+      "adaptation": "Codex invocation and router mechanics; other sections retained"
+    }
+  }
+}

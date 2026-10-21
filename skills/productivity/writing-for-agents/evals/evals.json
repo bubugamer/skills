@@ -1,0 +1,29 @@
+{
+  "skill_name": "writing-for-agents",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "AGENTS.md 有多处重复规则，复杂分支都挤在主流程里。",
+      "expected_output": "保留实际规则的单一来源，按需求拆出分支参考，明确读取条件。",
+      "expectations": [
+        "不以精简为由删掉关键约束。"
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "技能正文与配套资料已有链接，但引用条件含糊。",
+      "expected_output": "改善指针措辞、触发分支与相关内容位置，保留可检查的完成标准。",
+      "expectations": [
+        "不是只把全文移到一个无读取条件的外部文件。"
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "新建一个需要手动调用的 Codex 技能。",
+      "expected_output": "读取 SKILL-MECHANICS.md，保留 name 和 description，在 agents/openai.yaml 配置手动调用。",
+      "expectations": [
+        "不把旧宿主的 disable-model-invocation 字段写入 Codex 入口。"
+      ]
+    }
+  ]
+}

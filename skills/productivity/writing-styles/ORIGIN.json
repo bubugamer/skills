@@ -3,7 +3,7 @@
   "origin": "本地定制；用户要求创建，Codex 根据用户原稿与写作反馈整理并扩充",
   "source_sha256": "1e1a2f9938eef176dfd3d8df9b3edaa4ac189e6374e5c21d782f0099b18d5346",
   "snapshot_date": "2026-10-11",
-  "adaptation": "用户确认实施 writing-styles 多文风方案。精简共同规则，区分审稿建议、会话修订稿与指定文件编辑；保留 bbs 与 research-analysis，移至 references/styles，个人经历按材料使用，投资要求按领域适用；补充九条场景定义。保持自动选择设置，备份后按已授权更名迁移本机安装。Matt 阶段技能仍为候选，未导入。",
+  "adaptation": "用户确认实施 writing-styles 多文风方案。精简共同规则，区分审稿建议、会话修订稿与指定文件编辑；保留 bbs 与 research-analysis，移至 references/styles，个人经历按材料使用，投资要求按领域适用；补充九条场景定义。保持自动选择设置，备份后按已授权更名迁移本机安装。Matt 阶段技能仍为候选，未导入。 2026-10-21 仅同步 Matt 四项写作技能已获准纳入后的使用关系；个人入口、两种文风、行为场景和自动调用方式保持。",
   "upstream_commit": null,
   "history_verified_at": "2026-10-19",
   "creation_history": [
@@ -17,7 +17,7 @@
     }
   ],
   "previous_name": "writing-master",
-  "adapted_at": "2026-10-19",
+  "adapted_at": "2026-10-21",
   "adapted_entrypoint_sha256": "7f12977d78e03bfc36f27a6f97e5373e3c23b1caf77f6bd0181871a2b04d112d",
   "supporting_documents_sha256": {
     "references/styles/bbs.md": "e9071f4905c5606a76e20486a609175d1d531cd31edc5ae54e18f5e3281db93d",

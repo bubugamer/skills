@@ -111,10 +111,25 @@ def main():
         for name in ['teach']:
             policy = yaml.safe_load((selected / name / 'agents/openai.yaml').read_text())['policy']
             assert policy['allow_implicit_invocation'] is False, 'Classification must preserve manual invocation'
-        for name in ['domain-modeling', 'diagnosing-bugs', 'grilling', 'writing-for-agents']:
+        for name in ['domain-modeling', 'diagnosing-bugs', 'grilling']:
             candidate_target = base / ('candidate-' + name)
             run(installer, '--target', candidate_target, '--skill', name, '--apply', expected=2)
             assert not candidate_target.exists(), 'Unapproved candidate must not be installed'
+        matt_writing = base / 'matt-writing'
+        writing_names = ['writing-fragments', 'writing-shape', 'writing-beats', 'writing-for-agents']
+        writing_args = [part for name in writing_names for part in ['--skill', name]]
+        run(installer, '--target', matt_writing, *writing_args, '--apply')
+        assert sorted(p.name for p in matt_writing.iterdir()) == sorted(writing_names)
+        for name in writing_names:
+            link = matt_writing / name
+            assert link.resolve() == ROOT / 'skills/productivity' / name
+            metadata = yaml.safe_load((link / 'agents/openai.yaml').read_text())
+            assert metadata['policy']['allow_implicit_invocation'] is (name == 'writing-for-agents')
+            expected_display = 'Writing for Agents' if name == 'writing-for-agents' else name.replace('-', ' ').title()
+            assert metadata['interface']['display_name'] == expected_display
+            assert '$' + name in metadata['interface']['default_prompt']
+            assert (link / 'LICENSE.txt').is_file()
+        assert (matt_writing / 'writing-for-agents/SKILL-MECHANICS.md').is_file()
         wiki_aliases = base / 'wiki-aliases'
         (wiki_aliases / 'llm-wiki').mkdir(parents=True)
         old_wiki = wiki_aliases / 'llm-wiki/keep.txt'
@@ -238,7 +253,7 @@ def main():
     run(ROOT / 'skills/productivity/deep-research/scripts/test_records.py')
     run(ROOT / 'skills/engineering/ui-ux-pro-max/scripts/test_tools.py')
     run(ROOT / 'skills/engineering/skill-creator/scripts/test_evaluation.py')
-    print('Passed: admission checks across all sources, approved manual ask-skills, safe installation and legacy aliases, preserved invocation policies, reviewed references, research/UI preservation, skill-creator preview and existing-creator conflict protection, candidate exclusions, unchanged user files, 14 PARA, 16 wiki, 9 research-record, 9 UI-adapter and 15 evaluation-tool tests.')
+    print('Passed: admission checks across all sources, approved manual ask-skills and four Matt writing skills, safe installation and legacy aliases, preserved invocation policies, reviewed references, research/UI preservation, skill-creator preview and existing-creator conflict protection, candidate exclusions, unchanged user files, 14 PARA, 16 wiki, 9 research-record, 9 UI-adapter and 15 evaluation-tool tests.')
     return 0
 
 
