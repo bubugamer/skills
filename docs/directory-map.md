@@ -1,6 +1,6 @@
 # 目录与文件清单
 
-整理日期：2026-10-21。当前 21 个技能源码，按用途归 engineering 3 项、productivity 15 项、misc 3 项；另有 agent-browser、find-skills 两项外部说明。已确认保留 23 项，原有第一轮 32 项全部处理完毕、待审 0。Matt 第二批本次获准纳入四项写作技能，剩余候选 32 项；ask-skills 仍单列体系维护。见 [写作技能纳入](audit/writing-skills-adoption.md) 与 [第一轮收尾](audit/first-round-summary.md)。
+整理日期：2026-10-29。当前 22 个技能源码，engineering 3 项、productivity 16 项、misc 3 项；另有 agent-browser、find-skills 两项外部说明。已确认保留 24 项，第一轮原有 32 项全部处理完毕、待审 0。Matt 第二批已纳入四项写作及 grilling 共 5 项，剩余候选 31 项。见 [grilling 纳入与安装](audit/grilling-review.md) 和 [审查清单](audit/review-checklist.md)。
 
 ## 整理记录（历史）
 
@@ -31,13 +31,13 @@
 | 目录 | 本仓库技能源码 | 只记录使用说明的外部能力 |
 | --- | --- | --- |
 | engineering | deepcoffee-dev、ui-ux-pro-max、skill-creator | agent-browser |
-| productivity | remind、read、teach、para、site-unlocker、social-feed、wiki、writing-styles、wait-what、ask-skills、deep-research、writing-fragments、writing-shape、writing-beats、writing-for-agents | find-skills |
+| productivity | remind、read、teach、para、site-unlocker、social-feed、wiki、writing-styles、wait-what、ask-skills、deep-research、writing-fragments、writing-shape、writing-beats、writing-for-agents、grilling | find-skills |
 | misc | akshare-api、tdx-api、yt-dlp-download | 暂无 |
 | deprecated | 暂无 | 暂无 |
 
-domain-modeling、diagnosing-bugs、grilling 未获用户逐项确认，已撤回。三项仅在 [上游候选审查](audit/upstream-skills.md) 中保留链接，不计入当前集合。teach 已获明确确认，继续保留；wait-what 是原有技能。
+domain-modeling、diagnosing-bugs 未获用户逐项确认，已撤回。两项仅在 [上游候选审查](audit/upstream-skills.md) 中保留链接，不计入当前集合。teach 已获明确确认，继续保留；wait-what 是原有技能。
 
-已取消 in-progress 目录。deepcoffee-dev 已按用户确认恢复六类能力与配套规则，三个现有脚本仍为本地运行依赖，现已审阅通过；social-feed 的工具定位和登录处理仍有已知问题。wiki 已获用户确认，完成更名与只读检查工具改造；真实站点与公开过滤仍由知识库项目验证。当前默认发布 21 项，四项 Matt 写作技能已获准纳入；skill-creator 已按用户最终决定保留创建、维护与评测的一体入口；ui-ux-pro-max 已确认个人适配入口并纳入清单，外部运行依赖单独配置；deepcoffee-dev 已获用户确认并纳入清单，保持手动调用；deep-research 重写后纳入默认清单，正常自动选择。
+已取消 in-progress 目录。deepcoffee-dev 已按用户确认恢复六类能力与配套规则，三个现有脚本仍为本地运行依赖，现已审阅通过；social-feed 的工具定位和登录处理仍有已知问题。wiki 已获用户确认，完成更名与只读检查工具改造；真实站点与公开过滤仍由知识库项目验证。当前默认发布 22 项，四项 Matt 写作技能及 grilling 已获准纳入；skill-creator 已按用户最终决定保留创建、维护与评测的一体入口；ui-ux-pro-max 已确认个人适配入口并纳入清单，外部运行依赖单独配置；deepcoffee-dev 已获用户确认并纳入清单，保持手动调用；deep-research 重写后纳入默认清单，正常自动选择。
 
 ## 文件职责
 
@@ -103,6 +103,7 @@ skills/（仓库根目录）
 │   │   ├── existing-skills.md
 │   │   ├── find-skills-review.md
 │   │   ├── first-round-summary.md
+│   │   ├── grilling-review.md
 │   │   ├── imagegen-review.md
 │   │   ├── konmari-review.md
 │   │   ├── llm-wiki-review.md
@@ -143,6 +144,7 @@ skills/（仓库根目录）
 │   │   ├── deep-research.md
 │   │   ├── dongnaojin-yeye.md
 │   │   ├── find-skills.md
+│   │   ├── grilling.md
 │   │   ├── konmari.md
 │   │   ├── llm-wiki.md
 │   │   ├── para.md
@@ -282,6 +284,14 @@ skills/（仓库根目录）
 │       │   ├── scripts/
 │       │   │   ├── records.py
 │       │   │   └── test_records.py
+│       │   ├── ORIGIN.json
+│       │   └── SKILL.md
+│       ├── grilling/
+│       │   ├── agents/
+│       │   │   └── openai.yaml
+│       │   ├── evals/
+│       │   │   └── evals.json
+│       │   ├── LICENSE.txt
 │       │   ├── ORIGIN.json
 │       │   └── SKILL.md
 │       ├── para/

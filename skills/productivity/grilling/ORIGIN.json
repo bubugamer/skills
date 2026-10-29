@@ -1,0 +1,16 @@
+{
+  "source": "upstream-adapted",
+  "origin": "https://github.com/mattpocock/skills/tree/59db609eb1e18aaf59b63284d0e52255aff0c63c/skills/productivity/grilling",
+  "source_sha256": "befdff1e27a1dfe2a294d5871169ac1afe16d983911daa4f32627514a48c1e15",
+  "snapshot_date": "2026-10-29",
+  "upstream_commit": "59db609eb1e18aaf59b63284d0e52255aff0c63c",
+  "adaptation": "保留原英文 description、决策树、按依赖分轮提问、建议答案与共同理解的完成标准。仅将强制派出子代理查事实改为优先使用当前工具、代理须可用且已获授权；末尾追加 Reply in Chinese.。保留上游界面名称、简介、正常自动选择与 MIT 许可，不引入其他 grilling 包装入口。",
+  "adapted_at": "2026-10-29",
+  "adapted_entrypoint_sha256": "aa4370596862fb0c83f1523144177e85c7ccb7deba914374d08743dee53aa2d6",
+  "upstream_agent_metadata_sha256": "1411d7df7d99b7e621a1ff8283c8133cc2464be63d064e52d8ce169c6800ee9b",
+  "admission": {
+    "status": "user-approved",
+    "date": "2026-10-29",
+    "basis": "用户明确表示「好的，那就先给我的项目和本地都先安装上grilling吧」，批准仅将 grilling 纳入个人项目并安装本地；不包含其他访谈入口或依赖候选。"
+  }
+}

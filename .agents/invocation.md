@@ -1,6 +1,6 @@
 # Codex 调用策略
 
-2026-10-21 用户授权的本机统一接入已完成：21 个已确认技能链接到仓库源码，两项外部能力沿用原安装。旧入口与配置保留恢复资料；普通安装器仍只预览并报告新冲突，不自动覆盖。见 [当前范围](../SCOPE.md) 与 [安装说明](../docs/installation.md)。下列较早的更名和暂缓记录保留为历史。
+当前已接入 22 项仓库技能；2026-10-29 追加用户明确批准的 grilling，保持上游正常自动选择，也可用 $bubugamer-skills:grilling 手动指定。此前 2026-10-21 用户授权的本机统一接入已完成：21 个已确认技能链接到仓库源码，两项外部能力沿用原安装。旧入口与配置保留恢复资料；普通安装器仍只预览并报告新冲突，不自动覆盖。见 [当前范围](../SCOPE.md) 与 [安装说明](../docs/installation.md)。下列较早的更名和暂缓记录保留为历史。
 
 每个技能保持 name 与 description。agents/openai.yaml 控制手动或自动选择，按 catalog.json 的 manual 属性生成。目录分类与调用方式分别维护；移动目录时保留当前调用设置。
 
@@ -23,3 +23,5 @@ skill-creator 的创建、维护与评测共用一个入口，评测按任务需
 2026-10-21 Matt 四项写作技能获准纳入 productivity：writing-fragments、writing-shape、writing-beats 保持上游手动调用设置；writing-for-agents 保持正常自动选择。入口保留英文说明并追加中文回复要求；旧宿主调用字段由 agents/openai.yaml 承接，配套 mechanics 文档按当前 Codex 规则维护。用户按本次写作需要选择阶段；与 writing-styles 的用途组合不代表自动串联全部技能。
 
 本次实际发现名称带 bubugamer-skills: 前缀；明确选择时以当前技能选择器的完整名称为准，如 $bubugamer-skills:ask-skills。用户配置变更后重启 Codex 刷新，实际发现已通过独立本地服务读取验证。
+
+grilling 保留按依赖分轮提问的方法；事实查找使用当前工具，只有代理可用且已有授权时才可委派。用户本次只批准 grilling，不将其包装入口、domain-modeling 或 wayfinder 作为安装依赖。

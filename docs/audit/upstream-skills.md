@@ -2,7 +2,7 @@
 
 先审查自己的 32 项，再基于真实缺口判断。 本页记录候选审查建议，只有用户逐项确认的技能才可纳入集合。参考提交：49dd158d1076134a641b33efb035946536778336（1.3.1）。总共 38 项：27 个工程/生产力正式入口、4 个 misc、7 个试用；作者插件只发布前 27 项。
 
-当前已采用 6 项（含原有 wait-what、提前引入 teach 及本次四项写作技能），剩余候选 32 项。本页保留用途盘点与候选建议；哪些已逐项讨论、哪些已获用户确认，统一见 [合并审查清单](review-checklist.md)。借鉴设计原则与用户完成技能审核分别记录。
+当前已采用 7 项（含原有 wait-what、teach、四项写作技能及 grilling），剩余候选 31 项。grilling 采用 2026-10-29 核对的 59db609eb1e18aaf59b63284d0e52255aff0c63c 版本，其他条目枚举仍沿用初始快照。本页保留用途盘点与候选建议；哪些已逐项讨论、哪些已获用户确认，统一见 [合并审查清单](review-checklist.md)。借鉴设计原则与用户完成技能审核分别记录。
 
 | 作者分类 | Skill | 决定 | 为什么 |
 | --- | --- | --- | --- |
@@ -37,8 +37,8 @@
 | misc | [migrate-to-shoehorn](https://github.com/mattpocock/skills/tree/49dd158d1076134a641b33efb035946536778336/skills/misc/migrate-to-shoehorn) | 暂缓 | 仅 TypeScript 测试数据迁移；当前没有对应迁移需求。 |
 | misc | [scaffold-exercises](https://github.com/mattpocock/skills/tree/49dd158d1076134a641b33efb035946536778336/skills/misc/scaffold-exercises) | 暂缓 | 依赖作者课程结构与 ai-hero-cli，不是通用个人工作流。 |
 | misc | [setup-pre-commit](https://github.com/mattpocock/skills/tree/49dd158d1076134a641b33efb035946536778336/skills/misc/setup-pre-commit) | 按需纳入 | 针对有明确 lint/typecheck 工具链的项目使用；本仓库已有提交后检查，不默认添加 JS 工具链。 |
-| productivity | [grill-me](https://github.com/mattpocock/skills/tree/49dd158d1076134a641b33efb035946536778336/skills/productivity/grill-me) | 后续组合 | 只是 grilling 的手动入口；当前试用直接点选 grilling，先避免冗余。 |
-| productivity | [grilling](https://github.com/mattpocock/skills/tree/49dd158d1076134a641b33efb035946536778336/skills/productivity/grilling) | 候选，待用户逐项审核 | 候选用途是澄清方案和关键决策；当前仅提出审查建议，尚未获得纳入确认。 |
+| productivity | [grill-me](https://github.com/mattpocock/skills/tree/49dd158d1076134a641b33efb035946536778336/skills/productivity/grill-me) | 后续组合 | 只是 grilling 的手动入口；grilling 已获准并可直接手动指定；本包装入口仍未确认纳入。 |
+| productivity | [grilling](https://github.com/mattpocock/skills/tree/59db609eb1e18aaf59b63284d0e52255aff0c63c/skills/productivity/grilling) | 已确认纳入并安装 | 2026-10-29 用户明确批准；保留分轮访谈原文，仅适配代理授权并追加中文回复，见 [记录](grilling-review.md)。 |
 | productivity | [handoff](https://github.com/mattpocock/skills/tree/49dd158d1076134a641b33efb035946536778336/skills/productivity/handoff) | 优先后续 | 任务切换时小型交接有价值；要使用当前 Codex 会话/工作区能力，不默认开启新会话。 |
 | productivity | [teach](https://github.com/mattpocock/skills/tree/49dd158d1076134a641b33efb035946536778336/skills/productivity/teach) | 已按用途正式纳入，手动调用 | 2026-10-13 用户确认与 read 独立；恢复完整英文教学正文，仅适配 Codex 调用记号与手动调用设置，中文使用说明单独维护。 |
 | productivity | [to-questionnaire](https://github.com/mattpocock/skills/tree/49dd158d1076134a641b33efb035946536778336/skills/productivity/to-questionnaire) | 按需纳入 | 给第三方的问卷和给用户自己的追问不同；有明确对象与信息缺口时再增设。 |
@@ -50,3 +50,5 @@
 先按用户既定顺序审阅原有技能，再逐项讨论外部候选，由用户明确确认后纳入。teach 已获逐项确认，当前保留完整英文版本。domain-modeling、diagnosing-bugs、grilling、writing-for-agents 曾被提前导入，2026-10-14 已纠正撤回，仅保留候选链接。2026-10-21 用户明确批准 writing-for-agents 及 writing-fragments、writing-shape、writing-beats 纳入；之前撤回记录保留为历史，不再将 writing-for-agents 视为当前候选。其他纳入建议仍只表示待讨论提案，不构成用户批准。
 
 入选条件是自身缺口与可验证收益，不是作者数量更多。类似能力优先借鉴和改善，避免同一任务有多个互相争夺的入口。
+
+2026-10-29 用户明确批准仅将 grilling 纳入项目及本地，先前撤回记录保留为历史；grill-me、grill-with-docs、domain-modeling、wayfinder 均不随之引入。

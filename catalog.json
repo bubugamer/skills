@@ -983,6 +983,52 @@
       ]
     },
     {
+      "name": "grilling",
+      "category": "productivity",
+      "purpose": "通过分轮追问澄清想法、方案与关键取舍",
+      "decision": "keep",
+      "source": "upstream-adapted",
+      "origin": "https://github.com/mattpocock/skills/tree/59db609eb1e18aaf59b63284d0e52255aff0c63c/skills/productivity/grilling",
+      "source_sha256": "befdff1e27a1dfe2a294d5871169ac1afe16d983911daa4f32627514a48c1e15",
+      "path": "skills/productivity/grilling",
+      "manual": false,
+      "interface": {
+        "display_name": "Grilling",
+        "short_description": "Stress-test thinking a round of questions at a time"
+      },
+      "dependencies": [],
+      "release": true,
+      "release_reason": "用户明确批准项目与本地均安装 grilling，进入默认清单；保持上游正常自动选择，也可手动指定。",
+      "updated_at": "2026-10-29",
+      "reason": "用户已有想法，希望通过持续追问把它问清楚，已明确批准纳入并安装。采用本次讨论的 Matt 固定版本英文说明，保留决策树、依赖顺序与分轮访谈；仅适配代理授权边界并追加中文回复要求，保留 MIT。见 [纳入与安装记录](../audit/grilling-review.md)。",
+      "example": "用 grilling 把这个想法问清楚，分轮追问目标、约束和关键取舍，先不要实施。",
+      "done": "关键分支与隐含假设被讨论，事实与用户取舍分清，双方确认理解一致；只按当前授权处理后续任务。",
+      "compare": "writing-fragments（写作素材探索）；grilling（澄清想法、方案或决策）；grill-me、grill-with-docs、wayfinder 仍为未纳入候选",
+      "inputs": "已有想法、方案或待定选择及相关背景；使用已提供的上下文，能查明的事实由工具核实，关键取舍由用户回答",
+      "review": {
+        "status": "user-approved",
+        "admission_status": "user-approved",
+        "approved_at": "2026-10-29",
+        "approval_basis": "用户明确表示「好的，那就先给我的项目和本地都先安装上grilling吧」，批准仅将 grilling 纳入个人项目并安装本地；不包含其他访谈入口或依赖候选。",
+        "audit": "docs/audit/grilling-review.md",
+        "verified_scope": "核对固定原文、最小差异、许可、引用及调用配置，运行集合检查与隔离安装，并核对本地 Codex 实际发现；五条行为场景为定义，未测量真实访谈质量或触发准确率。"
+      },
+      "usage_scenarios": [
+        {
+          "situation": "已有产品或项目想法，希望把它问清楚",
+          "prompt": "$grilling 我有一个产品想法，请分轮追问目标、受众和核心假设，先不要写实施方案。",
+          "assistance": "把想法拆成相关决策，先问当前前提明确的问题，根据回答继续深入并给出建议。",
+          "result": "双方理解一致的目标、边界、假设与关键选择。"
+        },
+        {
+          "situation": "在几个方案之间犹豫，想找出遗漏的取舍",
+          "prompt": "$grilling 我在 A、B 两个方向之间犹豫，请追问约束、代价和隐含假设，帮我把取舍想清楚。",
+          "assistance": "核实可查事实，分轮讨论影响选择的问题；需要人决定的部分交给用户确认。",
+          "result": "明确的选项、取舍依据及尚待核实的问题。"
+        }
+      ]
+    },
+    {
       "name": "ask-skills",
       "category": "productivity",
       "purpose": "选择合适的 skill",
@@ -1023,5 +1069,5 @@
       ]
     }
   ],
-  "updated_at": "2026-10-21"
+  "updated_at": "2026-10-29"
 }

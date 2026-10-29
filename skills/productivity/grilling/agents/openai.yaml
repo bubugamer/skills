@@ -1,0 +1,6 @@
+interface:
+  display_name: "Grilling"
+  short_description: "Stress-test thinking a round of questions at a time"
+  default_prompt: "Use $grilling to help with this task: 用 grilling 把这个想法问清楚，分轮追问目标、约束和关键取舍，先不要实施。"
+policy:
+  allow_implicit_invocation: true

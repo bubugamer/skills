@@ -17,6 +17,7 @@
 | [writing-shape](../../docs/productivity/writing-shape.md) | 将已有素材逐块组织成文章 | 默认发布 |
 | [writing-beats](../../docs/productivity/writing-beats.md) | 逐次选择叙述方向，共同推进文章 | 默认发布 |
 | [writing-for-agents](../../docs/productivity/writing-for-agents.md) | 编写清楚、按需加载的 AI 指令文档 | 默认发布 |
+| [grilling](../../docs/productivity/grilling.md) | 通过分轮追问澄清想法、方案与关键取舍 | 默认发布 |
 | [ask-skills](../../docs/productivity/ask-skills.md) | 选择合适的 skill | 默认发布 |
 
 按用途归类；用户审阅状态、已知问题和默认发布设置分别记录，目录存在不表示已经审阅通过。

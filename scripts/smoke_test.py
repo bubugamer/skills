@@ -111,10 +111,19 @@ def main():
         for name in ['teach']:
             policy = yaml.safe_load((selected / name / 'agents/openai.yaml').read_text())['policy']
             assert policy['allow_implicit_invocation'] is False, 'Classification must preserve manual invocation'
-        for name in ['domain-modeling', 'diagnosing-bugs', 'grilling']:
+        for name in ['domain-modeling', 'diagnosing-bugs', 'grill-me', 'grill-with-docs', 'wayfinder']:
             candidate_target = base / ('candidate-' + name)
             run(installer, '--target', candidate_target, '--skill', name, '--apply', expected=2)
             assert not candidate_target.exists(), 'Unapproved candidate must not be installed'
+        grilling_target = base / 'grilling-only'
+        run(installer, '--target', grilling_target, '--skill', 'grilling', '--apply')
+        grilling_link = grilling_target / 'grilling'
+        assert grilling_link.resolve() == ROOT / 'skills/productivity/grilling'
+        grilling_metadata = yaml.safe_load((grilling_link / 'agents/openai.yaml').read_text())
+        assert grilling_metadata['policy']['allow_implicit_invocation'] is True
+        assert grilling_metadata['interface']['display_name'] == 'Grilling'
+        assert (grilling_link / 'LICENSE.txt').is_file()
+        assert sorted(p.name for p in grilling_target.iterdir()) == ['grilling']
         matt_writing = base / 'matt-writing'
         writing_names = ['writing-fragments', 'writing-shape', 'writing-beats', 'writing-for-agents']
         writing_args = [part for name in writing_names for part in ['--skill', name]]
@@ -253,7 +262,7 @@ def main():
     run(ROOT / 'skills/productivity/deep-research/scripts/test_records.py')
     run(ROOT / 'skills/engineering/ui-ux-pro-max/scripts/test_tools.py')
     run(ROOT / 'skills/engineering/skill-creator/scripts/test_evaluation.py')
-    print('Passed: admission checks across all sources, approved manual ask-skills and four Matt writing skills, safe installation and legacy aliases, preserved invocation policies, reviewed references, research/UI preservation, skill-creator preview and existing-creator conflict protection, candidate exclusions, unchanged user files, 14 PARA, 16 wiki, 9 research-record, 9 UI-adapter and 15 evaluation-tool tests.')
+    print('Passed: admission checks across all sources, approved manual ask-skills, four Matt writing skills and grilling, safe installation and legacy aliases, preserved invocation policies, reviewed references, research/UI preservation, skill-creator preview and existing-creator conflict protection, candidate exclusions, unchanged user files, 14 PARA, 16 wiki, 9 research-record, 9 UI-adapter and 15 evaluation-tool tests.')
     return 0
 
 
