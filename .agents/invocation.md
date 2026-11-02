@@ -1,6 +1,6 @@
 # Codex 调用策略
 
-当前已接入 22 项仓库技能；2026-10-29 追加用户明确批准的 grilling，保持上游正常自动选择，也可用 $bubugamer-skills:grilling 手动指定。此前 2026-10-21 用户授权的本机统一接入已完成：21 个已确认技能链接到仓库源码，两项外部能力沿用原安装。旧入口与配置保留恢复资料；普通安装器仍只预览并报告新冲突，不自动覆盖。见 [当前范围](../SCOPE.md) 与 [安装说明](../docs/installation.md)。下列较早的更名和暂缓记录保留为历史。
+当前已接入 23 项仓库技能；2026-11-02 追加 plan-eng-review，保持上游 Codex 自动选择设置，也可用 $bubugamer-skills:plan-eng-review 手动指定。此前 2026-10-29 追加用户明确批准的 grilling，保持上游正常自动选择，也可用 $bubugamer-skills:grilling 手动指定。此前 2026-10-21 用户授权的本机统一接入已完成：21 个已确认技能链接到仓库源码，两项外部能力沿用原安装。旧入口与配置保留恢复资料；普通安装器仍只预览并报告新冲突，不自动覆盖。见 [当前范围](../SCOPE.md) 与 [安装说明](../docs/installation.md)。下列较早的更名和暂缓记录保留为历史。
 
 每个技能保持 name 与 description。agents/openai.yaml 控制手动或自动选择，按 catalog.json 的 manual 属性生成。目录分类与调用方式分别维护；移动目录时保留当前调用设置。
 
@@ -25,3 +25,5 @@ skill-creator 的创建、维护与评测共用一个入口，评测按任务需
 本次实际发现名称带 bubugamer-skills: 前缀；明确选择时以当前技能选择器的完整名称为准，如 $bubugamer-skills:ask-skills。用户配置变更后重启 Codex 刷新，实际发现已通过独立本地服务读取验证。
 
 grilling 保留按依赖分轮提问的方法；事实查找使用当前工具，只有代理可用且已有授权时才可委派。用户本次只批准 grilling，不将其包装入口、domain-modeling 或 wayfinder 作为安装依赖。
+
+plan-eng-review 加载固定上游 Codex 流程，额外代理或模型仅按既有授权调用。运行绑定在本机私有配置，shell 通过技能内 launcher 取得工具与状态环境；不注册整套 gstack、不变更其他来源的安装或调用方式。

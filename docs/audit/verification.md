@@ -742,3 +742,22 @@ skill-creator 仍 under-review，当前只提出“日常创建沿用系统，�
 | 审查清单逐项计数 | 保留 24、公开场景 54；第一轮处理 32、待审 0；第二批已纳入 5、剩余 31=已比较 4+其余 27 | 没有因助手入口或未批准依赖增加纳入数量 |
 
 检查期间发现被 Git 忽略的 docs/.DS_Store，本机 Finder 元数据已保留到临时检查目录，避免个人状态留在公开源码树；未删除用户资料。五条新增模型行为场景只作定义，不声称真实访谈或触发准确率已验证。完整本地路径及发现响应保存在本机安装记录中，不进入公开仓库。
+
+## 2026-11-02 plan-eng-review 获准纳入与单项安装
+
+用户阅读方案审查推荐后明确要求安装该项。采用 gstack 1.92.68 固定提交 1a22ae96520b99d3119ce9d3e5c76b43e60ccc3c；完整 Codex 生成内容和共享 preamble 保留在外部固定运行目录，个人源码提供加载与环境适配。没有执行整套 setup、注册其他 gstack 技能或调用额外模型。
+
+| 实际输入或检查 | 实际结果 | 覆盖范围 |
+| --- | --- | --- |
+| 系统 skill-installer 隔离下载 plan-eng-review，与固定完整源码比较 | 原入口字节一致，MIT 与来源指纹已记录 | 不把推荐或上游主分支直接当作已安装版本 |
+| 上游 gen-skill-docs.ts --host codex，独立输出及 install-root | 生成完整英文 Codex 入口和共享 preamble；入口 145114 字节，归一化指纹匹配 | 保留范围质疑和四类工程审查，不压缩为个人清单；生成的其他入口不进入发现目录 |
+| scripts/runtime.py check | ready；固定版本、文档、配套文件与 Bun 1.4.2 匹配 | 独立 Bun，不替换机器原有 Bun |
+| 七项 runtime 适配测试 | 全部通过 | 路径别名归一化、子进程环境与工作目录、退出码、缺失文件、文档变更、版本不符、状态隔离和缺失绑定；临时目录路径别名问题已修复后复测 |
+| 真实 upstream plan-reality rows --phase eng --json、paths、skill-start --help、review-read --help | 均返回 0；包含 premise-table、surface-check 等要求 | 工具确实可运行；help 未启动会话；不等同完成业务方案审查 |
+| 私有 gstack 配置读取 | telemetry off、update_check false、auto_upgrade false、codex_reviews disabled、proactive off、cross_project_learnings false | 仅该项独立状态；不修改既有 gstack 设置，不伪造用户授权记录 |
+| 正常安装器 preview、apply、重复 apply | 无冲突，创建 1 个链接；重复创建 0 个 | 原生 gstack-plan-eng-review 别名作为冲突检查；仅安装 plan-eng-review |
+| 独立 Codex app-server skills/list，forceReload；仓库与主目录两处 | 两处均发现全部 23 项仓库入口启用、路径正确、0 个加载错误；新名称 bubugamer-skills:plan-eng-review | 没有重复原生入口或注册其他 gstack 技能 |
+| Codex 配置安装前后 SHA-256 | 一致 | 不修改系统技能、用户模型或其他启停配置 |
+| validate.py、smoke_test.py、sync_catalog.py --check、git diff --check | 全部通过 | 25 个 catalog 条目、23 个入口及默认发布项；原有 63 项工具测试加本次 7 项，单项安装及同名保护检查通过 |
+
+新增六条行为场景和两条公开用法，同步 ask-skills 推荐；场景仅为定义。没有真实业务方案输入，未执行模型评审、触发率或审查质量评测。上游 Codex 适配仍为 experimental，缺失外部浏览器或未授权外部评审按当前工具和授权准确说明。完整运行路径、生成文档、子进程输出和发现响应保存在本机安装记录，不进入公共源码。

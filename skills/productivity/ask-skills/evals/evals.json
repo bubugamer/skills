@@ -62,6 +62,15 @@
         "与 writing-fragments 的写作素材用途分清。",
         "路由只推荐，不擅自安装候选或启动任务。"
       ]
+    },
+    {
+      "id": 8,
+      "prompt": "用户已有整改方案，希望结合原代码核实合理性和影响范围，plan-eng-review 已获批准并安装。",
+      "expected_output": "首选 plan-eng-review，说明需要方案与目标仓库/版本，以及外部运行绑定；不把 Matt code-review 候选当作已安装能力。",
+      "expectations": [
+        "与 grilling 的取舍澄清用途分清。",
+        "只推荐，不启动审查或额外代理。"
+      ]
     }
   ]
 }

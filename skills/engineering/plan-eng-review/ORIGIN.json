@@ -1,0 +1,19 @@
+{
+  "source": "upstream-adapted",
+  "origin": "https://github.com/garrytan/gstack/tree/1a22ae96520b99d3119ce9d3e5c76b43e60ccc3c/plan-eng-review",
+  "source_sha256": "cd4d272e6bddf9d2c5a37e57bb03e99b3b4918fdc4a72324c8e0ddd3624287d0",
+  "snapshot_date": "2026-11-02",
+  "upstream_commit": "1a22ae96520b99d3119ce9d3e5c76b43e60ccc3c",
+  "upstream_version": "1.92.68.0",
+  "adaptation": "保留上游完整 Codex 生成流程与共享 preamble 于外部固定运行目录；本仓库仅提供环境检查与加载入口，明确当前授权优先、单技能接入和中文回复，不重写四类工程审查。运行路径及生成文件不进入公共源码。上游 allow_implicit_invocation: true 保留。 界面名称和简介按个人集合显示与长度要求适配，运行流程保持在原上游文件中。",
+  "adapted_at": "2026-11-02",
+  "adapted_entrypoint_sha256": "811187233d6c52b45f87941debf364ddc1a96ce6a3ec98d74ff91e6120b6b6e7",
+  "runtime_spec_sha256": "3333f3f0065acb241bd94e3951392a75426aeb70c7091e6a1c0cca55c0c58563",
+  "upstream_license_sha256": "e56fbb5b3d95756f3fa1cfefa24732ec79f18ece1ad08a4e79e00df57e8b198c",
+  "upstream_notice_sha256": "35b1b00d1421d6309ef379a4bb8b4c658783f8f19c4c5fd3f9f621b1e496daf0",
+  "admission": {
+    "status": "user-approved",
+    "date": "2026-11-02",
+    "basis": "用户在阅读方案审查推荐与依赖说明后明确要求「那就帮我安装 plan-eng-review 吧」，批准该项纳入个人集合并安装本地；不包含整套 gstack 技能。"
+  }
+}

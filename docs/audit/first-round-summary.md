@@ -6,16 +6,16 @@
 
 | 类型 | 数量 | 内容 |
 | --- | --- | --- |
-| engineering 已确认保留 | 4 | deepcoffee-dev、ui-ux-pro-max、skill-creator；agent-browser 为外部使用说明 |
+| engineering 已确认保留 | 5 | deepcoffee-dev、ui-ux-pro-max、skill-creator、plan-eng-review；agent-browser 为外部使用说明 |
 | productivity 已确认保留 | 17 | remind、read、para、site-unlocker、social-feed、wiki、writing-styles、wait-what、teach、deep-research、ask-skills、writing-fragments、writing-shape、writing-beats、writing-for-agents、grilling；find-skills 为外部使用说明 |
 | misc 已确认保留 | 3 | akshare-api、tdx-api、yt-dlp-download |
 | 原有技能迁出 | 1 | brief：方法和消息源已移到独立定时任务项目，尚未创建调度 |
 | 官方能力跳过 | 14 | 按用户要求直接沿用 OpenAI 官方来源，不纳入个人库；[逐项名单](openai-official-exclusions.md) |
 | 第一轮待审 | 0 | 无 |
 
-原有保留 17 项 + brief 迁出 1 项 + 官方跳过 14 项 = 原有 32 项。teach 是提前确认引入的能力，ask-skills 随后获用户明确批准加入，2026-10-21 四项 Matt 写作技能获准纳入，2026-10-29 再纳入 grilling，故当前已确认保留共 24 项。
+原有保留 17 项 + brief 迁出 1 项 + 官方跳过 14 项 = 原有 32 项。teach 是提前确认引入的能力，ask-skills 随后获用户明确批准加入，2026-10-21 四项 Matt 写作技能获准纳入，2026-10-29 再纳入 grilling，另有 2026-11-02 用户批准的 gstack plan-eng-review，故当前已确认保留共 25 项。
 
-当前 catalog 共 24 项：22 项有仓库源码，2 项只登记外部能力；22 项源码中含已获准的体系维护入口 ask-skills。README 和使用页收录 24 项已确认技能的 54 个代表场景，场景定义不冒称已执行评测。
+当前 catalog 共 25 项：23 项有仓库入口，2 项只登记外部能力；23 项入口中含已获准的体系维护入口 ask-skills。README 和使用页收录 25 项已确认技能的 56 个代表场景，场景定义不冒称已执行评测。
 
 ## 最终决定
 
@@ -34,3 +34,5 @@ Matt 第二批原有 36 项候选，2026-10-21 用户明确批准四项写作技
 公开仓库：[bubugamer/skills](https://github.com/bubugamer/skills)。
 
 2026-10-29 用户批准 grilling 项目与本地均安装，当前已接入 22 项仓库技能；该次增量安装和最小适配见 [记录](grilling-review.md)，第一轮原有数量保持。
+
+2026-11-02 gstack plan-eng-review 经用户明确批准后单列外部扩展，不改变第一轮或 Matt 第二批计数；当前接入 23 项仓库入口。见 [纳入记录](plan-eng-review-adoption.md)。

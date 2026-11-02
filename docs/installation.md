@@ -1,5 +1,7 @@
 # 安装与调用
 
+截至 2026-11-02，已接入 23 项仓库入口；新增 `$bubugamer-skills:plan-eng-review`。完整 gstack 固定运行文件和独立 Bun 在私有运行目录维护，其他 gstack 技能没有注册。使用前通过技能内运行检查，不改变已有配置或全局 Bun。
+
 截至 2026-10-29，已接入 22 项仓库技能；本次按用户明确批准，仅追加 grilling。完整调用名为 `$bubugamer-skills:grilling`，保留正常自动选择；实际本地发现已核对，其他安装及用户配置保持。
 
 2026-10-21 用户明确要求安装本地版本，本次已完成统一接入：21 个已确认的仓库技能安装到 `~/.agents/skills`，以链接读取仓库源码；agent-browser、find-skills 两项外部能力沿用原安装。11 个旧目录和 5 个旧链接完整归档后退出原发现位置，运行依赖单独保留。下方按日期的此前迁移与暂缓约定保留为历史，不作为当前未安装状态。
@@ -123,3 +125,7 @@ skill-creator 的离线辅助工具需 Python 3 和 PyYAML（见技能内 requir
 ## 2026-10-29 追加 grilling
 
 用户明确批准项目与本地均安装，仅将 grilling 纳入 productivity 并用正常安装器追加链接。首次预览无冲突，创建 1 个链接；再次执行创建 0 个。独立 Codex skills/list 在技能仓库和用户主目录两处均返回全部 22 项仓库技能启用、0 个加载错误，新增名称为 bubugamer-skills:grilling。用户配置指纹保持，没有替换旧安装或一并安装其他访谈入口。来源及适配见 [纳入记录](audit/grilling-review.md)，个人路径与实际发现记录仅留在本机。
+
+## 2026-11-02 追加 plan-eng-review
+
+本次按用户明确批准只接入这一项。上游默认整套安装器未执行，使用其 Codex 生成器和完整配套运行文件，个人入口负责读取固定版本与每个子进程的工具环境。机器间迁移需要重新配置私有运行绑定，见 [运行说明](../skills/engineering/plan-eng-review/references/runtime.md)；公开源码不携带本机路径。检查与发现结果见 [验证记录](audit/verification.md)。

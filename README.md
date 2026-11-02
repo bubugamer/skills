@@ -10,7 +10,7 @@
 
 ## 按场景选技能
 
-以下覆盖已确认保留的 24 个技能、54 个代表场景。待审技能与 Matt 候选继续记录在[分批审查清单](docs/audit/review-checklist.md)，审阅确认后补入此表。brief 已迁到独立定时任务项目。
+以下覆盖已确认保留的 25 个技能、56 个代表场景。待审技能与 Matt 候选继续记录在[分批审查清单](docs/audit/review-checklist.md)，审阅确认后补入此表。brief 已迁到独立定时任务项目。
 
 | 具体场景 | 你可以怎样提出要求 | 用哪个 skill | AI 会怎样协助 | 最终产出 |
 | --- | --- | --- | --- | --- |
@@ -56,6 +56,8 @@
 | 想知道技能修改是否改善真实任务结果 | `$skill-creator` 比较这个技能的新旧版本，先给出真实用例、评价标准和执行范围。 | [skill-creator](docs/engineering/skill-creator.md) | 定义可比基线与任务结果，记录实际输出和失败，依据匹配样本及证据说明差异。 | 可复核的任务对照、限制和改进建议。 |
 | 技能经常误触发或漏触发 | `$skill-creator` 检查这个技能的描述边界，先预览探针，不启动模型调用。 | [skill-creator](docs/engineering/skill-creator.md) | 准备正向与近似反例，预览调用范围，获准执行后区分有效结果、超时和错误，再提出描述修改。 | 触发覆盖说明及有依据的描述建议。 |
 | 需要人工比较已有测试输出 | `$skill-creator` 用已有结果生成新的本地评阅页，保留我的旧反馈。 | [skill-creator](docs/engineering/skill-creator.md) | 展示实际输出、判断依据、错误和覆盖范围，提供本地反馈预览，并保留已有文件。 | 可查看和填写反馈的本地评阅页面。 |
+| 已有代码优化或整改方案，实施前检查合理性与范围 | `$plan-eng-review` 对照当前仓库审查这份整改方案，查清直接改动、连带调用方和遗漏，先只审查。 | [plan-eng-review](docs/engineering/plan-eng-review.md) | 读取方案及相关实现、调用链和测试，检查改动必要性、架构、失败路径与验证覆盖；区分当前证据和未来假设。 | 带代码证据的方案判断、影响范围、遗漏项和验证要求。 |
+| 担心整改方案扩大范围，或新抽象重复现有能力 | `$plan-eng-review` 检查这份重构计划是否重复建设；比较保留现状、最小整改与拟议方案，并核对调用方。 | [plan-eng-review](docs/engineering/plan-eng-review.md) | 查找现有实现和可复用能力，比较方案的必要性、复杂度、接口和测试影响，保留用户已确认的目标。 | 可比较的取舍、最小完整改动范围及尚待决定的问题。 |
 | 脑中有想法，尚未想好文章怎么写 | `$writing-fragments` 采访我这次项目经历，把有价值的表达记到 fragments.md，先不列提纲。 | [writing-fragments](docs/productivity/writing-fragments.md) | 通过追问捕捉经历、观点、原话和细节，及时保存为素材片段。 | 一份可继续积累的素材文件。 |
 | 边讨论边修改已保存的素材 | `$writing-fragments` 继续收集素材，刚才那两个片段合并一下，保留我在文件里做的修改。 | [writing-fragments](docs/productivity/writing-fragments.md) | 每次写入前读取现状，按要求追加或修改指定片段，保护其他编辑。 | 更新后的素材集合，保留用户已有修改。 |
 | 素材已经齐了，想共同组织成一篇文章 | `$writing-shape` 读取 fragments.md，面向产品经理写到 article.md，先给我几个开头选择。 | [writing-shape](docs/productivity/writing-shape.md) | 先明确读者基础，比较不同主张的开头，再按读者需要逐块推进。 | 从既有素材形成的独立文章。 |
@@ -71,7 +73,7 @@
 
 ## 当前集合
 
-最初盘点的 32 项原有技能已完成第一轮处理，待审 0 项；Matt 候选放第二批考虑是否引入，ask-skills 单列为体系维护项。当前维护 22 个源码技能（其中 6 项上游适配）及 2 项外部依赖说明；默认发布 22 项。目录按用途分类，审阅和已知问题单独记录。进度见 [分批审查清单](docs/audit/review-checklist.md)，名称与已有安装迁移见 [安装说明](docs/installation.md)。
+最初盘点的 32 项原有技能已完成第一轮处理，待审 0 项；Matt 候选放第二批考虑是否引入，ask-skills 单列为体系维护项。当前维护 23 个源码技能（其中 7 项上游适配）及 2 项外部依赖说明；默认发布 23 项。目录按用途分类，审阅和已知问题单独记录。进度见 [分批审查清单](docs/audit/review-checklist.md)，名称与已有安装迁移见 [安装说明](docs/installation.md)。
 
 | 分类 | 作用 | 目录 |
 | --- | --- | --- |
@@ -114,6 +116,7 @@
 | [deep-research](docs/productivity/deep-research.md) | 多来源证据研究 | `$deep-research` |
 | [ui-ux-pro-max](docs/engineering/ui-ux-pro-max.md) | 设计资料库与风格建议 | `$ui-ux-pro-max` |
 | [skill-creator](docs/engineering/skill-creator.md) | 创建、改进与评测技能 | `$skill-creator` |
+| [plan-eng-review](docs/engineering/plan-eng-review.md) | 结合原代码审查工程整改方案及影响范围 | `$plan-eng-review` |
 | [writing-fragments](docs/productivity/writing-fragments.md) | 通过访谈捕捉写作素材与片段 | `$writing-fragments` |
 | [writing-shape](docs/productivity/writing-shape.md) | 将已有素材逐块组织成文章 | `$writing-shape` |
 | [writing-beats](docs/productivity/writing-beats.md) | 逐次选择叙述方向，共同推进文章 | `$writing-beats` |

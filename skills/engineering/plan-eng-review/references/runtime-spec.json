@@ -1,0 +1,23 @@
+{
+  "upstream_commit": "1a22ae96520b99d3119ce9d3e5c76b43e60ccc3c",
+  "bun_version": "1.4.2",
+  "entrypoint": "codex-render/.agents/skills/gstack-plan-eng-review/SKILL.md",
+  "preamble": "codex-render/.agents/skills/gstack-plan-eng-review/sections/preamble.md",
+  "required_files": [
+    "LICENSE",
+    "bin/gstack-skill-start",
+    "bin/gstack-config",
+    "bin/gstack-plan-reality",
+    "bin/gstack-review-read",
+    "bin/gstack-review-log",
+    "bin/gstack-paths",
+    "bin/gstack-slug",
+    "lib/plan-reality.ts",
+    "codex-render/.agents/skills/gstack-plan-eng-review/SKILL.md",
+    "codex-render/.agents/skills/gstack-plan-eng-review/sections/preamble.md"
+  ],
+  "normalized_sha256": {
+    "codex-render/.agents/skills/gstack-plan-eng-review/SKILL.md": "30c26d1a699017f5a55ef8035f7532036e4c9c5f040501343b85ac1876a7e594",
+    "codex-render/.agents/skills/gstack-plan-eng-review/sections/preamble.md": "33dafdad92b03689fd376ea6d9aee567c9e8f0c77d9e095b45149276275d731d"
+  }
+}

@@ -799,6 +799,55 @@
       ]
     },
     {
+      "name": "plan-eng-review",
+      "category": "engineering",
+      "purpose": "结合原代码审查工程整改方案及影响范围",
+      "decision": "keep",
+      "source": "upstream-adapted",
+      "origin": "https://github.com/garrytan/gstack/tree/1a22ae96520b99d3119ce9d3e5c76b43e60ccc3c/plan-eng-review",
+      "source_sha256": "cd4d272e6bddf9d2c5a37e57bb03e99b3b4918fdc4a72324c8e0ddd3624287d0",
+      "path": "skills/engineering/plan-eng-review",
+      "manual": false,
+      "interface": {
+        "display_name": "Plan Engineering Review",
+        "short_description": "Review engineering plans against existing code"
+      },
+      "dependencies": [],
+      "release": true,
+      "release_reason": "用户明确要求安装；只接入该项，上游默认允许自动选择，也可手动指定。",
+      "updated_at": "2026-11-02",
+      "reason": "用户希望同时检查方案合理性与原代码涉及的整改范围，阅读比较后批准安装。保留 gstack 固定版本的完整 Codex 审查流程，个人入口仅负责运行依赖、当前授权和中文回复；共享运行文件与个人路径在外部维护。见 [纳入记录](../audit/plan-eng-review-adoption.md)。",
+      "example": "用 plan-eng-review 对照当前仓库审查这份整改方案，查清必要改动、调用方和遗漏，先只审查。",
+      "done": "对照选定版本的代码和测试，给出方案判断、直接与连带整改范围、证据、待决定事项及验证方式；未知项和未执行覆盖明确列出。",
+      "compare": "grilling（澄清想法与取舍）；codebase-design（Matt 待审设计方法）；code-review（Matt 待审，检查已实施的代码改动）",
+      "inputs": "方案全文、目标仓库和分支或版本；外部固定 gstack 运行文件、Bun 1.4.2、Git、Bash 与 Python 3，绑定见技能内 references/runtime.md；Codex 上游适配仍为 experimental，本次未运行真实业务方案评测",
+      "review": {
+        "status": "user-approved",
+        "admission_status": "user-approved",
+        "approved_at": "2026-11-02",
+        "approval_basis": "用户在阅读方案审查推荐与依赖说明后明确要求「那就帮我安装 plan-eng-review 吧」，批准该项纳入个人集合并安装本地；不包含整套 gstack 技能。",
+        "audit": "docs/audit/plan-eng-review-adoption.md",
+        "verified_scope": "核对固定原文和完整上游 Codex 生成文件；验证运行绑定、配套工具、七项适配测试、单项安装及 Codex 实际发现；行为场景仅为定义，尚未验收真实业务方案审查。"
+      },
+      "usage_scenarios": [
+        {
+          "situation": "已有代码优化或整改方案，实施前检查合理性与范围",
+          "prompt": "$plan-eng-review 对照当前仓库审查这份整改方案，查清直接改动、连带调用方和遗漏，先只审查。",
+          "assistance": "读取方案及相关实现、调用链和测试，检查改动必要性、架构、失败路径与验证覆盖；区分当前证据和未来假设。",
+          "result": "带代码证据的方案判断、影响范围、遗漏项和验证要求。"
+        },
+        {
+          "situation": "担心整改方案扩大范围，或新抽象重复现有能力",
+          "prompt": "$plan-eng-review 检查这份重构计划是否重复建设；比较保留现状、最小整改与拟议方案，并核对调用方。",
+          "assistance": "查找现有实现和可复用能力，比较方案的必要性、复杂度、接口和测试影响，保留用户已确认的目标。",
+          "result": "可比较的取舍、最小完整改动范围及尚待决定的问题。"
+        }
+      ],
+      "previous_names": [
+        "gstack-plan-eng-review"
+      ]
+    },
+    {
       "name": "writing-fragments",
       "category": "productivity",
       "purpose": "通过访谈捕捉写作素材与片段",
@@ -1069,5 +1118,5 @@
       ]
     }
   ],
-  "updated_at": "2026-10-29"
+  "updated_at": "2026-11-02"
 }

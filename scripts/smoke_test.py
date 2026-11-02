@@ -124,6 +124,20 @@ def main():
         assert grilling_metadata['interface']['display_name'] == 'Grilling'
         assert (grilling_link / 'LICENSE.txt').is_file()
         assert sorted(p.name for p in grilling_target.iterdir()) == ['grilling']
+        plan_review_target = base / 'plan-review-only'
+        run(installer, '--target', plan_review_target, '--skill', 'plan-eng-review', '--apply')
+        plan_review_link = plan_review_target / 'plan-eng-review'
+        assert plan_review_link.resolve() == ROOT / 'skills/engineering/plan-eng-review'
+        assert sorted(p.name for p in plan_review_target.iterdir()) == ['plan-eng-review']
+        plan_review_policy = yaml.safe_load((plan_review_link / 'agents/openai.yaml').read_text())['policy']
+        assert plan_review_policy['allow_implicit_invocation'] is True
+        assert (plan_review_link / 'scripts/runtime.py').is_file()
+        assert (plan_review_link / 'references/runtime-spec.json').is_file()
+        native_conflict = base / 'native-plan-review-conflict'
+        native_conflict.mkdir()
+        (native_conflict / 'gstack-plan-eng-review').mkdir()
+        run(installer, '--target', native_conflict, '--skill', 'plan-eng-review', '--apply', expected=2)
+        assert not (native_conflict / 'plan-eng-review').exists()
         matt_writing = base / 'matt-writing'
         writing_names = ['writing-fragments', 'writing-shape', 'writing-beats', 'writing-for-agents']
         writing_args = [part for name in writing_names for part in ['--skill', name]]
@@ -262,7 +276,8 @@ def main():
     run(ROOT / 'skills/productivity/deep-research/scripts/test_records.py')
     run(ROOT / 'skills/engineering/ui-ux-pro-max/scripts/test_tools.py')
     run(ROOT / 'skills/engineering/skill-creator/scripts/test_evaluation.py')
-    print('Passed: admission checks across all sources, approved manual ask-skills, four Matt writing skills and grilling, safe installation and legacy aliases, preserved invocation policies, reviewed references, research/UI preservation, skill-creator preview and existing-creator conflict protection, candidate exclusions, unchanged user files, 14 PARA, 16 wiki, 9 research-record, 9 UI-adapter and 15 evaluation-tool tests.')
+    run(ROOT / 'skills/engineering/plan-eng-review/scripts/test_runtime.py')
+    print('Passed: admission checks across all sources, approved manual ask-skills, four Matt writing skills, grilling and plan-eng-review, safe single-skill installation and native/legacy aliases, preserved invocation policies, reviewed references, research/UI preservation, skill-creator preview and existing-creator conflict protection, candidate exclusions, unchanged user files, 14 PARA, 16 wiki, 9 research-record, 9 UI-adapter, 15 evaluation-tool and 7 plan-review-runtime tests.')
     return 0
 
 
