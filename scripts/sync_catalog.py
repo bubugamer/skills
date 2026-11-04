@@ -125,6 +125,7 @@ def outputs():
 
 - [第一轮收尾](docs/audit/first-round-summary.md)：最终集合、处理结论与验证范围。
 - [分批审查清单](docs/audit/review-checklist.md)：第一轮原有技能优先，第二批 Matt 候选另列。
+- [技能来源资料库](skills/productivity/ask-skills/references/skill-sources.md)：按任务查阅 gstack、Matt 和其他技能来源。
 - [原有 skills 的技术盘点](docs/audit/existing-skills.md)：来源、改善建议、外部依赖与重复项。
 - [Matt 全部 38 项的纳入判断](docs/audit/upstream-skills.md)：在整理自身集合后选择扩展。
 - [架构与各目录的作用](docs/architecture.md)：操作入口、使用文档、术语和治理分工。

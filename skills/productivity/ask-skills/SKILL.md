@@ -5,7 +5,8 @@ description: Recommend the most suitable skill for a user task, compare overlapp
 
 # 选择一个合适的 skill
 
-读取 references/routes.md，按任务目的选择，优先保留用户明确指定的能力。
+读取 [当前路由](references/routes.md) 和 [技能来源资料库](references/skill-sources.md)，按任务目的选择，优先保留用户明确指定的能力。
+用户指定外部来源、要求比较，或外部技能可能更贴合任务时，查阅相关来源，核对上游说明和依赖。需要拓宽搜索时，使用 find-skills 或可用的搜索工具。
 给出一个首选、最多两个有实质差异的备选，说明理由、必要依赖与一句可直接使用的指令。
 区分已收录能力、外部依赖和未纳入的候选，并说明用户审阅状态、已知限制及手动或自动调用方式。只推荐，不安装、不替用户启动目标任务；用途目录不代表已完成用户审阅。
 目标需要多个步骤时，说明先后关系；只列本次确实需要的步骤。

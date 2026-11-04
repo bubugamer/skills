@@ -1128,16 +1128,16 @@
       "category": "productivity",
       "purpose": "选择合适的 skill",
       "decision": "new",
-      "reason": "用户明确确认「ask-skills可以加入」。作为 productivity 的手动推荐入口保留，从当前集合选择适合任务的能力，说明外部依赖和候选边界；只给建议，不安装、不启动目标任务。此前未获确认即进入源码和发布的遗漏已纠正，所有来源统一要求明确批准。见 [确认记录](../audit/ask-skills-review.md)。",
+      "reason": "用户明确确认「ask-skills可以加入」。作为 productivity 的手动推荐入口保留，结合当前集合与技能来源资料库选择适合任务的能力，说明外部依赖和候选边界；只给建议，不安装、不启动目标任务。此前未获确认即进入源码和发布的遗漏已纠正，所有来源统一要求明确批准。见 [确认记录](../audit/ask-skills-review.md)。",
       "example": "我想做这件事，应该用哪个 skill？",
       "done": "给出首选、理由、依赖与一句可用指令；区分用户审阅状态、已知限制、外部依赖与调用方式。",
-      "compare": "find-skills（搜索外部新技能）；ask-skills 从当前集合推荐已有能力",
+      "compare": "find-skills（发现外部候选）；ask-skills（比较已有技能和外部候选，给出任务建议）",
       "source": "new",
       "origin": "本仓库",
       "path": "skills/productivity/ask-skills",
       "manual": true,
       "dependencies": [],
-      "updated_at": "2026-10-20",
+      "updated_at": "2026-11-04",
       "review": {
         "status": "user-approved",
         "admission_status": "user-approved",
@@ -1160,6 +1160,12 @@
           "prompt": "$ask-skills 比较 read、teach 和 wiki，告诉我当前任务该用哪个，先只推荐。",
           "assistance": "结合用户意图及已有选择解释边界，区分已收录能力、外部依赖与候选，保留手动调用要求。",
           "result": "针对当前任务的选择依据，不自动启动目标技能。"
+        },
+        {
+          "situation": "需要从已有技能和外部来源中选择发布前验收能力",
+          "prompt": "$ask-skills 我需要跑完浏览器中的业务流程做发布前验收，请比较已有能力与 gstack 等外部候选。",
+          "assistance": "核对现有技能与相关上游入口的能力、依赖和当前收录状态。",
+          "result": "基于适配程度的首选和可用备选。"
         }
       ]
     }

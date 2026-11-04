@@ -288,7 +288,8 @@ skills/（仓库根目录）
 │       │   ├── evals/
 │       │   │   └── evals.json
 │       │   ├── references/
-│       │   │   └── routes.md
+│       │   │   ├── routes.md
+│       │   │   └── skill-sources.md
 │       │   ├── ORIGIN.json
 │       │   └── SKILL.md
 │       ├── deep-research/

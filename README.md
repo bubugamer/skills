@@ -10,7 +10,7 @@
 
 ## 按场景选技能
 
-以下覆盖已确认保留的 26 个技能、58 个代表场景。待审技能与 Matt 候选继续记录在[分批审查清单](docs/audit/review-checklist.md)，审阅确认后补入此表。brief 已迁到独立定时任务项目。
+以下覆盖已确认保留的 26 个技能、59 个代表场景。待审技能与 Matt 候选继续记录在[分批审查清单](docs/audit/review-checklist.md)，审阅确认后补入此表。brief 已迁到独立定时任务项目。
 
 | 具体场景 | 你可以怎样提出要求 | 用哪个 skill | AI 会怎样协助 | 最终产出 |
 | --- | --- | --- | --- | --- |
@@ -72,6 +72,7 @@
 | 长任务分段，下一会话要专注回归验证 | `$handoff` 将当前工作整理成交接稿，下一会话重点检查尚未覆盖的回归场景。 | [handoff](docs/productivity/handoff.md) | 按指定接手重点筛选进展、验证证据和未解决的问题，给出下一步。 | 围绕验证任务的短交接稿及证据引用。 |
 | 不确定已有技能里该选哪一个 | `$ask-skills` 我想理解一篇文章并整理阅读笔记，应该用哪个技能？ | [ask-skills](docs/productivity/ask-skills.md) | 从当前路由给出首选、必要备选、选择理由、输入条件和一句可直接使用的请求。 | 明确的技能建议和下一步用法。 |
 | 几个技能用途接近，想先确认分工 | `$ask-skills` 比较 read、teach 和 wiki，告诉我当前任务该用哪个，先只推荐。 | [ask-skills](docs/productivity/ask-skills.md) | 结合用户意图及已有选择解释边界，区分已收录能力、外部依赖与候选，保留手动调用要求。 | 针对当前任务的选择依据，不自动启动目标技能。 |
+| 需要从已有技能和外部来源中选择发布前验收能力 | `$ask-skills` 我需要跑完浏览器中的业务流程做发布前验收，请比较已有能力与 gstack 等外部候选。 | [ask-skills](docs/productivity/ask-skills.md) | 核对现有技能与相关上游入口的能力、依赖和当前收录状态。 | 基于适配程度的首选和可用备选。 |
 
 ## 当前集合
 
@@ -88,6 +89,7 @@
 
 - [第一轮收尾](docs/audit/first-round-summary.md)：最终集合、处理结论与验证范围。
 - [分批审查清单](docs/audit/review-checklist.md)：第一轮原有技能优先，第二批 Matt 候选另列。
+- [技能来源资料库](skills/productivity/ask-skills/references/skill-sources.md)：按任务查阅 gstack、Matt 和其他技能来源。
 - [原有 skills 的技术盘点](docs/audit/existing-skills.md)：来源、改善建议、外部依赖与重复项。
 - [Matt 全部 38 项的纳入判断](docs/audit/upstream-skills.md)：在整理自身集合后选择扩展。
 - [架构与各目录的作用](docs/architecture.md)：操作入口、使用文档、术语和治理分工。

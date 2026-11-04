@@ -2,6 +2,7 @@
 
 ## 2026-11-04
 
+- 加入 gstack 等技能来源索引。ask-skills 在推荐时按任务查阅相关外部来源，并核对上游能力与依赖。
 - 接入 Matt Pocock 的 handoff，归 productivity，手动生成会话交接文档。同步使用场景、ask-skills 推荐和审查清单。
 
 ## 2026-11-02
