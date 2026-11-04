@@ -29,6 +29,7 @@
     "./skills/productivity/writing-beats",
     "./skills/productivity/writing-for-agents",
     "./skills/productivity/grilling",
+    "./skills/productivity/handoff",
     "./skills/productivity/ask-skills"
   ]
 }

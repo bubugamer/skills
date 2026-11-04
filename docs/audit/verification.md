@@ -761,3 +761,16 @@ skill-creator 仍 under-review，当前只提出“日常创建沿用系统，�
 | validate.py、smoke_test.py、sync_catalog.py --check、git diff --check | 全部通过 | 25 个 catalog 条目、23 个入口及默认发布项；原有 63 项工具测试加本次 7 项，单项安装及同名保护检查通过 |
 
 新增六条行为场景和两条公开用法，同步 ask-skills 推荐；场景仅为定义。没有真实业务方案输入，未执行模型评审、触发率或审查质量评测。上游 Codex 适配仍为 experimental，缺失外部浏览器或未授权外部评审按当前工具和授权准确说明。完整运行路径、生成文档、子进程输出和发现响应保存在本机安装记录，不进入公共源码。
+
+## 2026-11-04 handoff 安装
+
+用户明确要求安装并接入 Matt Pocock 的 handoff。上游固定提交为 4ae2317ddb22b046e26455e4f9c9b3aaaf62212d，原入口 Git blob 为 a224edc643a20ddb989f9bca1547440169159810，与推荐时的文件一致。保留英文交接方法和 MIT，按 Codex 映射手动调用，适配接手方的技能选择方式并追加中文回复要求。
+
+| 检查 | 实际结果 |
+| --- | --- |
+| `validate.py`、`smoke_test.py`、`sync_catalog.py --check` | 通过。当前 26 个已确认条目，24 个仓库入口与发布项，58 条公开场景。 |
+| `install.py --skill handoff` 预览及两次 `--apply` | 预览无冲突，首次创建 1 个链接，重复安装创建 0 个链接。 |
+| Codex app-server `skills/list` 强制刷新 | 仓库目录与用户主目录均识别 24 个仓库入口，加载错误为 0。新入口为 `bubugamer-skills:handoff`。手动策略由 `agents/openai.yaml` 校验。 |
+| Codex 配置安装前后指纹 | 一致。 |
+
+本次验证覆盖来源、调用策略、安装和发现。三条交接行为场景为用例定义，等待实际调用验证。

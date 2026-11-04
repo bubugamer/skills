@@ -10,7 +10,7 @@
 
 ## 按场景选技能
 
-以下覆盖已确认保留的 25 个技能、56 个代表场景。待审技能与 Matt 候选继续记录在[分批审查清单](docs/audit/review-checklist.md)，审阅确认后补入此表。brief 已迁到独立定时任务项目。
+以下覆盖已确认保留的 26 个技能、58 个代表场景。待审技能与 Matt 候选继续记录在[分批审查清单](docs/audit/review-checklist.md)，审阅确认后补入此表。brief 已迁到独立定时任务项目。
 
 | 具体场景 | 你可以怎样提出要求 | 用哪个 skill | AI 会怎样协助 | 最终产出 |
 | --- | --- | --- | --- | --- |
@@ -68,12 +68,14 @@
 | 技能拆出参考文件后，担心 AI 不会去读 | `$writing-for-agents` 检查这个 SKILL.md 的引用条件和完成标准，按当前 Codex 规则调整。 | [writing-for-agents](docs/productivity/writing-for-agents.md) | 核对触发分支、引用条件与完成标准；编写技能时读取 mechanics，并采用 Codex 调用配置。 | 引用可定位、职责明确的技能说明。 |
 | 已有产品或项目想法，希望把它问清楚 | `$grilling` 我有一个产品想法，请分轮追问目标、受众和核心假设，先不要写实施方案。 | [grilling](docs/productivity/grilling.md) | 把想法拆成相关决策，先问当前前提明确的问题，根据回答继续深入并给出建议。 | 双方理解一致的目标、边界、假设与关键选择。 |
 | 在几个方案之间犹豫，想找出遗漏的取舍 | `$grilling` 我在 A、B 两个方向之间犹豫，请追问约束、代价和隐含假设，帮我把取舍想清楚。 | [grilling](docs/productivity/grilling.md) | 核实可查事实，分轮讨论影响选择的问题；需要人决定的部分交给用户确认。 | 明确的选项、取舍依据及尚待核实的问题。 |
+| 把当前会话移交给已有会话或另一个 agent | `$handoff` 为下一位 agent 写交接稿，记录已完成事项、关键决定和接手第一步。 | [handoff](docs/productivity/handoff.md) | 提炼相关会话内容，引用已有计划、提交和文件，省略敏感信息。 | 一份可由接手方读取的交接文档。 |
+| 长任务分段，下一会话要专注回归验证 | `$handoff` 将当前工作整理成交接稿，下一会话重点检查尚未覆盖的回归场景。 | [handoff](docs/productivity/handoff.md) | 按指定接手重点筛选进展、验证证据和未解决的问题，给出下一步。 | 围绕验证任务的短交接稿及证据引用。 |
 | 不确定已有技能里该选哪一个 | `$ask-skills` 我想理解一篇文章并整理阅读笔记，应该用哪个技能？ | [ask-skills](docs/productivity/ask-skills.md) | 从当前路由给出首选、必要备选、选择理由、输入条件和一句可直接使用的请求。 | 明确的技能建议和下一步用法。 |
 | 几个技能用途接近，想先确认分工 | `$ask-skills` 比较 read、teach 和 wiki，告诉我当前任务该用哪个，先只推荐。 | [ask-skills](docs/productivity/ask-skills.md) | 结合用户意图及已有选择解释边界，区分已收录能力、外部依赖与候选，保留手动调用要求。 | 针对当前任务的选择依据，不自动启动目标技能。 |
 
 ## 当前集合
 
-最初盘点的 32 项原有技能已完成第一轮处理，待审 0 项；Matt 候选放第二批考虑是否引入，ask-skills 单列为体系维护项。当前维护 23 个源码技能（其中 7 项上游适配）及 2 项外部依赖说明；默认发布 23 项。目录按用途分类，审阅和已知问题单独记录。进度见 [分批审查清单](docs/audit/review-checklist.md)，名称与已有安装迁移见 [安装说明](docs/installation.md)。
+最初盘点的 32 项原有技能已完成第一轮处理，待审 0 项；Matt 候选放第二批考虑是否引入，ask-skills 单列为体系维护项。当前维护 24 个源码技能（其中 8 项上游适配）及 2 项外部依赖说明；默认发布 24 项。目录按用途分类，审阅和已知问题单独记录。进度见 [分批审查清单](docs/audit/review-checklist.md)，名称与已有安装迁移见 [安装说明](docs/installation.md)。
 
 | 分类 | 作用 | 目录 |
 | --- | --- | --- |
@@ -122,6 +124,7 @@
 | [writing-beats](docs/productivity/writing-beats.md) | 逐次选择叙述方向，共同推进文章 | `$writing-beats` |
 | [writing-for-agents](docs/productivity/writing-for-agents.md) | 编写清楚、按需加载的 AI 指令文档 | `$writing-for-agents` |
 | [grilling](docs/productivity/grilling.md) | 通过分轮追问澄清想法、方案与关键取舍 | `$grilling` |
+| [handoff](docs/productivity/handoff.md) | 把当前会话整理成交接文档供下一位 agent 接手 | `$handoff` |
 | [ask-skills](docs/productivity/ask-skills.md) | 选择合适的 skill | `$ask-skills` |
 
 ## 维护

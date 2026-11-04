@@ -1,0 +1,6 @@
+interface:
+  display_name: "Handoff"
+  short_description: "Compact a conversation into a handoff"
+  default_prompt: "Use $handoff to help with this task: 为当前会话写交接稿，下一位 agent 重点验证尚未完成的改动。"
+policy:
+  allow_implicit_invocation: false

@@ -1,5 +1,9 @@
 # 变更记录
 
+## 2026-11-04
+
+- 接入 Matt Pocock 的 handoff，归 productivity，手动生成会话交接文档。同步使用场景、ask-skills 推荐和审查清单。
+
 ## 2026-11-02
 
 - 按用户明确要求纳入并安装 gstack plan-eng-review，归 engineering；保留完整固定上游 Codex 流程，追加个人入口、运行绑定与中文回复。

@@ -1,5 +1,7 @@
 # 安装与调用
 
+截至 2026-11-04，已接入 24 项仓库入口。新增手动调用的 `$bubugamer-skills:handoff`，见 [纳入记录](audit/handoff-adoption.md)。
+
 截至 2026-11-02，已接入 23 项仓库入口；新增 `$bubugamer-skills:plan-eng-review`。完整 gstack 固定运行文件和独立 Bun 在私有运行目录维护，其他 gstack 技能没有注册。使用前通过技能内运行检查，不改变已有配置或全局 Bun。
 
 截至 2026-10-29，已接入 22 项仓库技能；本次按用户明确批准，仅追加 grilling。完整调用名为 `$bubugamer-skills:grilling`，保留正常自动选择；实际本地发现已核对，其他安装及用户配置保持。

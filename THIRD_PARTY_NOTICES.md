@@ -17,3 +17,5 @@ skill-creator 的创建及评测方法参考 [Anthropic skills](https://github.c
 2026-10-29 用户确认纳入并安装 Matt 的 grilling，采用本次讨论的 59db609eb1e18aaf59b63284d0e52255aff0c63c 固定提交。目录保留 MIT、原作者版权、原文与适配指纹；英文 description 与访谈方法保留，仅改代理授权一句并追加 Reply in Chinese.，不是未经修改的上游发行版。未一并复制其他入口。
 
 2026-11-02 用户确认安装 [garrytan/gstack plan-eng-review](https://github.com/garrytan/gstack/tree/1a22ae96520b99d3119ce9d3e5c76b43e60ccc3c/plan-eng-review)，固定版本 1.92.68。个人仓库保留 MIT（Copyright 2026 Garry Tan）、ORIGIN.json 及上游 NOTICE 来源资料；完整上游 Codex 生成内容、共享工具及依赖许可在外部运行目录维护。本仓库仅提供个人集合加载和运行环境适配，不声称为未经修改的上游发行版，不复制发布其他 gstack 技能。
+
+2026-11-04 用户确认接入 [Matt Pocock 的 handoff](https://github.com/mattpocock/skills/tree/4ae2317ddb22b046e26455e4f9c9b3aaaf62212d/skills/productivity/handoff)。保留 MIT、原作者版权及英文交接流程。调用设置映射到 Codex，技能选择表述适配接收方所在环境，末尾追加 Reply in Chinese.。
