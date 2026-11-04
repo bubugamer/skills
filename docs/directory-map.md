@@ -1,6 +1,6 @@
 # 目录与文件清单
 
-整理日期：2026-11-04。当前 24 个仓库技能入口，engineering 4 项、productivity 17 项、misc 3 项。另有 agent-browser、find-skills 两项外部说明。已确认保留 26 项，第一轮原有 32 项已处理完毕，待审 0。Matt 第二批已纳入 6 项，剩余候选 30 项。gstack plan-eng-review 单列为其他外部引入。见 [审查清单](audit/review-checklist.md)。
+整理日期：2026-11-04。当前 24 个仓库技能入口，engineering 4 项、productivity 17 项、misc 3 项。另有 agent-browser、find-skills 两项外部说明。已确认保留 26 项，第一轮原有 32 项已处理完毕，待审 0。Matt 第二批已纳入 6 项，其余 30 项留作按需查阅。gstack plan-eng-review 单列为其他外部引入。见 [审查清单](audit/review-checklist.md)。
 
 ## 整理记录（历史）
 

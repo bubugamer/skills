@@ -2,7 +2,7 @@
 
 参考快照：Matt Pocock skills 1.3.1，提交 49dd158d1076134a641b33efb035946536778336。原项目有 38 个技能，正式 engineering 20、productivity 7、misc 4，试用 7，deprecated 当前为空。作者插件只发布工程与生产力 27 项；misc 在仓库保留但没有纳入其插件。我们的正式集合包含专用工具，因此把自己的 misc 纳入明确发布清单。
 
-本仓库按 engineering、productivity、misc 三种用途归类，deprecated 留迁移说明；取消 in-progress。已知问题、用户审阅状态、默认发布设置与调用方式分别维护。第一轮只审阅原有 32 项，Matt 尚未引入的技能作为第二批扩展候选。
+本仓库按 engineering、productivity、misc 三种用途归类，deprecated 留迁移说明；取消 in-progress。已知问题、用户审阅状态、默认发布设置与调用方式分别维护。第一轮已完成原有 32 项。Matt 尚未引入的技能留作按需查阅资料。
 
 ## 目录的作用
 
@@ -21,7 +21,7 @@
 | 每个技能的 evals/ | 场景输入与预期；不伪装成已执行结果。 |
 | 每个技能的 ORIGIN.json | 原始入口指纹、来源日期和公开版本的改动。 |
 | docs/用途分类/ | 给人看的用途、依赖、例子、完成条件与限制。 |
-| docs/audit/ | 第一轮原有集合审查、第二批上游引入评估和真实验证记录。 |
+| docs/audit/ | 第一轮审查、上游候选盘点和真实验证记录。 |
 | docs/directory-map.md | 当前用途目录与完整文件清单。 |
 | docs/agents/ | 工作区配置示例；个人路径与生产配置留在用户项目。 |
 | .agents/ | 调用、文档编写、重要维护决策和插件目录清单。 |

@@ -1,6 +1,6 @@
 # Matt 全部 skills 的纳入判断
 
-先审查自己的 32 项，再基于真实缺口判断。 本页记录候选审查建议，只有用户逐项确认的技能才可纳入集合。参考提交：49dd158d1076134a641b33efb035946536778336（1.3.1）。总共 38 项：27 个工程/生产力正式入口、4 个 misc、7 个试用；作者插件只发布前 27 项。
+本页保存 Matt 技能的初始盘点。原第二批剩余 30 项暂停批量审阅，表中的建议供具体任务按需查阅。参考提交为 49dd158d1076134a641b33efb035946536778336（1.3.1）。快照共 38 项，其中工程和生产力正式入口 27 项、misc 4 项、试用 7 项。
 
 当前已采用 8 项（原有 wait-what、teach、四项写作技能、grilling 与 handoff），剩余候选 30 项。grilling 采用 2026-10-29 核对的 59db609eb1e18aaf59b63284d0e52255aff0c63c 版本，handoff 采用 2026-11-04 核对的 4ae2317ddb22b046e26455e4f9c9b3aaaf62212d 版本，条目枚举沿用初始快照。本页保留用途盘点与候选建议；哪些已逐项讨论、哪些已获用户确认，统一见 [合并审查清单](review-checklist.md)。借鉴设计原则与用户完成技能审核分别记录。
 
@@ -45,9 +45,9 @@
 | productivity | [wait-what](https://github.com/mattpocock/skills/tree/49dd158d1076134a641b33efb035946536778336/skills/productivity/wait-what) | 已改善现有 | 原有集合，第一轮已确认保留；仓库按用户要求保留英文说明，正文仅追加 Reply in Chinese.，保留 MIT、出处与 Codex 手动配置。见 [审阅](wait-what-review.md)；不计入第二批候选。 |
 | productivity | [writing-for-agents](https://github.com/mattpocock/skills/tree/49dd158d1076134a641b33efb035946536778336/skills/productivity/writing-for-agents) | 已确认纳入 productivity | 2026-10-21 用户明确批准；AI 指令文档的表达与组织，保留原英文及 MIT，按 Codex 映射调用设置。见 [纳入记录](writing-skills-adoption.md)。 |
 
-## 本轮与后续顺序
+## 引入记录
 
-先按用户既定顺序审阅原有技能，再逐项讨论外部候选，由用户明确确认后纳入。teach 已获逐项确认，当前保留完整英文版本。domain-modeling、diagnosing-bugs、grilling、writing-for-agents 曾被提前导入，2026-10-14 已纠正撤回，仅保留候选链接。2026-10-21 用户明确批准 writing-for-agents 及 writing-fragments、writing-shape、writing-beats 纳入；之前撤回记录保留为历史，不再将 writing-for-agents 视为当前候选。其他纳入建议仍只表示待讨论提案，不构成用户批准。
+teach 已获逐项确认，当前保留完整英文版本。domain-modeling、diagnosing-bugs、grilling、writing-for-agents 曾被提前导入，2026-10-14 已纠正撤回，仅保留候选链接。2026-10-21 用户明确批准 writing-for-agents 及 writing-fragments、writing-shape、writing-beats 纳入；之前撤回记录保留为历史，不再将 writing-for-agents 视为当前候选。其他候选正式收录前须逐项确认。
 
 入选条件是自身缺口与可验证收益，不是作者数量更多。类似能力优先借鉴和改善，避免同一任务有多个互相争夺的入口。
 

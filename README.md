@@ -10,7 +10,7 @@
 
 ## 按场景选技能
 
-以下覆盖已确认保留的 26 个技能、59 个代表场景。待审技能与 Matt 候选继续记录在[分批审查清单](docs/audit/review-checklist.md)，审阅确认后补入此表。brief 已迁到独立定时任务项目。
+以下覆盖已确认保留的 26 个技能、59 个代表场景。按具体需求检索候选技能，正式收录后补入此表。历史盘点见 [分批审查清单](docs/audit/review-checklist.md)。brief 已迁到独立定时任务项目。
 
 | 具体场景 | 你可以怎样提出要求 | 用哪个 skill | AI 会怎样协助 | 最终产出 |
 | --- | --- | --- | --- | --- |
@@ -76,7 +76,7 @@
 
 ## 当前集合
 
-最初盘点的 32 项原有技能已完成第一轮处理，待审 0 项；Matt 候选放第二批考虑是否引入，ask-skills 单列为体系维护项。当前维护 24 个源码技能（其中 8 项上游适配）及 2 项外部依赖说明；默认发布 24 项。目录按用途分类，审阅和已知问题单独记录。进度见 [分批审查清单](docs/audit/review-checklist.md)，名称与已有安装迁移见 [安装说明](docs/installation.md)。
+最初盘点的 32 项原有技能已完成第一轮处理，待审 0 项。新增能力按具体需求检索，Matt 剩余候选留作参考。ask-skills 单列为体系维护项。当前维护 24 个源码技能（其中 8 项上游适配）及 2 项外部依赖说明；默认发布 24 项。目录按用途分类，审阅和已知问题单独记录。进度见 [分批审查清单](docs/audit/review-checklist.md)，名称与已有安装迁移见 [安装说明](docs/installation.md)。
 
 | 分类 | 作用 | 目录 |
 | --- | --- | --- |
@@ -88,7 +88,7 @@
 ## 从这里开始
 
 - [第一轮收尾](docs/audit/first-round-summary.md)：最终集合、处理结论与验证范围。
-- [分批审查清单](docs/audit/review-checklist.md)：第一轮原有技能优先，第二批 Matt 候选另列。
+- [分批审查清单](docs/audit/review-checklist.md)：已确认保留的技能和按需查阅的 Matt 候选。
 - [技能来源资料库](skills/productivity/ask-skills/references/skill-sources.md)：按任务查阅 gstack、Matt 和其他技能来源。
 - [原有 skills 的技术盘点](docs/audit/existing-skills.md)：来源、改善建议、外部依赖与重复项。
 - [Matt 全部 38 项的纳入判断](docs/audit/upstream-skills.md)：在整理自身集合后选择扩展。

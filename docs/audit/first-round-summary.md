@@ -27,9 +27,9 @@ skill-creator 按用户最终要求将创建、改进与评测合在同一入口
 
 具体输入、检查结果及覆盖范围见 [验证记录](verification.md)。文件、安装保护和脚本检查不能证明实际模型效果；合成评阅样例用于核对页面与反馈交互，不是能力提升证据。真实登录抓取、完整行情链路、生产操作和独立模型效果未纳入本次收尾验证，已有问题继续保留在对应使用页。
 
-## 后续批次
+## 按需查阅
 
-Matt 第二批原有 36 项候选，2026-10-21 用户明确批准四项写作技能纳入，2026-10-29 再纳入 grilling，2026-11-04 纳入 handoff，剩余 30 项候选，其中 4 项只比较过方法。详见 [本次纳入记录](writing-skills-adoption.md)。ask-skills 已获明确批准，继续另列体系维护。这两类均不混入已完成的第一轮计数；第一轮收尾不自动启动第二批或本机迁移。
+Matt 第二批原有 36 项候选，已纳入四项写作技能、grilling 和 handoff。剩余 30 项暂停批量审阅，留作按需检索资料，其中 4 项做过相邻方法比较。ask-skills 单列为体系维护。见 [审查清单](review-checklist.md) 和 [技能来源资料库](../../skills/productivity/ask-skills/references/skill-sources.md)。
 
 公开仓库：[bubugamer/skills](https://github.com/bubugamer/skills)。
 
